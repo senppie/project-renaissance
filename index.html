@@ -4,21 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RENAISSANCE</title>
-    <link rel="icon" type="image/png" href="design/logos/favicon.png">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>RENAISSANCE</h1>
-    <p>TRACKS_FRAME</p>
+    <link rel="icon" type="image/png" href="design/logos/.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @font-face {
+        font-family: 'BBManualMono';
+        src: url('assets/font/BBManualMonoPro-Regular.otf') format('opentype');
+        font-weight: 400;
+      }
 
-    <!-- Floating Menu Bar -->
-    <div class="floating-menu">
-      <nav class="menu-bar">
-        <a href="#" class="menu-item">TRACKS</a>
-        <a href="#" class="menu-item">VISUALS</a>
-        <a href="#" class="menu-item">MERCH</a>
-        <a href="#" class="menu-item">ABOUT</a>
+      @layer base {
+        body {
+          font-family: 'BBManualMono', monospace;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <div class="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+      <nav class="flex gap-2 bg-black/80 px-4 py-2 border border-gray-600 backdrop-blur-md rounded">
+        <a href="#" class="px-4 py-2 text-gray-400 hover:text-white transition">TRACKS</a>
+        <a href="#" class="px-4 py-2 text-gray-400 hover:text-white transition">TOUR</a>
+        <a href="#" class="px-4 py-2 text-gray-400 hover:text-white transition">VISUALS</a>
+        <a href="#" class="px-4 py-2 text-gray-400 hover:text-white transition">MERCH</a>
+        <a href="#" class="px-4 py-2 text-gray-400 hover:text-white transition">ABOUT</a>
       </nav>
     </div>
+    <h1 class="text-5xl text-center pt-25">RENAISSANCE</h1>
   </body>
 </html>
