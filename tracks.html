@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RENAISSANCE: TRACKS</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script>
+    const tracks = [
+      { title: "I'M THAT GIRL", duration: "3:28" },
+      { title: "COZY", duration: "3:30" },
+      { title: "ALIEN SUPERSTAR", duration: "3:35" },
+      { title: "CUFF IT", duration: "3:45" },
+      { title: "ENERGY (FEAT. BEAM)", duration: "1:56" },
+      { title: "BREAK MY SOUL", duration: "4:38" },
+      { title: "CHURCH GIRL", duration: "3:44" },
+      { title: "PLASTIC OFF THE SOFA", duration: "4:14" },
+      { title: "VIRGO'S GROOVE", duration: "6:08" },
+      { title: "MOVE (FEAT. GRACE JONES & TEMS)", duration: "3:23" },
+      { title: "HEATED", duration: "4:20" },
+      { title: "THIQUE", duration: "4:04" },
+      { title: "ALL UP IN YOUR MIND", duration: "2:29" },
+      { title: "AMERICA HAS A PROBLEM", duration: "3:18" },
+      { title: "PURE/HONEY", duration: "4:48" },
+      { title: "SUMMER RENAISSANCE", duration: "4:34" }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('#songlist');
+
+      tracks.forEach((track, index) => {
+        const trackDiv = document.createElement('div');
+        trackDiv.className = 'inline-flex items-baseline justify-between gap-20';
+        trackDiv.innerHTML = `
+        <div class="inline-flex items-baseline gap-2">
+          <p class="text-[#9E9E9E]">${index + 1}</p>
+          <p class="text-white">${track.title}</p>
+        </div>
+        <p class="text-[#9E9E9E]">${track.duration}</p>
+      `;
+        container.appendChild(trackDiv);
+      });
+    });
+  </script>
+  <style type="text/tailwindcss">
+    @font-face {
+        font-family: 'BBManualMono';
+        src: url('assets/font/BBManualMonoPro-Regular.otf') format('opentype');
+        font-weight: 400;
+      }
+
+      @layer base {
+        body {
+          font-family: 'BBManualMono', monospace;
+        }
+      }
+    </style>
+</head>
+
+<body class="bg-black text-white select-none relative flex flex-col justify-center h-screen">
+  <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50">
+    <nav
+      class="flex gap-2 bg-zinc-700/20 px-2 py-1 text-xl border-2 border-neutral-700/60 backdrop-blur-md rounded-2xl">
+      <a href="index.html" class="px-4 py-2 text-neutral-700 hover:text-neutral-700 transition">TRACKS</a>
+      <a href="#" class="px-4 py-2 text-white hover:text-neutral-700 transition">VISUALS</a>
+      <a href="#" class="px-4 py-2 text-white hover:text-neutral-700 transition">TOUR</a>
+      <a href="#" class="px-4 py-2 text-white hover:text-neutral-700 transition">MERCH</a>
+      <a href="#" class="px-4 py-2 text-white hover:text-neutral-700 transition">ABOUT</a>
+    </nav>
+  </div>
+  <div class="max-w-6xl mx-auto">
+    <div>
+      <button class="flex px-6 py-2 text-[#9E9E9E] hover:text-white text-xl border-2 border-neutral-700/60 backdrop-blur-md rounded-2xl">← BACK</button>
+    </div>
+    <div class="grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex flex-col items-center justify-center gap-10">
+        <img src="assets/mainmenu/albumcover.png"
+          class="w-90 h-90 object-contain border-2 border-neutral-700/60 rounded-2xl" />
+        <div class="flex flex-col gap-2">
+          <h1 class="text-5xl">RENAISSANCE</h1>
+          <p class="text-2xl text-[#9E9E9E]">BEYONCÉㆍ2022</p>
+        </div>
+      </div>
+      <div class="text-xl flex flex-col gap-2" id="songlist">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
