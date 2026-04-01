@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>act i RENAISSANCE: VISUALS</title>
+  <title>VISUALS</title>
   <link rel="icon" type="image/png" href="assets/favicon-main.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
@@ -38,47 +39,50 @@
       }
   </style>
 </head>
+
 <body class="bg-black text-white select-none overflow-hidden h-screen">
-  <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50">
-    <nav class="flex gap-2 bg-zinc-700/20 px-2 py-1 text-xl border-2 border-zinc-700/60 backdrop-blur-md rounded-2xl">
-      <a href="tracks.html" class="px-4 py-2 text-white/40 hover:text-white transition">MUSIC</a>
-      <a href="visuals.html" class="px-4 py-2 text-white transition">VISUALS</a>
-      <a href="#" class="px-4 py-2 text-white/40 hover:text-white transition">TOUR</a>
-      <a href="#" class="px-4 py-2 text-white/40 hover:text-white transition">SHOP</a>
-      <a href="#" class="px-4 py-2 text-white/40 hover:text-white transition">ABOUT</a>
-    </nav>
-  </div>
   <div class="fixed top-9 left-55 z-50">
-    <a href="index.html" class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/40 hover:text-white text-xl border-2 border-zinc-700/60 rounded-2xl">
+    <a href="index.html"
+      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/40 hover:text-white text-xl border-2 border-zinc-700/60 rounded-2xl">
       <i data-lucide="house" class="w-5 h-5"></i>
-        HOME
+      HOME
     </a>
   </div>
+  <div class="fixed top-9 left-90 z-50">
+    <button id="music-toggle-btn"
+      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white hover:text-white text-xl border-2 border-zinc-700/60 rounded-2xl transition hover:bg-zinc-700/40">
+      <i data-lucide="pause" class="w-5 h-5"></i>
+      PAUSE
+    </button>
+  </div>
 
-  <!-- Slideshow Container -->
   <div id="slideshow" class="relative w-full h-screen overflow-hidden">
-    <!-- Page 1 -->
-   <div class="page">
-      <h1 class="text-5xl">Page 1</h1>
-      <p class="text-2xl text-white/40">Add your content here</p>
+    <div class="page" data-audio="assets/music/page1.mp3">
+      <audio class="page-audio">
+        <source src="assets/visuals-menu/audios/test-song.m4a" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">I'M THAT GIRL</h1>
     </div>
 
-    <!-- Page 2 -->
-    <div class="page">
-      <h1 class="text-5xl">Page 2</h1>
-      <p class="text-2xl text-white/40">Add your content here</p>
+    <div class="page" data-audio="assets/music/page2.mp3">
+      <audio class="page-audio">
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">COZY</h1>
     </div>
 
-    <!-- Page 3 -->
-    <div class="page">
-      <h1 class="text-5xl">Page 3</h1>
-      <p class="text-2xl text-white/40">Add your content here</p>
+    <div class="page" data-audio="assets/music/page3.mp3">
+      <audio class="page-audio">
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">ALIEN SUPERSTAR</h1>
     </div>
 
-    <!-- Page 4 -->
-    <div class="page">
-      <h1 class="text-5xl">Page 4</h1>
-      <p class="text-2xl text-white/40">Add your content here</p>
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio">
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">CUFF IT</h1>
     </div>
   </div>
   <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex gap-2">
@@ -88,24 +92,80 @@
     <button class="pagination-dot" data-page="3"></button>
   </div>
 </body>
+
+<script src="assets/navbar-loader.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   lucide.createIcons();
 
-  // Slideshow
+  // Slideshow logic
   let currentPage = 0;
   const pages = document.querySelectorAll('.page');
   const totalPages = pages.length;
   let isScrolling = false;
   const scrollCooldown = 700;
+  let musicPaused = false;
+
+  // Music toggle 
+  const musicToggleBtn = document.getElementById('music-toggle-btn');
+  if (musicToggleBtn) {
+    musicToggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      musicPaused = !musicPaused;
+      console.log('Music paused state:', musicPaused);
+      updateMusicButtonState();
+
+      const audioElements = document.querySelectorAll('.page-audio');
+      if (musicPaused) {
+        audioElements.forEach(audio => {
+          audio.pause();
+          console.log('Pausing audio');
+        });
+      } else {
+        audioElements[currentPage].play().catch(err => console.log('Audio play failed:', err));
+      }
+    });
+  }
+
+  function updateMusicButtonState() {
+    if (musicPaused) {
+      musicToggleBtn.innerHTML = '<i data-lucide="play" class="w-5 h-5"></i> PLAY';
+    } else {
+      musicToggleBtn.innerHTML = '<i data-lucide="pause" class="w-5 h-5"></i> PAUSE';
+    }
+    lucide.createIcons();
+  }
+
+  // Audio looping
+  document.querySelectorAll('.page-audio').forEach((audio, index) => {
+    audio.addEventListener('ended', function () {
+      if (currentPage === index && !musicPaused) {
+        audio.currentTime = 0;
+        audio.play().catch(err => console.log('Audio play failed:', err));
+      }
+    });
+  });
 
   function goToPage(index) {
     currentPage = (index + totalPages) % totalPages;
-    
-    // Move all pages
+
     pages.forEach((page, i) => {
       const offset = (i - currentPage) * 100;
       page.style.transform = `translateY(${offset}%)`;
+    });
+
+    // Audio loop handling
+    const audioElements = document.querySelectorAll('.page-audio');
+    audioElements.forEach((audio, i) => {
+      if (i === currentPage) {
+        audio.currentTime = 0;
+        if (!musicPaused) {
+          audio.play().catch(err => console.log('Audio play failed:', err));
+        }
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+      }
     });
 
     // Update pagination dots
@@ -118,10 +178,23 @@
     });
   }
 
+  // Pagination dot clicks
+  document.querySelectorAll('.pagination-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      if (isScrolling) return;
+      const pageIndex = parseInt(dot.dataset.page);
+      isScrolling = true;
+      goToPage(pageIndex);
+      setTimeout(() => {
+        isScrolling = false;
+      }, scrollCooldown);
+    });
+  });
+
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (isScrolling) return;
-    
+
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       isScrolling = true;
@@ -139,20 +212,32 @@
     }
   });
 
-  // Pagination dot clicks
-  document.querySelectorAll('.pagination-dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-      if (isScrolling) return;
-      const pageIndex = parseInt(dot.dataset.page);
+  // Mouse scroll navigation
+  let scrollAccumulator = 0;
+  const scrollThreshold = 50;
+
+  document.addEventListener('wheel', (e) => {
+    if (isScrolling) return;
+    e.preventDefault();
+
+    scrollAccumulator += e.deltaY;
+
+    if (Math.abs(scrollAccumulator) >= scrollThreshold) {
       isScrolling = true;
-      goToPage(pageIndex);
+      if (scrollAccumulator > 0) {
+        goToPage(currentPage + 1);
+      } else {
+        goToPage(currentPage - 1);
+      }
+      scrollAccumulator = 0;
       setTimeout(() => {
         isScrolling = false;
       }, scrollCooldown);
-    });
-  });
+    }
+  }, { passive: false });
 
   // Initialize first page
   goToPage(0);
 </script>
+
 </html>
