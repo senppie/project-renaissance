@@ -22,7 +22,11 @@
 
       @layer components {
         .page {
-          @apply absolute inset-0 w-full h-screen flex flex-col items-center justify-center gap-6 p-8 transition-transform duration-700 ease-in-out;
+          @apply absolute inset-0 w-full h-screen flex flex-col items-center justify-center gap-6 p-8 transition-all duration-700 ease-in-out opacity-0;
+        }
+
+        .page.active {
+          @apply opacity-100;
         }
 
         .pagination-dot {
@@ -41,48 +45,133 @@
 </head>
 
 <body class="bg-black text-white select-none overflow-hidden h-screen">
-  <div class="fixed top-9 left-55 z-50">
+  <!-- Home button -->
+  <div class="fixed top-9 left-9 z-50">
     <a href="index.html"
-      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/40 hover:text-white text-xl border-2 border-zinc-700/60 rounded-2xl">
+      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/10 backdrop-blur-md rounded-2xl">
       <i data-lucide="house" class="w-5 h-5"></i>
-      HOME
     </a>
   </div>
-  <div class="fixed top-9 left-90 z-50">
+  <!-- Play/Pause button -->
+  <div class="fixed top-9 right-9 z-50">
     <button id="music-toggle-btn"
-      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white hover:text-white text-xl border-2 border-zinc-700/60 rounded-2xl transition hover:bg-zinc-700/40">
+      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/10 backdrop-blur-md rounded-2xl">
       <i data-lucide="pause" class="w-5 h-5"></i>
-      PAUSE
     </button>
   </div>
 
   <div id="slideshow" class="relative w-full h-screen overflow-hidden">
     <div class="page" data-audio="assets/music/page1.mp3">
-      <audio class="page-audio">
-        <source src="assets/visuals-menu/audios/test-song.m4a" type="audio/mpeg">
+      <audio class="page-audio" autoplay loop>
+        <source src="assets/visuals-menu/audios/imthatgirl.m4a" type="audio/mpeg">
       </audio>
       <h1 class="text-5xl">I'M THAT GIRL</h1>
     </div>
 
     <div class="page" data-audio="assets/music/page2.mp3">
-      <audio class="page-audio">
-        <source src="" type="audio/mpeg">
+      <audio class="page-audio" autoplay loop>
+        <source src="assets/visuals-menu/audios/test-song.m4a" type="audio/mpeg">
       </audio>
-      <h1 class="text-5xl">COZY</h1>
+      <h1 class="text-5xl z-50">COZY</h1>
+      <img src="assets/visuals-menu/test.png" class="absolute w-auto h-auto pointer-events-none" />
     </div>
 
     <div class="page" data-audio="assets/music/page3.mp3">
-      <audio class="page-audio">
+      <audio class="page-audio" autoplay loop>
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="text-5xl">ALIEN SUPERSTAR</h1>
     </div>
 
     <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio">
+      <audio class="page-audio" autoplay loop>
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="text-5xl">CUFF IT</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">ENERGY (FEAT. BEAM)</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">BREAK MY SOUL</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">CHURCH GIRL</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">PLASTIC OFF THE SOFA</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">VIRGO'S GROOVE</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">MOVE (FEAT. GRACE JONES & TEMS)</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">HEATED</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">THIQUE</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">ALL UP IN YOUR MIND</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">AMERICA HAS A PROBLEM</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">PURE/HONEY</h1>
+    </div>
+
+    <div class="page" data-audio="assets/music/page4.mp3">
+      <audio class="page-audio" autoplay loop>
+        <source src="" type="audio/mpeg">
+      </audio>
+      <h1 class="text-5xl">SUMMER RENAISSANCE</h1>
     </div>
   </div>
   <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex gap-2">
@@ -90,6 +179,18 @@
     <button class="pagination-dot" data-page="1"></button>
     <button class="pagination-dot" data-page="2"></button>
     <button class="pagination-dot" data-page="3"></button>
+    <button class="pagination-dot" data-page="4"></button>
+    <button class="pagination-dot" data-page="5"></button>
+    <button class="pagination-dot" data-page="6"></button>
+    <button class="pagination-dot" data-page="7"></button>
+    <button class="pagination-dot" data-page="8"></button>
+    <button class="pagination-dot" data-page="9"></button>
+    <button class="pagination-dot" data-page="10"></button>
+    <button class="pagination-dot" data-page="11"></button>
+    <button class="pagination-dot" data-page="12"></button>
+    <button class="pagination-dot" data-page="13"></button>
+    <button class="pagination-dot" data-page="14"></button>
+    <button class="pagination-dot" data-page="15"></button>
   </div>
 </body>
 
@@ -129,21 +230,20 @@
 
   function updateMusicButtonState() {
     if (musicPaused) {
-      musicToggleBtn.innerHTML = '<i data-lucide="play" class="w-5 h-5"></i> PLAY';
+      musicToggleBtn.innerHTML = '<i data-lucide="play" class="w-5 h-5"></i>';
     } else {
-      musicToggleBtn.innerHTML = '<i data-lucide="pause" class="w-5 h-5"></i> PAUSE';
+      musicToggleBtn.innerHTML = '<i data-lucide="pause" class="w-5 h-5"></i>';
     }
     lucide.createIcons();
   }
 
-  // Audio looping
+  // Seamless audio looping - immediately restart when audio ends
   document.querySelectorAll('.page-audio').forEach((audio, index) => {
     audio.addEventListener('ended', function () {
       if (currentPage === index && !musicPaused) {
-        audio.currentTime = 0;
         audio.play().catch(err => console.log('Audio play failed:', err));
       }
-    });
+    }, false);
   });
 
   function goToPage(index) {
@@ -152,6 +252,11 @@
     pages.forEach((page, i) => {
       const offset = (i - currentPage) * 100;
       page.style.transform = `translateY(${offset}%)`;
+      if (i === currentPage) {
+        page.classList.add('active');
+      } else {
+        page.classList.remove('active');
+      }
     });
 
     // Audio loop handling
@@ -238,6 +343,8 @@
 
   // Initialize first page
   goToPage(0);
+
+
 </script>
 
 </html>
