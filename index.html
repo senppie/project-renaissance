@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HOMEPAGE</title>
   <link rel="icon" type="image/png" href="assets/favicon-main.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="navbar/navbar-loader.js"></script>
   <style type="text/tailwindcss">
     @font-face {
         font-family: 'BBManualMono';
@@ -21,15 +21,81 @@
       }
     </style>
 </head>
-
 <body class="bg-black select-none">
-  <img src="assets/mainmenu/beyonce.png"
-    class="fixed top-00 right-0 md:right-0 w-250 h-auto object-contain pointer-events-none" />
-  <img src="assets/mainmenu/title.png"
-    class="fixed top-24 left-44 w-40 h-auto object-contain z-10 pointer-events-none" />
-  <p class="fixed bottom-8 right-20 text-white text-xl">project by senppie</p>
+  <img id="bg-image" src="assets/homepage/bg01.jpeg"
+  class="fixed inset-0 w-screen h-screen object-cover pointer-events-none transition-opacity duration-800"/>
+<div class="fixed text-neutral-100 text-8xl top-40 left-50 object-contain pointer-events-none z-50">
+    <div class="flex flex-col items-start">
+      <span class="title-line">RS</span>
+      <span class="title-line">ES</span>
+      <span class="title-line">NA</span>
+      <span class="title-line">AN</span>
+      <span class="title-line">IC</span>
+      <span class="title-line">‎ E</span>
+      <span id="act" class="text-xl rotate-[-90deg] origin-top -translate-x-1 -translate-y-13">act i</span>
+    </div>
+  </div>
+  <p class="fixed bottom-8 right-12 text-white/60 text-xl">PROJECT BY SENPPIE</p>
 </body>
+<script>
+  const backgrounds = [
+    'assets/homepage/bg01.jpeg',
+    'assets/homepage/bg02.jpeg',
+    'assets/homepage/bg03.jpeg',
+    'assets/homepage/bg04.jpeg',
+    'assets/homepage/bg05.jpeg',
+    'assets/homepage/bg06.jpeg',
+    'assets/homepage/bg07.jpeg',
+    'assets/homepage/bg08.jpeg',
+    'assets/homepage/bg09.jpeg',
+    'assets/homepage/bg10.jpeg',
+    'assets/homepage/bg11.jpeg',
+    'assets/homepage/bg12.jpeg'
+  ];
 
-<script src="assets/navbar-loader.js"></script>
+  let currentBgIndex = 0;
+  const bgImage = document.getElementById('bg-image');
 
+  setInterval(() => {
+    bgImage.style.opacity = '0';
+    
+    setTimeout(() => {
+      currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+      bgImage.src = backgrounds[currentBgIndex];
+      bgImage.style.opacity = '1';
+
+      updateTextColor(currentBgIndex);
+    }, 800);
+  }, 12000);
+
+  const textColors = [
+    "text-neutral-100",
+    "text-green-600",
+    "text-red-800",
+    "text-yellow-200",
+    "text-white",
+    "text-white",
+    "text-teal-600",
+    "text-orange-200",
+    "text-red-500",
+    "text-white",
+    "text-white",
+    "text-white"
+  ];
+
+  const titleLines = document.querySelectorAll(".title-line");
+  const actText = document.getElementById("act");
+
+  function updateTextColor(index) {
+    const colorClass = textColors[index];
+
+    titleLines.forEach(el => {
+      el.classList.remove(...textColors);
+      el.classList.add(colorClass);
+    });
+
+    actText.classList.remove(...textColors);
+    actText.classList.add(colorClass);
+}
+</script>
 </html>
