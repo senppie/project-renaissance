@@ -6,6 +6,8 @@
   <title>act i RENAISSANCE</title>
   <link rel="icon" type="image/png" href="assets/favicon-tracks.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="navbar/navbar-loader.js"></script>
+  <script src="homebutton/homebutton-loader.js"></script>
   <script>
     const tracks = [
       { title: "I'M THAT GIRL", duration: "3:28" },
@@ -31,13 +33,13 @@
 
       tracks.forEach((track, index) => {
         const trackDiv = document.createElement('div');
-        trackDiv.className = 'inline-flex items-baseline justify-between gap-20 z-0';
+        trackDiv.className = 'inline-flex items-baseline justify-between gap-20 z-50';
         trackDiv.innerHTML = `
         <div class="inline-flex items-baseline gap-8">
-          <p class="text-white/40 w-6">${index + 1}</p>
+          <p class="text-white/60 w-6">${index + 1}</p>
           <p class="text-white">${track.title}</p>
         </div>
-        <p class="text-white/40">${track.duration}</p>
+        <p class="text-white/60">${track.duration}</p>
       `;
         container.appendChild(trackDiv);
       });
@@ -57,14 +59,8 @@
       }
   </style>
 </head>
-<body class="bg-black text-white select-none relative flex flex-col justify-center h-screen">
+<body class="bg-black text-white relative flex flex-col justify-center h-screen select-none">
   <div class="max-w-6xl mx-auto">
-  <div class="fixed top-9 left-9 z-50">
-    <a href="index.html"
-      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/10 backdrop-blur-md rounded-2xl">
-      <i data-lucide="house" class="w-5 h-5"></i>
-    </a>
-  </div>
     <div class="grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4">
       <div class="flex flex-col items-center justify-center gap-6">
         <img src="assets/tracksmenu/albumcover-shadow.png"
@@ -72,11 +68,11 @@
         <img src="assets/tracksmenu/albumcover.jpeg" class="w-77 h-77 border-2 border-zinc-700/20 rounded-2xl z-2" />
         <div class="flex flex-col gap-1 z-0">
           <h1 class="text-4xl z-0">RENAISSANCE</h1>
-          <p class="text-2xl text-white/40">BEYONCÉㆍ2022</p>
+          <p class="text-2xl text-white/60">BEYONCÉㆍ2022</p>
         </div>
         <div class="flex gap-6">
           <a href="https://music.apple.com/us/album/renaissance/1630005298"
-            class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/10 backdrop-blur-md rounded-2xl">
+            class="inline-flex items-center gap-2 bg-zinc-900/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/20 backdrop-blur-md rounded-2xl">
             <svg class="w-5 h-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282" />
               <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282" />
@@ -84,7 +80,7 @@
             <span class="relative z-0">MUSIC</span>
           </a>
           <a href="https://open.spotify.com/intl-pt/album/6FJxoadUE4JNVwWHghBwnb"
-            class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/10 backdrop-blur-md rounded-2xl">
+            class="inline-flex items-center gap-2 bg-zinc-900/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/20 backdrop-blur-md rounded-2xl">
             <svg class="w-5 h-5" viewBox="0 0 168 168" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M84 0a84 84 0 1 0 0 168 84 84 0 0 0 0-168zm38.4 121.2a5.2 5.2 0 0 1-7.2 1.7c-19.7-12-44.5-14.7-73.7-8.1a5.2 5.2 0 1 1-2.3-10.1c32-7.3 59.5-4.2 81.8 9.2a5.2 5.2 0 0 1 1.4 7.3zm10.3-22.9a6.5 6.5 0 0 1-8.9 2.1c-22.5-13.8-56.8-17.8-83.5-9.7a6.5 6.5 0 1 1-3.8-12.4c30.8-9.4 69-4.9 94.6 11.2a6.5 6.5 0 0 1 1.6 8.8zm.9-23.8c-26.8-15.9-71-17.4-96.6-9.5a7.8 7.8 0 1 1-4.6-14.9c29.5-9.1 78.4-7.4 109.4 10.9a7.8 7.8 0 1 1-8.2 13.5z" />
             </svg>
@@ -101,7 +97,6 @@
     </div>
   </div>
 </body>
-<script src="navbar/navbar-loader.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>lucide.createIcons();</script>
 </html>

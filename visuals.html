@@ -6,6 +6,8 @@
   <title>VISUALS</title>
   <link rel="icon" type="image/png" href="assets/favicon-main.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="navbar/navbar-loader.js"></script>
+    <script src="homebutton/homebutton-loader.js"></script>
   <style type="text/tailwindcss">
     @font-face {
         font-family: 'BBManualMono';
@@ -42,18 +44,11 @@
       }
   </style>
 </head>
-<body class="bg-black text-white select-none overflow-hidden h-screen">
-  <!-- HOME BUTTON -->
-  <div class="fixed top-9 left-9 z-50">
-    <a href="index.html"
-      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/10 backdrop-blur-md rounded-2xl">
-      <i data-lucide="house" class="w-5 h-5"></i>
-    </a>
-  </div>
+<body class="bg-black text-white select-none">
   <!-- PLAY/PAUSE BUTTON -->
-  <div class="fixed top-9 right-9 z-50">
+  <div class="fixed top-9 left-1/2 -translate-x-1/2 z-50">
     <button id="music-toggle-btn"
-      class="inline-flex items-center gap-2 bg-zinc-700/20 px-4 py-2 text-white/60 hover:text-white text-xl border-2 border-zinc-700/10 backdrop-blur-md rounded-2xl">
+      class="inline-flex bg-zinc-900/20 px-3 py-3 text-white hover:bg-zinc-700/40 border-2 border-white/5 backdrop-blur-md rounded-4xl">
       <i data-lucide="pause" class="w-5 h-5"></i>
     </button>
   </div>
@@ -193,7 +188,6 @@
     <button class="pagination-dot" data-page="15"></button>
   </div>
 </body>
-<script src="navbar/navbar-loader.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   lucide.createIcons();
@@ -342,8 +336,5 @@
 
   // Initialize first page
   goToPage(0);
-
-
 </script>
-
 </html>
