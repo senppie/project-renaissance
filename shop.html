@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOP</title>
+  <link rel="icon" type="image/png" href="assets/favicon-main.png">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="navbar/navbar-loader.js"></script>
+  <script src="homebutton/homebutton-loader.js"></script>
+  <style type="text/tailwindcss">
+    @font-face {
+        font-family: 'BBManualMono';
+        src: url('assets/font/BBManualMonoPro-Regular.otf') format('opentype');
+        font-weight: 400;
+      }
+
+      @layer base {
+        body {
+          font-family: 'BBManualMono', monospace;
+        }
+      }
+    </style>
+</head>
+<body class="bg-black select-none">
+    <div class="fixed pointer-events-none w-80 h-80 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <img src="assets/shop-menu/catito.jpeg" class="border-2 border-white/10 rounded-2xl"/>
+    </div>
+    <div class="fixed left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2">
+        <h1 class="text-6xl text-white z-50">TEST</h1>
+    </div>
+</body>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+</html>
