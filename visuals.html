@@ -39,7 +39,7 @@
         }
 
         .pagination-dot:not(.active) {
-          @apply bg-white/10;
+          @apply bg-white/30 hover:bg-white/60;
         }
       }
   </style>
@@ -65,7 +65,7 @@
     <!-- COZY -->
     <div class="page" data-audio="assets/music/page2.mp3">
       <audio class="page-audio" autoplay loop>
-        <source src="assets/visuals-menu/audios/test-song.m4a" type="audio/mpeg">
+        <source src="" type="audio/mpeg">
       </audio>
       <h1 class="text-5xl z-50">COZY</h1>
       <img src="" class="absolute w-auto h-auto pointer-events-none"/>
@@ -151,7 +151,7 @@
     <!-- AMERICA HAS A PROBLEM -->
     <div class="page" data-audio="assets/music/page4.mp3">
       <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
+        <source src="assets/visuals-menu/audios/americahasaproblem.m4a" type="audio/mpeg">
       </audio>
       <h1 class="text-5xl">AMERICA HAS A PROBLEM</h1>
     </div>
@@ -171,7 +171,7 @@
     </div>
   </div>
   <!-- PAGINATION -->
-  <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex gap-2">
+  <div class="fixed bg-zinc-900/20 px-4 py-3 bottom-10 left-1/2 -translate-x-1/2 z-50 flex gap-2 border-2 border-white/5 backdrop-blur-md rounded-full">
     <button class="pagination-dot" data-page="0"></button>
     <button class="pagination-dot" data-page="1"></button>
     <button class="pagination-dot" data-page="2"></button>
