@@ -44,9 +44,9 @@
       }
   </style>
 </head>
-<body class="bg-black text-white select-none">
+<body class="bg-[#DB230D] text-white select-none">
   <!-- PLAY/PAUSE BUTTON -->
-  <div class="fixed top-10 left-2/3 -translate-x-1/2 z-50">
+  <div class="fixed top-6 left-2/3 -translate-x-1/2 z-50">
     <button id="music-toggle-btn"
       class="flex bg-zinc-900/20 px-3 py-3 text-white hover:bg-zinc-700/40 border-2 border-white/5 backdrop-blur-md rounded-4xl">
       <i data-lucide="pause" class="w-6 h-6"></i>
@@ -59,16 +59,18 @@
       <audio class="page-audio" autoplay loop>
         <source src="assets/visuals-menu/audios/imthatgirl.m4a" type="audio/mpeg">
       </audio>
-      <h1 class="text-5xl z-50">I'M THAT GIRL</h1>
-      <img src="assets/visuals-menu/imthatgirl.png" class="absolute w-auto h-auto pointer-events-none"/>
+      <h1 class="fixed top-25 left-35 text-3xl z-50">I'M THAT GIRL</h1>
+      <img src="assets/visuals-menu/visual-imthatgirl.jpg"
+      class="absolute object-contain w-220 h-220 pointer-events-none"/>
     </div>
     <!-- COZY -->
     <div class="page" data-audio="assets/music/page2.mp3">
       <audio class="page-audio" autoplay loop>
         <source src="" type="audio/mpeg">
       </audio>
-      <h1 class="text-5xl z-50">COZY</h1>
-      <img src="" class="absolute w-auto h-auto pointer-events-none"/>
+      <h1 class="fixed bottom-18 text-xl z-50">COZY</h1>
+      <img src="assets/visuals-menu/visual-cozy.jpg"
+      class="absolute object-contain w-160 h-160 pointer-events-none"/>
     </div>
     <!-- ALIEN SUPERSTAR -->
     <div class="page" data-audio="assets/music/page3.mp3">
@@ -171,7 +173,7 @@
     </div>
   </div>
   <!-- PAGINATION -->
-  <div class="fixed bg-zinc-900/20 px-4 py-3 bottom-10 left-1/2 -translate-x-1/2 z-50 flex gap-2 border-2 border-white/5 backdrop-blur-md rounded-full">
+  <div class="fixed bg-zinc-900/20 px-4 py-3 bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-2 border-2 border-white/5 backdrop-blur-md rounded-full">
     <button class="pagination-dot" data-page="0"></button>
     <button class="pagination-dot" data-page="1"></button>
     <button class="pagination-dot" data-page="2"></button>
