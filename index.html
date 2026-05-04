@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HOMEPAGE</title>
-  <link rel="icon" type="image/png" href="assets/favicon-main.png">
+  <title>RENAISSANCE</title>
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-homepage.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="navbar/navbar-loader.js"></script>
   <style type="text/tailwindcss">
@@ -23,19 +23,14 @@
 </head>
 <body class="bg-black select-none">
   <img id="bg-image" src="assets/homepage/bg01.jpeg"
-  class="fixed inset-0 w-screen h-screen object-cover pointer-events-none transition-opacity duration-800"/>
-<div class="fixed text-[#c8c8c8] text-8xl top-40 left-50 object-contain pointer-events-none z-50">
-    <div class="flex flex-col items-start">
-      <span class="title-line transition-colors duration-800 ease-in-out">RS</span>
-      <span class="title-line transition-colors duration-800 ease-in-out">ES</span>
-      <span class="title-line transition-colors duration-800 ease-in-out">NA</span>
-      <span class="title-line transition-colors duration-800 ease-in-out">AN</span>
-      <span class="title-line transition-colors duration-800 ease-in-out">IC</span>
-      <span class="title-line transition-colors duration-800 ease-in-out">‎ E</span>
-      <span id="act" class="text-xl rotate-[-90deg] origin-top -translate-x-1 -translate-y-13 transition-colors duration-800 ease-in-out">act i</span>
-    </div>
-</div>
-  <p class="fixed bottom-6 right-12 text-white/60 text-md tracking-tight">//senppie</p>
+    class="fixed inset-0 w-screen h-screen object-cover pointer-events-none transition-opacity duration-800"/>
+  <div class="fixed w-full h-screen flex items-center justify-between text-2xl px-25 mix-blend-difference pointer-events-none z-50">
+    <span class="text-white">act i</span>
+    <span class="text-white">RENAISSANCE</span>
+  </div>
+  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 mix-blend-difference">
+    <p class="text-white text-sm tracking-tight">© 2026 SENPPIE</p>
+  </div>
 </body>
 <script>
   const backgrounds = [
@@ -63,49 +58,12 @@
 
   setInterval(() => {
     bgImage.style.opacity = '0';
-    
+
     setTimeout(() => {
       currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
       bgImage.src = backgrounds[currentBgIndex];
       bgImage.style.opacity = '1';
-
-      updateTextColor(currentBgIndex);
     }, 800);
   }, 12000);
-
-  const textColors = [
-    "text-[#c8c8c8]",
-    "text-[#0dad30]",
-    "text-red-800",
-    "text-yellow-200",
-    "text-white",
-    "text-white",
-    "text-teal-600",
-    "text-orange-200",
-    "text-red-500",
-    "text-white",
-    "text-white",
-    "text-white",
-    "text-[#7d8a99]",
-    "text-[#ec8020]",
-    "text-[#d6518d]",
-    "text-white",
-    "text-[#230f0b]"
-  ];
-
-  const titleLines = document.querySelectorAll(".title-line");
-  const actText = document.getElementById("act");
-
-  function updateTextColor(index) {
-    const colorClass = textColors[index];
-
-    titleLines.forEach(el => {
-      el.classList.remove(...textColors);
-      el.classList.add(colorClass);
-    });
-
-    actText.classList.remove(...textColors);
-    actText.classList.add(colorClass);
-}
 </script>
 </html>
