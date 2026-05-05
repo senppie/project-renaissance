@@ -1,6 +1,6 @@
 async function loadHomeButton() {
   try {
-    const response = await fetch('homebutton/homebutton.html');
+    const response = await fetch('components/homebutton/homebutton.html');
     const homeButtonHTML = await response.text();
     document.body.insertAdjacentHTML('afterbegin', homeButtonHTML);
 

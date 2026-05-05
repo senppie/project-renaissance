@@ -7,8 +7,8 @@
   <link rel="icon" type="image/png" href="assets/favicon/favicon-visual.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="assets/font/font.css">
-  <script src="navbar/navbar-loader.js"></script>
-    <script src="homebutton/homebutton-loader.js"></script>
+  <script src="components/navbar/navbar-loader.js"></script>
+  <script src="components/homebutton/homebutton-loader.js"></script>
   <style type="text/tailwindcss">
       @layer components {
         .page {
@@ -45,20 +45,14 @@
   <div id="slideshow" class="relative w-full h-screen overflow-hidden">
     <!-- I'M THAT GIRL -->
     <div class="page" data-audio="assets/music/page1.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
       <h1 class="fixed left-20 text-xl z-50">I'M THAT GIRL</h1>
-      <img src="assets/visuals-menu/visual-imthatgirl.jpg"
+      <img src="assets/visualspage/visual-imthatgirl.jpg"
       class="absolute object-contain w-220 h-220 pointer-events-none"/>
     </div>
     <!-- COZY -->
     <div class="page" data-audio="assets/music/page2.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
       <h1 class="fixed left-20 text-xl z-50">COZY</h1>
-      <img src="assets/visuals-menu/visual-cozy.jpg"
+      <img src="assets/visualspage/visual-cozy.jpg"
       class="absolute object-contain h-220 w-220 pointer-events-none"/>
     </div>
     <!-- ALIEN SUPERSTAR -->
@@ -67,7 +61,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">ALIEN SUPERSTAR</h1>
-      <img src="assets/visuals-menu/visual-aliensuperstar.jpg"
+      <img src="assets/visualspage/visual-aliensuperstar.jpg"
       class="absolute top-0 h-auto w-auto pointer-events-none"/>
     </div>
     <!-- CUFF IT -->
@@ -76,7 +70,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">CUFF IT</h1>
-      <img src="assets/visuals-menu/visual-cuffit.jpg"
+      <img src="assets/visualspage/visual-cuffit.jpg"
       class="absolute object-contain h-220 w-220 pointer-events-none"/>
     </div>
     <!-- ENERGY (FEAT. BEAM) -->
@@ -85,7 +79,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">ENERGY (FEAT. BEAM)</h1>
-      <img src="assets/visuals-menu/visual-energy.jpg"
+      <img src="assets/visualspage/visual-energy.jpg"
       class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
     </div>
     <!-- BREAK MY SOUL -->
@@ -94,7 +88,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">BREAK MY SOUL</h1>
-      <img src="assets/visuals-menu/visual-breakmysoul.jpg"
+      <img src="assets/visualspage/visual-breakmysoul.jpg"
       class="absolute object-contain h-220 w-220 pointer-events-none"/>
     </div>
     <!-- CHURCH GIRL -->
@@ -103,7 +97,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">CHURCH GIRL</h1>
-      <img src="assets/visuals-menu/visual-churchgirl.jpg"
+      <img src="assets/visualspage/visual-churchgirl.jpg"
       class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
     </div>
     <!-- PLASTIC OFF THE SOFA -->
@@ -112,7 +106,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">PLASTIC OFF THE SOFA</h1>
-      <img src="assets/visuals-menu/visual-plasticoofthesofa.jpg"
+      <img src="assets/visualspage/visual-plasticoofthesofa.jpg"
       class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
     </div>
     <!-- VIRGO'S GROOVE -->
@@ -121,7 +115,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">VIRGO'S GROOVE</h1>
-      <img src="assets/visuals-menu/visual-virgosgroove.jpg"
+      <img src="assets/visualspage/visual-virgosgroove.jpg"
       class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
     </div>
     <!-- MOVE (FEAT. GRACE JONES & TEMS) -->
@@ -130,7 +124,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">MOVE (FEAT. GRACE JONES & TEMS)</h1>
-      <img src="assets/visuals-menu/visual-move.jpg"
+      <img src="assets/visualspage/visual-move.jpg"
       class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
     </div>
     <!-- HEATED -->
@@ -139,7 +133,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">HEATED</h1>
-      <img src="assets/visuals-menu/visual-heated.jpg"
+      <img src="assets/visualspage/visual-heated.jpg"
       class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
     </div>
     <!-- THIQUE -->
@@ -148,25 +142,19 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">THIQUE</h1>
-      <img src="assets/visuals-menu/visual-thique.jpg"
+      <img src="assets/visualspage/visual-thique.jpg"
       class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
     </div>
     <!-- ALL UP IN YOUR MIND -->
     <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
       <h1 class="fixed left-20 text-xl z-50">ALL UP IN YOUR MIND</h1>
-      <img src="assets/visuals-menu/visual-allupinyourmind.jpg"
+      <img src="assets/visualspage/visual-allupinyourmind.jpg"
       class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
     </div>
     <!-- AMERICA HAS A PROBLEM -->
     <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="assets/visuals-menu/audios/americahasaproblem.m4a" type="audio/mpeg">
-      </audio>
       <h1 class="fixed left-20 text-xl z-50">AMERICA HAS A PROBLEM</h1>
-      <img src="assets/visuals-menu/visual-americahasaproblem.jpg"
+      <img src="assets/visualspage/visual-americahasaproblem.jpg"
       class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
     </div>
     <!-- PURE/HONEY -->
@@ -175,7 +163,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">PURE/HONEY</h1>
-      <img src="assets/visuals-menu/visual-purehoney.jpg"
+      <img src="assets/visualspage/visual-purehoney.jpg"
       class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
     </div>
     <!-- SUMMER RENAISSANCE -->
@@ -184,7 +172,7 @@
         <source src="" type="audio/mpeg">
       </audio>
       <h1 class="fixed left-20 text-xl z-50">SUMMER RENAISSANCE</h1>
-      <img src="assets/visuals-menu/visual-summerrenaissance.jpg"
+      <img src="assets/visualspage/visual-summerrenaissance.jpg"
       class="absolute object-contain bottom-0 h-auto w-auto pointer-events-none"/>
     </div>
   </div>
