@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'BBManualMono';
+  src: url('BBManualMonoPro-Regular.otf') format('opentype');
+  font-weight: 300;
+}
+
+@layer base {
+  body {
+    font-family: 'BBManualMono', monospace;
+  }
+}
