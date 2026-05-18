@@ -9,340 +9,69 @@
   <link rel="stylesheet" href="assets/font/font.css">
   <script src="components/navbar/navbar-loader.js"></script>
   <script src="components/homebutton/homebutton-loader.js"></script>
-  <style type="text/tailwindcss">
-      @layer components {
-        .page {
-          @apply absolute inset-0 w-full h-screen flex flex-col items-center justify-center gap-6 p-8 transition-all duration-700 ease-in-out opacity-0;
-        }
-
-        .page.active {
-          @apply opacity-100;
-        }
-
-        .pagination-dot {
-          @apply w-3 h-3 rounded-full transition-all cursor-pointer;
-        }
-
-        .pagination-dot.active {
-          @apply bg-white/60;
-        }
-
-        .pagination-dot:not(.active) {
-          @apply bg-white/30 hover:bg-white/60;
-        }
-      }
-  </style>
 </head>
-<body class="bg-[#DB230D] text-white select-none">
-  <!-- PLAY/PAUSE BUTTON -->
-  <div class="fixed top-6 left-2/3 -translate-x-1/2 z-50">
-    <button id="music-toggle-btn"
-      class="flex bg-zinc-900/20 px-3 py-3 text-white hover:bg-zinc-700/40 border-2 border-white/5 backdrop-blur-md rounded-4xl">
-      <i data-lucide="pause" class="w-6 h-6"></i>
-    </button>
+<body class="bg-black overflow-x-scroll overflow-y-hidden select-none">
+  <div class="flex flex-row w-full h-screen">
+   <img src="assets/musicpage/albumcover.jpeg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-cozy.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-01.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-summerrenaissance.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-02.jpg" class="w-auto"/> <!-- visual-02 -->
+    <img src="assets/visualspage/visual-03.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-04.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-heated.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-energy-1.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-energy-2.jpeg" class="w-auto"/>
+    <img src="assets/visualspage/visual-energy-3.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-05.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-breakmysoul.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-06.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-07.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-08.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-imthatgirl.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-09.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-churchgirl.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-plasticoofthesofa-1.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-plasticoofthesofa-2.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-plasticoofthesofa-3.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-plasticoofthesofa-4.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-plasticoofthesofa-5.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-virgosgroove.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-move-1.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-move-2.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-cuffit.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-10.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-purehoney-1.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-thique-1.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-thique-2.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-thique-3.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-11.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-12.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-13.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-14.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-15.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-16.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-17.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-allupinyourmind.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-americahasaproblem.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-purehoney-2.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-purehoney-3.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-18.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-19.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-purehoney-4.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-20.jpg" class="w-auto" />
+    <img src="assets/visualspage/albumcover-aternative.jpg" class="w-auto"/>
+    <img src="assets/visualspage/booklet/visual-aliensuperstar.jpg" class="w-auto"/>
+    <img src="assets/visualspage/albumcover-1.jpg" class="w-auto"/>
   </div>
-  <!-- PAGE CONTENT -->
-  <div id="slideshow" class="relative w-full h-screen overflow-hidden">
-    <!-- I'M THAT GIRL -->
-    <div class="page" data-audio="assets/music/page1.mp3">
-      <h1 class="fixed left-20 text-xl z-50">I'M THAT GIRL</h1>
-      <img src="assets/visualspage/visual-imthatgirl.jpg"
-      class="absolute object-contain w-220 h-220 pointer-events-none"/>
-    </div>
-    <!-- COZY -->
-    <div class="page" data-audio="assets/music/page2.mp3">
-      <h1 class="fixed left-20 text-xl z-50">COZY</h1>
-      <img src="assets/visualspage/visual-cozy.jpg"
-      class="absolute object-contain h-220 w-220 pointer-events-none"/>
-    </div>
-    <!-- ALIEN SUPERSTAR -->
-    <div class="page" data-audio="assets/music/page3.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">ALIEN SUPERSTAR</h1>
-      <img src="assets/visualspage/visual-aliensuperstar.jpg"
-      class="absolute top-0 h-auto w-auto pointer-events-none"/>
-    </div>
-    <!-- CUFF IT -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">CUFF IT</h1>
-      <img src="assets/visualspage/visual-cuffit.jpg"
-      class="absolute object-contain h-220 w-220 pointer-events-none"/>
-    </div>
-    <!-- ENERGY (FEAT. BEAM) -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">ENERGY (FEAT. BEAM)</h1>
-      <img src="assets/visualspage/visual-energy.jpg"
-      class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
-    </div>
-    <!-- BREAK MY SOUL -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">BREAK MY SOUL</h1>
-      <img src="assets/visualspage/visual-breakmysoul.jpg"
-      class="absolute object-contain h-220 w-220 pointer-events-none"/>
-    </div>
-    <!-- CHURCH GIRL -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">CHURCH GIRL</h1>
-      <img src="assets/visualspage/visual-churchgirl.jpg"
-      class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
-    </div>
-    <!-- PLASTIC OFF THE SOFA -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">PLASTIC OFF THE SOFA</h1>
-      <img src="assets/visualspage/visual-plasticoofthesofa.jpg"
-      class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
-    </div>
-    <!-- VIRGO'S GROOVE -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">VIRGO'S GROOVE</h1>
-      <img src="assets/visualspage/visual-virgosgroove.jpg"
-      class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
-    </div>
-    <!-- MOVE (FEAT. GRACE JONES & TEMS) -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">MOVE (FEAT. GRACE JONES & TEMS)</h1>
-      <img src="assets/visualspage/visual-move.jpg"
-      class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
-    </div>
-    <!-- HEATED -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">HEATED</h1>
-      <img src="assets/visualspage/visual-heated.jpg"
-      class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
-    </div>
-    <!-- THIQUE -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">THIQUE</h1>
-      <img src="assets/visualspage/visual-thique.jpg"
-      class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
-    </div>
-    <!-- ALL UP IN YOUR MIND -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <h1 class="fixed left-20 text-xl z-50">ALL UP IN YOUR MIND</h1>
-      <img src="assets/visualspage/visual-allupinyourmind.jpg"
-      class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
-    </div>
-    <!-- AMERICA HAS A PROBLEM -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <h1 class="fixed left-20 text-xl z-50">AMERICA HAS A PROBLEM</h1>
-      <img src="assets/visualspage/visual-americahasaproblem.jpg"
-      class="absolute object-contain top-0 h-220 w-220 pointer-events-none"/>
-    </div>
-    <!-- PURE/HONEY -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">PURE/HONEY</h1>
-      <img src="assets/visualspage/visual-purehoney.jpg"
-      class="absolute object-contain top-0 h-auto w-auto pointer-events-none"/>
-    </div>
-    <!-- SUMMER RENAISSANCE -->
-    <div class="page" data-audio="assets/music/page4.mp3">
-      <audio class="page-audio" autoplay loop>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <h1 class="fixed left-20 text-xl z-50">SUMMER RENAISSANCE</h1>
-      <img src="assets/visualspage/visual-summerrenaissance.jpg"
-      class="absolute object-contain bottom-0 h-auto w-auto pointer-events-none"/>
-    </div>
-  </div>
-  <!-- PAGINATION -->
-  <div class="fixed bg-zinc-900/20 px-4 py-3 bottom-6 left-1/2 -translate-x-1/2 z-50 flex gap-2 border-2 border-white/5 backdrop-blur-md rounded-full">
-    <button class="pagination-dot" data-page="0"></button>
-    <button class="pagination-dot" data-page="1"></button>
-    <button class="pagination-dot" data-page="2"></button>
-    <button class="pagination-dot" data-page="3"></button>
-    <button class="pagination-dot" data-page="4"></button>
-    <button class="pagination-dot" data-page="5"></button>
-    <button class="pagination-dot" data-page="6"></button>
-    <button class="pagination-dot" data-page="7"></button>
-    <button class="pagination-dot" data-page="8"></button>
-    <button class="pagination-dot" data-page="9"></button>
-    <button class="pagination-dot" data-page="10"></button>
-    <button class="pagination-dot" data-page="11"></button>
-    <button class="pagination-dot" data-page="12"></button>
-    <button class="pagination-dot" data-page="13"></button>
-    <button class="pagination-dot" data-page="14"></button>
-    <button class="pagination-dot" data-page="15"></button>
+  <div
+    class="fixed flex justify-between top-9 left-0 right-0 px-25 text-xl mix-blend-difference pointer-events-none z-50">
+    <span class="font-light text-white">act i</span>
+    <span class="text-white uppercase">Renaissance</span>
   </div>
 </body>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   lucide.createIcons();
-
-  // Slideshow logic
-  let currentPage = 0;
-  const pages = document.querySelectorAll('.page');
-  const totalPages = pages.length;
-  let isScrolling = false;
-  const scrollCooldown = 700;
-  let musicPaused = false;
-
-  // Music toggle 
-  const musicToggleBtn = document.getElementById('music-toggle-btn');
-  if (musicToggleBtn) {
-    musicToggleBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      musicPaused = !musicPaused;
-      console.log('Music paused state:', musicPaused);
-      updateMusicButtonState();
-
-      const audioElements = document.querySelectorAll('.page-audio');
-      if (musicPaused) {
-        audioElements.forEach(audio => {
-          audio.pause();
-          console.log('Pausing audio');
-        });
-      } else {
-        audioElements[currentPage].play().catch(err => console.log('Audio play failed:', err));
-      }
-    });
-  }
-
-  function updateMusicButtonState() {
-    if (musicPaused) {
-      musicToggleBtn.innerHTML = '<i data-lucide="play" class="w-6 h-6"></i>';
-    } else {
-      musicToggleBtn.innerHTML = '<i data-lucide="pause" class="w-6 h-6"></i>';
-    }
-    lucide.createIcons();
-  }
-
-  // Seamless audio looping - immediately restart when audio ends
-  document.querySelectorAll('.page-audio').forEach((audio, index) => {
-    audio.addEventListener('ended', function () {
-      if (currentPage === index && !musicPaused) {
-        audio.play().catch(err => console.log('Audio play failed:', err));
-      }
-    }, false);
-  });
-
-  function goToPage(index) {
-    currentPage = (index + totalPages) % totalPages;
-
-    pages.forEach((page, i) => {
-      const offset = (i - currentPage) * 100;
-      page.style.transform = `translateY(${offset}%)`;
-      if (i === currentPage) {
-        page.classList.add('active');
-      } else {
-        page.classList.remove('active');
-      }
-    });
-
-    // Audio loop handling
-    const audioElements = document.querySelectorAll('.page-audio');
-    audioElements.forEach((audio, i) => {
-      if (i === currentPage) {
-        audio.currentTime = 0;
-        if (!musicPaused) {
-          audio.play().catch(err => console.log('Audio play failed:', err));
-        }
-      } else {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    });
-
-    // Update pagination dots
-    document.querySelectorAll('.pagination-dot').forEach((dot, i) => {
-      if (i === currentPage) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
-  }
-
-  // Pagination dot clicks
-  document.querySelectorAll('.pagination-dot').forEach(dot => {
-    dot.addEventListener('click', () => {
-      if (isScrolling) return;
-      const pageIndex = parseInt(dot.dataset.page);
-      isScrolling = true;
-      goToPage(pageIndex);
-      setTimeout(() => {
-        isScrolling = false;
-      }, scrollCooldown);
-    });
-  });
-
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (isScrolling) return;
-
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      isScrolling = true;
-      goToPage(currentPage + 1);
-      setTimeout(() => {
-        isScrolling = false;
-      }, scrollCooldown);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      isScrolling = true;
-      goToPage(currentPage - 1);
-      setTimeout(() => {
-        isScrolling = false;
-      }, scrollCooldown);
-    }
-  });
-
-  // Mouse scroll navigation
-  let scrollAccumulator = 0;
-  const scrollThreshold = 50;
-
-  document.addEventListener('wheel', (e) => {
-    if (isScrolling) return;
-    e.preventDefault();
-
-    scrollAccumulator += e.deltaY;
-
-    if (Math.abs(scrollAccumulator) >= scrollThreshold) {
-      isScrolling = true;
-      if (scrollAccumulator > 0) {
-        goToPage(currentPage + 1);
-      } else {
-        goToPage(currentPage - 1);
-      }
-      scrollAccumulator = 0;
-      setTimeout(() => {
-        isScrolling = false;
-      }, scrollCooldown);
-    }
-  }, { passive: false });
-
-  // Initialize first page
-  goToPage(0);
 </script>
 </html>
