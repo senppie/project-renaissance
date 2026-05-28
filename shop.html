@@ -13,40 +13,49 @@
   <style type="text/tailwindcss">
     @layer components {
       .shop-page {
-        @apply min-h-screen text-white px-8 pt-28 pb-16;
+        @apply min-h-screen text-white px-5 pt-25 pb-16;
       }
 
       .shop-grid {
-        @apply grid grid-cols-4 gap-12 text-center w-full max-w-6xl mx-auto;
+        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-7xl mx-auto;
       }
 
       .shop-item {
-        @apply flex flex-col items-center gap-4;
+        @apply flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 backdrop-blur-md bg-zinc-900/5 z-50;
+      }
+
+      .shop-media {
+        @apply flex h-44 shrink-0 items-center justify-center px-4 pt-4 pb-5;
       }
 
       .shop-image {
-        @apply w-40 h-40 object-contain border-2 border-white/10 rounded-xl;
+        @apply h-50 w-full max-w-full object-contain;
+      }
+
+      .shop-details {
+        @apply flex flex-1 flex-col px-4 pt-0 pb-4;
+      }
+
+      .shop-heading-row {
+        @apply flex items-start;
+      }
+
+      .shop-copy {
+        @apply min-w-0 flex-1;
       }
 
       .shop-title {
-        @apply text-sm uppercase;
+        @apply text-lg uppercase leading-tight tracking-normal;
       }
 
-      .shop-subtitle {
-        @apply text-sm font-light uppercase text-white/60;
+      .shop-description {
+        @apply mt-4 min-h-24 text-sm font-light pb-5 text-white/60 uppercase leading-snug;
       }
 
-      .shop-includes {
-        @apply text-xs uppercase text-white/50 leading-snug;
+      .shop-actions {
+        @apply mt-auto flex items-center justify-center;
       }
 
-      .shop-price {
-        @apply text-sm uppercase text-white;
-      }
-
-      .add-to-bag-btn {
-        @apply mt-2 px-4 py-2 border border-white/20 rounded-full text-xs uppercase text-white hover:bg-white hover:text-blue-900 transition-colors;
-      }
     }
   </style>
 </head>
@@ -57,123 +66,71 @@
       <span class="text-white uppercase">Renaissance</span>
     </div>
     <section id="shopGrid" class="shop-grid"></section>
+    <div>
+      <img src="assets/shoppage/gradientblurbg.png"
+      class="fixed bg-cover bottom-150 animate-pulse [animation-duration:18s]"/>
+    </div>
   </main>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     const items = [
       {
         id: 1,
-        title: 'Renaissance Vinyl',
-        subtitle: 'Collector\'s Edition',
-        image: 'assets/shoppage/shop-vinyl-front.png',
-        includes: '2 printed jackets + 2 printed inner sleeves, 36-page photo booklet, 1 of 3 randomized 24" X 36" collectible posters',
+        title: 'Renaissance Vinyl Collector\'s Edition',
+        image: 'assets/shoppage/shop-vinyl.png',
+        description: 'Includes 2 printed jackets + 2 printed inner sleeves, 36-page photo booklet, 1 of 3 randomized 24" X 36" collectible posters',
         price: '$44.98'
       },
       {
         id: 2,
-        title: 'Renaissance',
-        subtitle: 'CD',
-        image: 'assets/shoppage/shop-cd-front.png',
-        includes: '4 panel softpak, 28-page photo booklet, collectible mini poster',
+        title: 'Renaissance CD',
+        image: 'assets/shoppage/shop-cd.png',
+        description: 'Includes 4 panel softpak, 28-page photo booklet, collectible mini poster',
         price: '$12.98'
       },
       {
         id: 3,
-        title: 'Renaissance',
-        subtitle: 'Digital Album',
+        title: 'Renaissance Digital Album',
         image: 'assets/shoppage/shop-digital-album.png',
-        includes: 'Delivers via e-mail upon purchase - .wav uncompressed lossless audio',
+        description: 'Delivers via e-mail upon purchase - .wav uncompressed lossless audio',
         price: '$9.99'
       },
       {
         id: 4,
-        title: 'Renaissance Vinyl',
-        subtitle: 'Limited Edition',
+        title: 'Renaissance Vinyl Limited Edition',
         image: 'assets/shoppage/shop-vinyl-limited-edition.png',
-        includes: 'Alternate cover art, gatefold jacket with printed inner sleeves, 2LP - 180g vinyl',
+        description: 'Alternate cover art - Includes gatefold jacket with printed inner sleeves, 2LP - 180g vinyl',
         price: '$32.98'
-      },
-      {
-        id: 5,
-        title: 'Title-1',
-        subtitle: 'Title-2',
-        image: 'assets/shoppage/shop-item-5.png',
-        includes: 'Item 1, item 2',
-        price: '$44.99'
-      },
-      {
-        id: 6,
-        title: 'Title-1',
-        subtitle: 'Title-2',
-        image: 'assets/shoppage/shop-item-5.png',
-        includes: 'Item 1, item 2',
-        price: '$44.99'
-      },
-      {
-        id: 7,
-        title: 'Title-1',
-        subtitle: 'Title-2',
-        image: 'assets/shoppage/shop-item-5.png',
-        includes: 'Item 1, item 2',
-        price: '$44.99'
-      },
-      {
-        id: 8,
-        title: 'Title-1',
-        subtitle: 'Title-2',
-        image: 'assets/shoppage/shop-item-5.png',
-        includes: 'Item 1, item 2',
-        price: '$44.99'
-      },
-      {
-        id: 9,
-        title: 'Title-1',
-        subtitle: 'Title-2',
-        image: 'assets/shoppage/shop-item-5.png',
-        includes: 'Item 1, item 2',
-        price: '$44.99'
-      },
-      {
-        id: 10,
-        title: 'Title-1',
-        subtitle: 'Title-2',
-        image: 'assets/shoppage/shop-item-5.png',
-        includes: 'Item 1, item 2',
-        price: '$44.99'
-      },
-      {
-        id: 11,
-        title: 'Title-1',
-        subtitle: 'Title-2',
-        image: 'assets/shoppage/shop-item-5.png',
-        includes: 'Item 1, item 2',
-        price: '$44.99'
-      },
-      {
-        id: 12,
-        title: 'Title-1',
-        subtitle: 'Title-2',
-        image: 'assets/shoppage/shop-item-5.png',
-        includes: 'Item 1, item 2',
-        price: '$44.99'
       }
     ];
 
     function renderShopGrid() {
       const shopGrid = document.getElementById('shopGrid');
+      const visibleItems = items.filter((item) => !item.title.startsWith('Title-'));
 
-      shopGrid.innerHTML = items.map((item) => `
+      shopGrid.innerHTML = visibleItems.map((item) => {
+        return `
         <article class="shop-item">
-          <img src="${item.image}" alt="${item.title} ${item.subtitle}" class="shop-image" onerror="this.onerror=null; this.src='assets/shoppage/shop-vinyl-front.png'">
-          <div class="flex flex-col items-center">
-            <p class="shop-title">${item.title}</p>
-            <p class="shop-subtitle">${item.subtitle}</p>
+          <div class="shop-media">
+            <img src="${item.image}" alt="${item.title}" class="shop-image" onerror="this.onerror=null; this.src='assets/shoppage/shop-vinyl.png'">
           </div>
-          <p class="shop-includes">${item.includes}</p>
-          <p class="shop-price">${item.price}</p>
-          <button class="add-to-bag-btn" type="button">Add to Bag</button>
+          <div class="shop-details">
+            <div class="shop-heading-row">
+              <div class="shop-copy">
+                <p class="shop-title">${item.title}</p>
+              </div>
+            </div>
+            <p class="shop-description">${item.description}</p>
+            <div class="shop-actions">
+              <button class="group relative inline-grid place-items-center overflow-hidden rounded-4xl bg-transparent border-2 border-white/10 hover:bg-white/5 px-5 py-3 text-center text-white font-medium uppercase leading-none transition">
+                <span class="col-start-1 row-start-1 transition duration-300 ease-out translate-y-0 opacity-100 group-hover:-translate-y-full group-hover:opacity-0">${item.price}</span>
+                <span class="col-start-1 row-start-1 transition duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">Add to Bag</span>
+              </button>
+            </div>
+          </div>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
 
     document.addEventListener('DOMContentLoaded', renderShopGrid);
