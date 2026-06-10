@@ -13,15 +13,15 @@
   <style type="text/tailwindcss">
     @layer components {
       .shop-page {
-        @apply min-h-screen text-white px-5 pt-25 pb-16;
+        @apply min-h-screen text-white px-5 pt-30 pb-16;
       }
 
       .shop-grid {
-        @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-7xl mx-auto;
+        @apply grid grid-cols-4 gap-10 w-full max-w-7xl mx-auto;
       }
 
       .shop-item {
-        @apply flex flex-col overflow-hidden rounded-2xl border-2 border-white/10 backdrop-blur-md bg-zinc-900/5 z-50;
+        @apply flex flex-col overflow-hidden rounded-2xl border-2 border-white/5 backdrop-blur-md bg-zinc-900/20 z-50;
       }
 
       .shop-media {
@@ -45,15 +45,27 @@
       }
 
       .shop-title {
-        @apply text-lg uppercase leading-tight tracking-normal;
+        @apply text-lg uppercase leading-tight border-b-2 border-white/5 pb-3;
       }
 
       .shop-description {
-        @apply mt-4 min-h-24 text-sm font-light pb-5 text-white/60 uppercase leading-snug;
+        @apply mt-4 min-h-24 text-sm font-light border-white/5 pb-4 text-white/60 uppercase leading-tight;
       }
 
       .shop-actions {
-        @apply mt-auto flex items-center justify-center;
+        @apply mt-auto flex flex-col items-center justify-center gap-2;
+      }
+
+      .version-toggle {
+        @apply inline-flex w-50 overflow-hidden rounded-4xl border-2 border-white/5 text-sm text-white mb-2;
+      }
+
+      .version-option {
+        @apply flex-1 py-1 text-white/60 transition uppercase hover:bg-zinc-700/40 leading-tight hover:text-white;
+      }
+
+      .version-option.active {
+        @apply bg-zinc-700/40 text-white;
       }
 
     }
@@ -61,15 +73,15 @@
 </head>
 <body class="bg-black text-white select-none">
   <main class="shop-page">
-    <div class="fixed flex justify-between top-9 left-0 right-0 px-25 text-xl pointer-events-none z-50">
+    <div class="fixed flex justify-between top-9 left-0 right-0 px-25 text-xl pointer-events-none z-99">
       <span class="font-light text-white">act i</span>
       <span class="text-white uppercase">Renaissance</span>
     </div>
     <section id="shopGrid" class="shop-grid"></section>
-    <div>
+    <!-- <div>
       <img src="assets/shoppage/gradientblurbg.png"
-      class="fixed bg-cover bottom-150 animate-pulse [animation-duration:18s]"/>
-    </div>
+      class="fixed bg-cover bottom-10 animate-pulse [animation-duration:20s]"/>
+    </div> -->
   </main>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -83,7 +95,7 @@
       },
       {
         id: 2,
-        title: 'Renaissance CD',
+        title: 'Renaissance CDㅤㅤㅤㅤㅤㅤㅤㅤ',
         image: 'assets/shoppage/shop-cd.png',
         description: 'Includes 4 panel softpak, 28-page photo booklet, collectible mini poster',
         price: '$12.98'
@@ -92,7 +104,7 @@
         id: 3,
         title: 'Renaissance Digital Album',
         image: 'assets/shoppage/shop-digital-album.png',
-        description: 'Delivers via e-mail upon purchase - .wav uncompressed lossless audio',
+        description: '.wav uncompressed lossless audio - Delivers via e-mail upon purchase',
         price: '$9.99'
       },
       {
@@ -101,6 +113,48 @@
         image: 'assets/shoppage/shop-vinyl-limited-edition.png',
         description: 'Alternate cover art - Includes gatefold jacket with printed inner sleeves, 2LP - 180g vinyl',
         price: '$32.98'
+      },
+      {
+        id: 5,
+        title: 'Break My Soul - Digital Single',
+        image: 'assets/shoppage/shop-bms-ds.png',
+        description: 'Includes the Single, Instrumental, and A Cappella versions - .wav uncompressed lossless audio',
+        price: '$3.87'
+      },
+       {
+        id: 6,
+        title: 'Break My Soul (Remixes)ㅤㅤㅤㅤㅤㅤㅤㅤ',
+        image: 'assets/shoppage/shop-bms-remixes.png',
+        description: 'Includes remixes by Will.i.am, Terry Hunter, Honey Dijon & Nita Aviance - .wav uncompressed lossless audio',
+        price: '$5.16'
+      },
+      {
+        id: 7,
+        title: 'Break My Soul (The Queens Remix)',
+        image: 'assets/shoppage/shop-bms-queens.png',
+        description: '.wav uncompressed lossless audio - Delivers via e-mail upon purchase',
+        price: '$1.29'
+      },
+      {
+        id: 8,
+        title: 'Cuff It - Digital Single',
+        image: 'assets/shoppage/shop-ci-ds.png',
+        description: 'Includes the Wetter remix + Acapella & Instrumental - .wav uncompressed lossless audio',
+        price: '$3.87'
+      },
+      {
+        id: 9,
+        title: 'America Has a Problem - Digital Single',
+        image: 'assets/shoppage/shop-ahap.png',
+        description: '.wav uncompressed lossless audio - Delivers via e-mail upon purchase',
+        price: '$1.29'
+      },
+      {
+        id: 10,
+        title: 'My House - Digital Single',
+        image: 'assets/shoppage/shop-myhouse.png',
+        description: '.wav uncompressed lossless audio - Delivers via e-mail upon purchase',
+        price: '$3.87'
       }
     ];
 
@@ -122,7 +176,11 @@
             </div>
             <p class="shop-description">${item.description}</p>
             <div class="shop-actions">
-              <button class="group relative inline-grid place-items-center overflow-hidden rounded-4xl bg-transparent border-2 border-white/10 hover:bg-white/5 px-5 py-3 text-center text-white font-medium uppercase leading-none transition">
+              <div class="version-toggle" role="group" aria-label="Audio version">
+                <button type="button" class="version-option" aria-pressed="true">Clean</button>
+                <button type="button" class="version-option active" aria-pressed="false">Explicit</button>
+              </div>
+              <button class="group relative inline-grid place-items-center overflow-hidden rounded-4xl bg-transparent border-2 border-white/5 hover:bg-zinc-700/40 px-4 py-3 text-center text-white font-medium uppercase leading-none transition">
                 <span class="col-start-1 row-start-1 transition duration-300 ease-out translate-y-0 opacity-100 group-hover:-translate-y-full group-hover:opacity-0">${item.price}</span>
                 <span class="col-start-1 row-start-1 transition duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">Add to Bag</span>
               </button>
@@ -134,6 +192,21 @@
     }
 
     document.addEventListener('DOMContentLoaded', renderShopGrid);
+
+    document.addEventListener('click', (event) => {
+      const selectedOption = event.target.closest('.version-option');
+
+      if (!selectedOption) return;
+
+      const toggle = selectedOption.closest('.version-toggle');
+      const options = toggle.querySelectorAll('.version-option');
+
+      options.forEach((option) => {
+        const isActive = option === selectedOption;
+        option.classList.toggle('active', isActive);
+        option.setAttribute('aria-pressed', String(isActive));
+      });
+    });
   </script>
 </body>
 </html>
