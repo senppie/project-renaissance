@@ -26,20 +26,16 @@
       .version-toggle { @apply inline-flex w-60 overflow-hidden rounded-xl border-2 border-white/5 text-sm text-white mb-2; }
       .version-option { @apply flex-1 py-2 text-white/30 transition uppercase hover:bg-zinc-700/40 leading-tight hover:text-white cursor-pointer; }
       .version-option.active { @apply bg-white text-black; }
+
+      @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
+      .pop { animation: pop 260ms ease-in-out; }
+
+      .shop-scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
     }
-  </style>
-  <style>
-    /* small pop animation for Add to Bag button */
-    @keyframes pop {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
-    }
-    .pop { animation: pop 260ms ease-in-out; }
   </style>
 </head>
 <body class="bg-black text-white select-none">
-  <main class="shop-page">
+  <main class="shop-page shop-scroll">
     <div class="fixed flex justify-between top-9 left-0 right-0 px-25 text-xl pointer-events-none z-99">
       <span class="font-light text-white">act i</span>
       <span class="text-white uppercase">Renaissance</span>
@@ -47,7 +43,7 @@
     <section id="shopGrid" class="shop-grid"></section>
     <div>
       <img src="assets/shoppage/gradientbg-shop.png"
-      class="fixed bg-cover h-300 bottom-20 left-80 animate-pulse [animation-duration:12s]"/>
+      class="fixed bg-cover h-300 bottom-20 left-80 animate-pulse [animation-duration:12s]" style="z-index:0;pointer-events:none;"/>
     </div>
   </main>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -168,6 +164,7 @@
     // react to cart changes (add/remove/clear) from other pages
     document.addEventListener('cart:changed', updateCartBadge);
 
+
     // Cart helpers (localStorage-backed, demo-only)
     function getCart() {
       try {
@@ -251,6 +248,7 @@
         option.setAttribute('aria-pressed', String(isActive));
       });
     });
+
   </script>
 </body>
 </html>

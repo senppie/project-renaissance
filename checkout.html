@@ -9,38 +9,38 @@
   <link rel="stylesheet" href="assets/font/font.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style type="text/tailwindcss">
-    @layer components {
-      .card { @apply max-w-md mx-auto bg-zinc-900/80 border-2 border-white/5 rounded-3xl p-8 backdrop-blur-md; }
-      .brand { @apply text-2xl uppercase tracking-widest font-light text-white/90; }
-      .input { @apply w-full bg-transparent border-2 border-white/5 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/10; }
-      .btn { @apply w-full rounded-4xl bg-white text-black py-3 mt-4 inline-flex items-center justify-center gap-2; }
-      .link { @apply text-sm text-white/60 hover:text-white cursor-pointer; }
-    }
-  </style>
-  <style>
-    .pop {
-      transform: scale(0.98);
-      transition: transform 160ms ease;
-    }
+   @layer components {
+     .card { @apply max-w-md mx-auto bg-zinc-900/80 border-2 border-white/5 rounded-3xl p-8 backdrop-blur-md; }
+     .brand { @apply text-2xl uppercase tracking-widest font-light text-white/90; }
+     .input { @apply w-full bg-transparent border-2 border-white/5 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/10; }
+     .btn { @apply w-full rounded-4xl bg-white text-black py-3 mt-4 inline-flex items-center justify-center gap-2; }
+     .link { @apply text-sm text-white/60 hover:text-white cursor-pointer; }
+     .pop { transform: scale(0.98); transition: transform 160ms ease; }
+     .payment-scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
+
+     @media (min-width: 768px) {
+       .right-column { position: sticky; top: 6rem; align-self: start; }
+     }
+   }
   </style>
 </head>
 <body class="bg-black text-white select-none">
   <header>
     <div
-      class="fixed w-full h-screen flex items-center justify-between text-2xl px-25 mix-blend-difference pointer-events-none z-50">
-      <span class="font-light text-white">act i</span>
-      <span class="text-white">RENAISSANCE</span>
+    class="fixed w-full h-screen flex items-center justify-between text-2xl px-25 mix-blend-difference pointer-events-none z-50">
+    <span class="font-light text-white">act i</span>
+    <span class="text-white">RENAISSANCE</span>
     </div>
      <div>
       <img src="assets/loginpage/gradientbg-login.png"
-      class="fixed bg-cover h-320 top-60 left-10 animate-pulse [animation-duration:12s]"/>
+      class="fixed bg-cover h-320 top-60 left-10 select-none animate-pulse [animation-duration:12s]"/>
     </div>
   </header>
   <main class="min-h-screen flex items-center justify-center">
     <div class="w-full max-w-4xl px-4 py-10">
       <div class="flex flex-col md:flex-row items-start justify-center gap-6">
         <!-- Payment card -->
-        <section class="card bg-zinc-900/20 backdrop-blur-md w-full md:w-3/5">
+        <section class="card bg-zinc-900/20 backdrop-blur-md w-full md:w-3/5 payment-scroll">
           <div class="flex items-center justify-between">
             <div>
               <div class="uppercase text-2xl">Checkout</div>
@@ -127,7 +127,7 @@
           </form>
         </section>
         <!-- Order summary column with login card underneath -->
-        <div class="w-full md:w-2/5 flex flex-col items-stretch gap-4">
+        <div class="w-full md:w-2/5 flex flex-col items-stretch gap-4 right-column">
 
           <!-- Order summary card (top) -->
           <section class="card bg-zinc-900/20 backdrop-blur-md w-full">
