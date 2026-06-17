@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LOGIN: RENAISSANCE</title>
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-homepage.png">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="assets/font/font.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style type="text/tailwindcss">
+    @layer components {
+      .card { @apply max-w-md mx-auto bg-zinc-900/80 border-2 border-white/5 rounded-3xl p-8 backdrop-blur-md; }
+      .brand { @apply text-2xl uppercase tracking-widest font-light text-white/90; }
+      .input { @apply w-full bg-transparent border-2 border-white/5 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/10; }
+      .btn { @apply w-full rounded-4xl bg-white text-black py-3 mt-4 inline-flex items-center justify-center gap-2; }
+      .link { @apply text-sm text-white/60 hover:text-white cursor-pointer; }
+    }
+  </style>
+</head>
+<body class="bg-black text-white select-none flex items-center justify-center min-h-screen">
+  <div
+      class="fixed w-full h-screen flex items-center justify-between text-2xl px-25 mix-blend-difference pointer-events-none z-50">
+      <span class="font-light text-white">project</span>
+      <span class="text-white">RENAISSANCE</span>
+    </div>
+  <div>
+      <img src="assets/loginpage/gradientbg-login.png"
+      class="fixed bg-cover h-360 bottom-40 left-40 animate-pulse [animation-duration:12s]"/>
+    </div>
+  <section class="card bg-zinc-900/20 backdrop-blur-md">
+    <div class="mb-4 flex items-center justify-between">
+      <div>
+        <div class="uppercase text-2xl">Renaissance</div>
+        <div class="text-white/60 text-md uppercase">Account</div>
+      </div>
+      <div class="pointer-events-auto">
+        <i data-lucide="user" class="w-8 h-8 text-white"></i>
+      </div>
+    </div>
+
+    <form id="loginForm" class="mt-3">
+      <label class="text-sm text-white/60 uppercase">Email</label>
+      <input id="email" class="input mt-2 font-light" type="email" placeholder="you@renaissance.example" required />
+
+      <label class="text-sm text-white/60 uppercase mt-4 block">Password</label>
+      <input id="password" class="input mt-2" type="password" placeholder="••••••••" required />
+
+      <div class="flex items-center justify-between mt-3">
+        <label class="flex items-center gap-2 text-white/60 text-sm uppercase">
+          <input id="remember" type="checkbox" class="w-4 h-4 accent-white/80 cursor-pointer" /> Remember
+        </label>
+        <a id="forgot" class="link uppercase text-white/30 hover:text-white/60">Forgot?</a>
+      </div>
+
+      <button id="submitBtn" class="btn bg-transparent rounded-xl border-2 border-white/5 text-white/60 hover:bg-white hover:text-black cursor-pointer uppercase" type="submit">
+        <i data-lucide="log-in" class="w-4 h-4"></i>
+        <span>Sign In</span>
+  
+      </button>
+    </form>
+
+    <div id="easter" class="mt-4 text-white/30 text-sm text-center uppercase">This is a demo</div>
+  </section>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+
+    const form = document.getElementById('loginForm');
+    const btn = document.getElementById('submitBtn');
+    const easter = document.getElementById('easter');
+
+    function fakeSignIn(email) {
+      if (/queen/i.test(email)) return 'Welcome back!';
+      const names = ['I’m one of one', 'I’m number one', 'I’m the only one!', 'Unique - That’s what you are','It should cost a billion to look this good','You won’t break my soul','Bad bitches to the left','Money bitches to the right','Nobody can judge me, but me. I was born free.','Look around, Everybody on mute'];
+      return names[Math.floor(Math.random()*names.length)];
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      btn.classList.add('pop');
+      setTimeout(() => btn.classList.remove('pop'), 160);
+      const email = document.getElementById('email').value || '';
+      const msg = fakeSignIn(email);
+      try { localStorage.setItem('renaissance_user', JSON.stringify({ email, time: Date.now() })); } catch (err) {}
+      easter.textContent = msg;
+      easter.classList.remove('text-white/30');
+      easter.classList.add('text-white');
+      setTimeout(() => { window.close(); }, 900);
+    });
+  </script>
+</body>
+</html>
