@@ -22,7 +22,7 @@ async function loadCart() {
       if (!container) return;
       const cart = getCart();
       if (!cart || cart.length === 0) {
-        container.innerHTML = '<p class="text-white/60 text-center py-4 uppercase">Your bag is empty</p>';
+        container.innerHTML = '<p class="text-white/30 text-center py-4 uppercase">Your bag is empty</p>';
         const totalElEmpty = document.getElementById('cartTotal');
         if (totalElEmpty) totalElEmpty.textContent = '$0.00';
         return;
@@ -31,7 +31,7 @@ async function loadCart() {
       container.innerHTML = cart.map((it) => `
         <div class="py-2 flex items-center gap-3">
           <div class="flex-1 min-w-0">
-            <div class="text-sm font-medium uppercase">${escapeHtml(it.title)}</div>
+            <div class="text-sm text-white/60 uppercase">${escapeHtml(it.title)}</div>
             <div class="text-xs text-white/60 uppercase">${it.price} ― ${escapeHtml(it.version || 'Explicit')} ver. ― Qty: ${it.qty || 1}</div>
           </div>
           <div class="flex items-center gap-2">
