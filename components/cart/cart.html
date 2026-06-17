@@ -1,5 +1,37 @@
 <div class="fixed top-6 left-2/3 -translate-x-1/2 z-99">
-    <a href="cart.html" class="flex bg-zinc-900/20 px-3 py-3 text-white hover:bg-zinc-700/40 border-2 border-white/5 backdrop-blur-md rounded-4xl">
-        <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-    </a>
+  <div class="relative">
+    <button id="cartToggle" aria-expanded="false" aria-controls="cartPanel" class="relative flex bg-zinc-900/20 px-3 py-3 text-white hover:bg-zinc-700/40 border-2 border-white/5 backdrop-blur-md rounded-4xl cursor-pointer">
+      <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+      <span id="cartBadge" class="absolute -top-2 -right-2 inline-flex items-center justify-center text-xs bg-white rounded-full w-5 h-5 text-black hidden">0</span>
+    </button>
+
+    <div id="cartPanel" class="cart-panel hidden absolute right-0 mt-3 w-80 max-w-xs bg-zinc-900/20 border-2 border-white/5 rounded-xl p-3 backdrop-blur-md z-50">
+      <style>
+        /* panel open/close animation */
+        .cart-panel { transition: transform .18s ease, opacity .18s ease; transform-origin: top right; transform: translateY(-6px) scale(.98); opacity: 0; }
+        .cart-panel.open { transform: translateY(0) scale(1); opacity: 1; }
+        /* hide horizontal scrollbar while keeping scrolling usable */
+        #cartItems { overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; }
+        #cartItems::-webkit-scrollbar { display: none; width: 0; height: 0; }
+      </style>
+      <div class="flex items-center justify-between mb-2">
+        <strong class="text-sm uppercase">Your Bag</strong>
+        <button id="cartClose" aria-label="Close cart" class="text-white/60 hover:text-white cursor-pointer">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+      <div id="cartItems" tabindex="0" class="divide-y-2 divide-white/5 text-sm max-h-60">
+        <p class="text-white/60 text-center py-4 uppercase">Your bag is empty</p>
+      </div>
+
+      <div id="cartSummary" class="mt-3 text-sm text-white/80 flex items-center justify-between relative">
+        <span class="text-white/60 uppercase z-10">Subtotal:</span>
+        <span id="cartTotal" class="font-semibold text-white z-10">$0.00</span>
+      </div>
+
+      <div class="mt-3">
+        <a href="checkout.html" id="goToCart" class="block text-center bg-white text-black rounded-full py-2 text-sm font-semibold uppercase">Proceed to Checkout</a>
+      </div>
+    </div>
+  </div>
 </div>
