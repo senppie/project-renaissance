@@ -12,11 +12,15 @@
    @layer components {
      .card { @apply max-w-md mx-auto bg-zinc-900/80 border-2 border-white/5 rounded-3xl p-8 backdrop-blur-md; }
      .brand { @apply text-2xl uppercase tracking-widest font-light text-white/90; }
-     .input { @apply w-full bg-transparent border-2 border-white/5 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/10; }
+     .input { @apply w-full bg-transparent border-2 border-white/5 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring focus:ring-white/10; }
+     .input-group { @apply relative; }
+     .input-group label { @apply absolute left-4 top-4 text-white/60 text-sm uppercase pointer-events-none transition-all duration-200; }
+     .input-group input:focus ~ label,
+     .input-group input:not(:placeholder-shown) ~ label { @apply -top-2 text-xs font-bold rounded bg-white text-black px-1; }
      .btn { @apply w-full rounded-4xl bg-white text-black py-3 mt-4 inline-flex items-center justify-center gap-2; }
      .link { @apply text-sm text-white/60 hover:text-white cursor-pointer; }
      .pop { transform: scale(0.98); transition: transform 160ms ease; }
-     .payment-scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
+     .payment-scroll { @apply h-192 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
 
      @media (min-width: 768px) {
        .right-column { position: sticky; top: 6rem; align-self: start; }
@@ -39,95 +43,117 @@
   <main class="min-h-screen flex items-center justify-center">
     <div class="w-full max-w-4xl px-4 py-10">
       <div class="flex flex-col md:flex-row items-start justify-center gap-6">
-        <!-- Payment card -->
+        <!-- Billing & Payment card -->
         <section class="card bg-zinc-900/20 backdrop-blur-md w-full md:w-3/5 payment-scroll">
           <div class="flex items-center justify-between">
-            <div>
+            <div class="w-full">
               <div class="uppercase text-2xl">Checkout</div>
-              <div class="text-white/60 text-md uppercase">Billing</div>
-            </div>
-            <div class="pointer-events-auto">
-              <i data-lucide="receipt-text" class="w-8 h-8 text-white"></i>
+              <div class="flex items-center gap-3">
+                <div class="text-white/60 text-md uppercase">Billing</div>
+                <div class="flex-grow border-b border-white/10"></div>
+              </div>
             </div>
           </div>
-          <form id="paymentForm" class="mt-3 space-y-2">
-            <div>
-              <label class="text-sm text-white/60 uppercase">Full Name</label>
-              <input id="billingName" class="input mt-2 font-light" type="text" placeholder="Beyoncé Giselle Knowles-Carter"
+          <form id="paymentForm" class="mt-5 space-y-5">
+            <div class="grid grid-cols-2 gap-3">
+            <div class="input-group">
+              <input id="billingName" class="input" type="text" placeholder=" "
                 required />
+              <label for="billingName">First Name</label>
             </div>
-            <div>
-              <label class="text-sm text-white/60 uppercase">Address</label>
-              <input id="billingAddress" class="input mt-2 font-light" type="text" placeholder="1412 Broadway, 24th Floor" required />
+            <div class="input-group">
+              <input id="billingName" class="input" type="text" placeholder=" "
+                required />
+              <label for="billingName">Last Name</label>
+            </div>
+            </div>
+            <div class="input-group">
+              <input id="billingAddress" class="input" type="text" placeholder=" " required />
+              <label for="billingAddress">Address</label>
             </div>
             <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="text-sm text-white/60 uppercase">City</label>
-                <input id="billingCity" class="input mt-2 font-light" type="text" placeholder="New York, NY"
-                  required />
+              <div class="input-group">
+                <input id="billingCity" class="input" type="text" placeholder=" " required />
+                <label for="billingCity">City</label>
               </div>
-              <div>
-                <label class="text-sm text-white/60 uppercase">Postal code</label>
-                <input id="billingPostal" class="input mt-2 font-light" type="text" placeholder="10018-9235"
-                  required />
+              <div class="input-group">
+                <input id="billingPostal" class="input" type="text" placeholder=" " required />
+                <label for="billingPostal">Postal code</label>
               </div>
             </div>
-            <div>
-              <label class="text-sm text-white/60 uppercase">Country</label>
-              <input id="billingCountry" class="input mt-2 font-light uppercase" type="text" placeholder="USA"
+            <div class="input-group">
+              <input id="billingAddress" class="input" type="text" placeholder=" " required />
+              <label for="billingAddress">Country/Region</label>
+            </div>
+            <div class="w-full">
+              <div class="flex items-center gap-3">
+                <div class="text-white/60 text-md uppercase">Contact</div>
+                <div class="flex-grow border-b border-white/10"></div>
+              </div>
+            </div>
+            <div class="input-group">
+              <input id="billingName" class="input" type="text" placeholder=" "
                 required />
+              <label for="billingName">Email</label>
             </div>
-            <div class="mt-3">
-              <div>
-                <div class="text-white/60 text-md uppercase mb-5 mt-8">Payment</div>
+            <div class="input-group">
+              <input id="billingName" class="input" type="text" placeholder=" "
+                required />
+              <label for="billingName">Phone Number</label>
+            </div>
+            <div class="mt-2">
+              <div class="flex items-center gap-3">
+                <div class="text-white/60 text-md uppercase mb-5">Payment</div>
+                <div class="flex-grow border-b border-white/10 mb-5"></div>
               </div>
               <label class="text-sm text-white/60 uppercase mb-2 block">Payment Method</label>
-              <div id="pmButtons" class="inline-flex gap-2">
-                <button type="button" data-pm="card"
-                  class="pm-option cursor-pointer inline-flex items-center gap-2 px-3 py-2 text-sm uppercase rounded-xl border-2 border-white/5 bg-white/5 text-white"><i data-lucide="credit-card" class="w-5 h-5"></i><span class="hidden md:inline">Credit/Debit</span></button>
-                <button type="button" data-pm="applepay" class="pm-option cursor-pointer inline-flex items-center gap-2 px-3 py-2 text-sm uppercase rounded-xl border-2 border-white/5 bg-white/5 text-white">
-                  <svg viewBox="0 0 550 250" class="w-10 h-6" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M93.6,27.1C87.6,34.2,78,39.8,68.4,39c-1.2-9.6,3.5-19.8,9-26.1c6-7.3,16.5-12.5,25-12.9  C103.4,10,99.5,19.8,93.6,27.1 M102.3,40.9c-13.9-0.8-25.8,7.9-32.4,7.9c-6.7,0-16.8-7.5-27.8-7.3c-14.3,0.2-27.6,8.3-34.9,21.2  c-15,25.8-3.9,64,10.6,85c7.1,10.4,15.6,21.8,26.8,21.4c10.6-0.4,14.8-6.9,27.6-6.9c12.9,0,16.6,6.9,27.8,6.7  c11.6-0.2,18.9-10.4,26-20.8c8.1-11.8,11.4-23.3,11.6-23.9c-0.2-0.2-22.4-8.7-22.6-34.3c-0.2-21.4,17.5-31.6,18.3-32.2  C123.3,42.9,107.7,41.3,102.3,40.9 M182.6,11.9v155.9h24.2v-53.3h33.5c30.6,0,52.1-21,52.1-51.4c0-30.4-21.1-51.2-51.3-51.2H182.6z   M206.8,32.3h27.9c21,0,33,11.2,33,30.9c0,19.7-12,31-33.1,31h-27.8V32.3z M336.6,169c15.2,0,29.3-7.7,35.7-19.9h0.5v18.7h22.4V90.2  c0-22.5-18-37-45.7-37c-25.7,0-44.7,14.7-45.4,34.9h21.8c1.8-9.6,10.7-15.9,22.9-15.9c14.8,0,23.1,6.9,23.1,19.6v8.6l-30.2,1.8  c-28.1,1.7-43.3,13.2-43.3,33.2C298.4,155.6,314.1,169,336.6,169z M343.1,150.5c-12.9,0-21.1-6.2-21.1-15.7c0-9.8,7.9-15.5,23-16.4  l26.9-1.7v8.8C371.9,140.1,359.5,150.5,343.1,150.5z M425.1,210.2c23.6,0,34.7-9,44.4-36.3L512,54.7h-24.6l-28.5,92.1h-0.5  l-28.5-92.1h-25.3l41,113.5l-2.2,6.9c-3.7,11.7-9.7,16.2, -20.4,16.2c-1.9,0-5.6-0.2-7.1-0.4v18.7C417.3,210,423.3,210.2,425.1,210.2z"/></svg></button>
-                <button type="button" data-pm="gpay" class="pm-option cursor-pointer inline-flex items-center gap-2 px-3 py-2 text-sm uppercase rounded-xl border-2 border-white/5 bg-white/5 text-white">
-                  <svg viewBox="0 0 88 40" class="w-10 h-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                    <path fill="currentColor" d="M37.8,19.7V29h-3V6h7.8c1.9,0,3.7,0.7,5.1,2c1.4,1.2,2.1,3,2.1,4.9c0,1.9-0.7,3.6-2.1,4.9c-1.4,1.3-3.1,2-5.1,2  L37.8,19.7L37.8,19.7z M37.8,8.8v8h5c1.1,0,2.2-0.4,2.9-1.2c1.6-1.5,1.6-4,0.1-5.5c0,0-0.1-0.1-0.1-0.1c-0.8-0.8-1.8-1.3-2.9-1.2  L37.8,8.8L37.8,8.8z"/>
-                    <path fill="currentColor" d="M56.7,12.8c2.2,0,3.9,0.6,5.2,1.8s1.9,2.8,1.9,4.8V29H61v-2.2h-0.1c-1.2,1.8-2.9,2.7-4.9,2.7  c-1.7,0-3.2-0.5-4.4-1.5c-1.1-1-1.8-2.4-1.8-3.9c0-1.6,0.6-2.9,1.8-3.9c1.2-1,2.9-1.4,4.9-1.4c1.8,0,3.2,0.3,4.3,1v-0.7  c0-1-0.4-2-1.2-2.6c-0.8-0.7-1.8-1.1-2.9-1.1c-1.7,0-3,0.7-3.9,2.1l-2.6-1.6C51.8,13.8,53.9,12.8,56.7,12.8z M52.9,24.2  c0,0.8,0.4,1.5,1,1.9c0.7,0.5,1.5,0.8,2.3,0.8c1.2,0,2.4-0.5,3.3-1.4c1-0.9,1.5-2,1.5-3.2c-0.9-0.7-2.2-1.1-3.9-1.1  c-1.2,0-2.2,0.3-3,0.9C53.3,22.6,52.9,23.3,52.9,24.2z"/>
-                    <path fill="currentColor" d="M80,13.3l-9.9,22.7h-3l3.7-7.9l-6.5-14.7h3.2l4.7,11.3h0.1l4.6-11.3H80z"/>
-                    <path fill="currentColor" d="M25.9,17.7c0-0.9-0.1-1.8-0.2-2.7H13.2v5.1h7.1c-0.3,1.6-1.2,3.1-2.6,4v3.3H22C24.5,25.1,25.9,21.7,25.9,17.7z"/>
-                    <path fill="currentColor" d="M13.2,30.6c3.6,0,6.6-1.2,8.8-3.2l-4.3-3.3c-1.2,0.8-2.7,1.3-4.5,1.3c-3.4,0-6.4-2.3-7.4-5.5H1.4v3.4  C3.7,27.8,8.2,30.6,13.2,30.6z"/>
-                    <path fill="currentColor" d="M5.8,19.9c-0.6-1.6-0.6-3.4,0-5.1v-3.4H1.4c-1.9,3.7-1.9,8.1,0,11.9L5.8,19.9z"/>
-                    <path fill="currentColor" d="M13.2,9.4c1.9,0,3.7,0.7,5.1,2l0,0l3.8-3.8c-2.4-2.2-5.6-3.5-8.8-3.4c-5,0-9.6,2.8-11.8,7.3l4.4,3.4  C6.8,11.7,9.8,9.4,13.2,9.4z"/>
-                  </svg>
-                </button>
-              </div>
-              <input type="hidden" name="pm" id="pmValue" value="card" />
+              <div id="pmButtons" class="inline-flex gap-2 mb-5">
+              <button type="button" data-pm="card"
+                class="pm-option cursor-pointer inline-flex items-center gap-2 px-3 py-2 text-sm uppercase rounded-xl border-2 border-white/5 bg-white/5 text-white"><i data-lucide="credit-card" class="w-5 h-5"></i><span class="hidden md:inline">Credit/Debit</span></button>
+              <button type="button" data-pm="applepay" class="pm-option cursor-pointer inline-flex items-center gap-2 px-3 py-2 text-sm uppercase rounded-xl border-2 border-white/5 bg-white/5 text-white">
+                <svg viewBox="0 0 550 250" class="w-10 h-6" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M93.6,27.1C87.6,34.2,78,39.8,68.4,39c-1.2-9.6,3.5-19.8,9-26.1c6-7.3,16.5-12.5,25-12.9  C103.4,10,99.5,19.8,93.6,27.1 M102.3,40.9c-13.9-0.8-25.8,7.9-32.4,7.9c-6.7,0-16.8-7.5-27.8-7.3c-14.3,0.2-27.6,8.3-34.9,21.2  c-15,25.8-3.9,64,10.6,85c7.1,10.4,15.6,21.8,26.8,21.4c10.6-0.4,14.8-6.9,27.6-6.9c12.9,0,16.6,6.9,27.8,6.7  c11.6-0.2,18.9-10.4,26-20.8c8.1-11.8,11.4-23.3,11.6-23.9c-0.2-0.2-22.4-8.7-22.6-34.3c-0.2-21.4,17.5-31.6,18.3-32.2  C123.3,42.9,107.7,41.3,102.3,40.9 M182.6,11.9v155.9h24.2v-53.3h33.5c30.6,0,52.1-21,52.1-51.4c0-30.4-21.1-51.2-51.3-51.2H182.6z   M206.8,32.3h27.9c21,0,33,11.2,33,30.9c0,19.7-12,31-33.1,31h-27.8V32.3z M336.6,169c15.2,0,29.3-7.7,35.7-19.9h0.5v18.7h22.4V90.2  c0-22.5-18-37-45.7-37c-25.7,0-44.7,14.7-45.4,34.9h21.8c1.8-9.6,10.7-15.9,22.9-15.9c14.8,0,23.1,6.9,23.1,19.6v8.6l-30.2,1.8  c-28.1,1.7-43.3,13.2-43.3,33.2C298.4,155.6,314.1,169,336.6,169z M343.1,150.5c-12.9,0-21.1-6.2-21.1-15.7c0-9.8,7.9-15.5,23-16.4  l26.9-1.7v8.8C371.9,140.1,359.5,150.5,343.1,150.5z M425.1,210.2c23.6,0,34.7-9,44.4-36.3L512,54.7h-24.6l-28.5,92.1h-0.5  l-28.5-92.1h-25.3l41,113.5l-2.2,6.9c-3.7,11.7-9.7,16.2, -20.4,16.2c-1.9,0-5.6-0.2-7.1-0.4v18.7C417.3,210,423.3,210.2,425.1,210.2z"/></svg></button>
+              <button type="button" data-pm="gpay" class="pm-option cursor-pointer inline-flex items-center gap-2 px-3 py-2 text-sm uppercase rounded-xl border-2 border-white/5 bg-white/5 text-white">
+                <svg viewBox="0 0 88 40" class="w-10 h-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M37.8,19.7V29h-3V6h7.8c1.9,0,3.7,0.7,5.1,2c1.4,1.2,2.1,3,2.1,4.9c0,1.9-0.7,3.6-2.1,4.9c-1.4,1.3-3.1,2-5.1,2  L37.8,19.7L37.8,19.7z M37.8,8.8v8h5c1.1,0,2.2-0.4,2.9-1.2c1.6-1.5,1.6-4,0.1-5.5c0,0-0.1-0.1-0.1-0.1c-0.8-0.8-1.8-1.3-2.9-1.2  L37.8,8.8L37.8,8.8z"/>
+                  <path fill="currentColor" d="M56.7,12.8c2.2,0,3.9,0.6,5.2,1.8s1.9,2.8,1.9,4.8V29H61v-2.2h-0.1c-1.2,1.8-2.9,2.7-4.9,2.7  c-1.7,0-3.2-0.5-4.4-1.5c-1.1-1-1.8-2.4-1.8-3.9c0-1.6,0.6-2.9,1.8-3.9c1.2-1,2.9-1.4,4.9-1.4c1.8,0,3.2,0.3,4.3,1v-0.7  c0-1-0.4-2-1.2-2.6c-0.8-0.7-1.8-1.1-2.9-1.1c-1.7,0-3,0.7-3.9,2.1l-2.6-1.6C51.8,13.8,53.9,12.8,56.7,12.8z M52.9,24.2  c0,0.8,0.4,1.5,1,1.9c0.7,0.5,1.5,0.8,2.3,0.8c1.2,0,2.4-0.5,3.3-1.4c1-0.9,1.5-2,1.5-3.2c-0.9-0.7-2.2-1.1-3.9-1.1  c-1.2,0-2.2,0.3-3,0.9C53.3,22.6,52.9,23.3,52.9,24.2z"/>
+                  <path fill="currentColor" d="M80,13.3l-9.9,22.7h-3l3.7-7.9l-6.5-14.7h3.2l4.7,11.3h0.1l4.6-11.3H80z"/>
+                  <path fill="currentColor" d="M25.9,17.7c0-0.9-0.1-1.8-0.2-2.7H13.2v5.1h7.1c-0.3,1.6-1.2,3.1-2.6,4v3.3H22C24.5,25.1,25.9,21.7,25.9,17.7z"/>
+                  <path fill="currentColor" d="M13.2,30.6c3.6,0,6.6-1.2,8.8-3.2l-4.3-3.3c-1.2,0.8-2.7,1.3-4.5,1.3c-3.4,0-6.4-2.3-7.4-5.5H1.4v3.4  C3.7,27.8,8.2,30.6,13.2,30.6z"/>
+                  <path fill="currentColor" d="M5.8,19.9c-0.6-1.6-0.6-3.4,0-5.1v-3.4H1.4c-1.9,3.7-1.9,8.1,0,11.9L5.8,19.9z"/>
+                  <path fill="currentColor" d="M13.2,9.4c1.9,0,3.7,0.7,5.1,2l0,0l3.8-3.8c-2.4-2.2-5.6-3.5-8.8-3.4c-5,0-9.6,2.8-11.8,7.3l4.4,3.4  C6.8,11.7,9.8,9.4,13.2,9.4z"/>
+                </svg>
+              </button>
             </div>
-            <div id="cardDetails" class="space-y-2">
-              <div>
-                <label class="text-sm text-white/60 uppercase">Card number</label>
-                <input id="cardNumber" class="input mt-2 font-light uppercase" type="text"
-                  placeholder="4444 4444 4444 4444" />
+            <input type="hidden" name="pm" id="pmValue" value="card" />
+            <div id="cardDetails" class="space-y-5">
+              <div class="input-group">
+                <input id="cardNumber" class="input uppercase" type="text" placeholder=" " />
+                <label for="cardNumber">Card number</label>
               </div>
               <div class="grid grid-cols-2 gap-3">
-                <div>
-                  <label class="text-sm text-white/60 uppercase">Expiry</label>
-                  <input id="cardExpiry" class="input mt-2 font-light uppercase" type="text" placeholder="09/81" />
+                <div class="input-group">
+                  <input id="cardExpiry" class="input uppercase" type="text" placeholder=" " />
+                  <label for="cardExpiry">Expiry</label>
                 </div>
-                <div>
-                  <label class="text-sm text-white/60 uppercase">CVC</label>
-                  <input id="cardCvc" class="input mt-2 font-light uppercase" type="text" placeholder="444" />
+                <div class="input-group">
+                  <input id="cardCvc" class="input uppercase" type="text" placeholder=" " />
+                  <label for="cardCvc">CVC</label>
                 </div>
+              </div>
+              <div class="input-group">
+                <input id="cardName" class="input uppercase" type="text" placeholder=" " />
+                <label for="cardName">Name on card</label>
               </div>
             </div>
             <label class="flex items-start gap-3 mt-6 text-sm">
-              <input id="agree" type="checkbox" class="w-4 h-4 mt-1 cursor-pointer accent-white/80" />
-              <span class="text-white uppercase">I accept the <a href="#" class="link">privacy</a> and <a href="#"
-                  class="link">service</a> agreement.</span>
+              <input id="agree" type="checkbox" class="w-4 h-4 cursor-pointer accent-white/80"/>
+              <span class="text-white uppercase">I agree with <a href="#" class="link">the terms and conditions</a></span>
             </label>
             <button id="purchaseBtn" type="button" class="btn cursor-pointer rounded-xl bg-transparent border-2 border-white/5 text-white hover:bg-white hover:text-black uppercase">Finalize Purchase</button>
           </form>
         </section>
         <!-- Order summary column with login card underneath -->
-        <div class="w-full md:w-2/5 flex flex-col items-stretch gap-4 right-column">
+        <div class="w-full md:w-2/5 flex flex-col items-stretch gap-12 right-column">
 
           <!-- Order summary card (top) -->
           <section class="card bg-zinc-900/20 backdrop-blur-md w-full">
@@ -140,7 +166,7 @@
             <div class="space-y-2">
               <div>
                 <div class="text-white text-md uppercase">Items:</div>
-                <ul id="cartItems" class="mt-3 space-y-2">
+                <ul id="cartItems" class="mt-3 space-y-2 max-h-32 overflow-y-auto pr-2 scrollbar-thumb-white/10 scrollbar-track-transparent scrollbar-thin">
                   <!-- items populated by JS -->
                 </ul>
               </div>
@@ -165,11 +191,9 @@
               <div class="pointer-events-auto mb-3">
                 <i data-lucide="log-in" class="w-8 h-8 text-white"></i>
               </div>
-              <div>
-                <div class="uppercase text-2xl mb-4">Account</div>
-              </div>
+              <h3 class="text-2xl uppercase mb-2">Account</h3>
             </div>
-            <div class="text-white/60 text-md uppercase">Login or register</div>
+            
             <div class="mt-3 text-white/30 text-sm font-light uppercase">Sign in to save your details and view past orders.</div>
             <div class="mt-2 flex gap-3">
               <a href="login.html" target="_blank" rel="noopener" class="btn bg-transparent rounded-xl hover:bg-white hover:text-black border-2 border-white/5 text-white uppercase w-1/2">Login</a>
