@@ -3,42 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RENAISSANCE</title>
+  <title>PROJECT:RENAISSANCE</title>
   <link rel="icon" type="image/png" href="assets/favicon/favicon-homepage.png">
   <link rel="stylesheet" href="assets/font/font.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <script src="components/navbar/navbar-loader.js"></script>
 </head>
 <body class="bg-black select-none">
-  <img id="bg-image" src="assets/homepage/bg01.jpeg"
-    class="fixed inset-0 w-screen h-screen object-cover pointer-events-none transition-opacity duration-800"/>
+  <img id="bg-image" src="assets/homepage/main-bg.jpeg"
+    class="fixed inset-0 w-screen h-screen object-cover pointer-events-none transition-opacity duration-800" />
   <div class="fixed w-full h-screen flex items-center justify-between text-2xl px-25 mix-blend-difference pointer-events-none z-50">
-    <span class="font-light text-white">act i</span>
-    <span class="text-white">RENAISSANCE</span>
+    <span class="font-light text-white">project</span>
+    <span class="text-white uppercase">Renaissance</span>
   </div>
-  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 mix-blend-difference">
+  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 mix-blend-difference z-50">
     <p class="text-white text-sm tracking-tight">© 2026 SENPPIE</p>
+  </div>
+  <div class="fixed bottom-6 right-20 -translate-x-1/2 mix-blend-difference z-50">
+    <a href="https://github.com/senppie/project-renaissance" class="text-white text-md tracking-tight uppercase hover:text-white/60">github</a>
   </div>
 </body>
 <script>
   const backgrounds = [
-    'assets/homepage/bg01.jpeg',
-    'assets/homepage/bg02.jpeg',
-    'assets/homepage/bg03.jpeg',
-    'assets/homepage/bg04.jpeg',
-    'assets/homepage/bg05.jpeg',
-    'assets/homepage/bg06.jpeg',
-    'assets/homepage/bg07.jpeg',
-    'assets/homepage/bg08.jpeg',
-    'assets/homepage/bg09.jpeg',
-    'assets/homepage/bg10.jpeg',
-    'assets/homepage/bg11.jpeg',
-    'assets/homepage/bg12.jpeg',
-    'assets/homepage/bg13.jpeg',
-    'assets/homepage/bg14.jpeg',
-    'assets/homepage/bg15.jpeg',
-    'assets/homepage/bg16.jpeg',
-    'assets/homepage/bg17.jpeg'
+    'assets/homepage/bgt14.jpeg',
+    'assets/visualspage/visual-02.jpg',
+    'assets/visualspage/booklet/visual-energy-1.jpg',
+    'assets/visualspage/visual-05.jpg',
+    'assets/visualspage/visual-07.jpg',
+    'assets/visualspage/visual-09.jpg',
+    'assets/homepage/visual-plasticoofthesofa.jpeg',
+    'assets/visualspage/visual-10.jpg',
+    'assets/visualspage/visual-purehoney-1.jpg',
+    'assets/visualspage/visual-11.jpg',
+    'assets/visualspage/visual-17.jpg',
+    'assets/visualspage/booklet/visual-allupinyourmind.jpg',
+    'assets/homepage/visual-purehoney.jpeg',
+    'assets/homepage/tour-bg-01.jpeg',
+    'assets/homepage/tour-bg-02.jpeg',
+    'assets/homepage/tour-bg-03.jpeg',
+    'assets/homepage/tour-bg-04.jpeg',
+    'assets/homepage/tour-bg-05.jpeg',
+    'assets/homepage/tour-bg-06.jpeg',
+    'assets/homepage/tour-bg-07.jpeg',
+    'assets/homepage/tour-bg-08.jpeg',
+    'assets/homepage/tour-bg-09.jpeg',
+    'assets/homepage/tour-bg-10.jpeg',
+    'assets/homepage/tour-bg-11.jpeg',
   ];
 
   let currentBgIndex = 0;
