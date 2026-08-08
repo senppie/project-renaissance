@@ -3,75 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VISUALS: RENAISSANCE</title>
+  <title>VISUALS | PROJECT:RENAISSANCE</title>
   <link rel="icon" type="image/png" href="assets/favicon/favicon-visuals.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="assets/font/font.css">
+  <script src="components/title/title-loader.js"></script>
   <script src="components/navbar/navbar-loader.js"></script>
   <script src="components/homebutton/homebutton-loader.js"></script>
 </head>
 <body class="bg-black overflow-x-scroll overflow-y-hidden select-none">
-  <div class="flex flex-row w-full h-screen">
-   <img src="assets/musicpage/albumcover.jpeg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-cozy.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-01.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-summerrenaissance.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-02.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-03.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-04.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-heated.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-energy-1.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-energy-2.jpeg" class="w-auto"/>
-    <img src="assets/visualspage/visual-energy-3.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-05.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-breakmysoul.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-06.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-07.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-08.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-imthatgirl.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-09.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-churchgirl.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-plasticoofthesofa-1.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-plasticoofthesofa-2.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-plasticoofthesofa-3.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-plasticoofthesofa-4.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-plasticoofthesofa-5.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-virgosgroove.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-move-1.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-move-2.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-cuffit.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-10.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-purehoney-1.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-thique-1.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-thique-2.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-thique-3.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-11.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-12.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-13.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-14.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-15.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-16.jpg" class="w-auto"/>
-    <img src="assets/visualspage/visual-17.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-allupinyourmind.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-americahasaproblem.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-purehoney-2.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-purehoney-3.jpg" class="w-auto"/>
+  <div id="navhint"
+    class="fixed inline-flex left-1/2 bottom-6 -translate-x-1/2 rounded-2xl border border-white/5 bg-zinc-900/20 px-6 py-2 text-sm uppercase tracking-tight text-white backdrop-blur-md transition-all duration-300 z-50">
+    Scroll or use the arrow keys to navigate
+  </div>
+  <div class="relative z-10 flex flex-row w-full h-screen">
+    <img src="assets/musicpage/albumcover.jpeg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-cozy.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-01.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-summerrenaissance.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-02.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-03.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-04.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-heated.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-energy-1.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-energy-2.jpeg" class="w-auto" />
+    <img src="assets/visualspage/visual-energy-3.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-05.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-breakmysoul.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-06.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-07.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-08.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-imthatgirl.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-09.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-churchgirl.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-plasticoofthesofa-1.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-plasticoofthesofa-2.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-plasticoofthesofa-3.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-plasticoofthesofa-4.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-plasticoofthesofa-5.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-virgosgroove.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-move-1.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-move-2.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-cuffit.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-10.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-purehoney-1.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-thique-1.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-thique-2.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-thique-3.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-11.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-12.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-13.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-14.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-15.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-16.jpg" class="w-auto" />
+    <img src="assets/visualspage/visual-17.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-allupinyourmind.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-americahasaproblem.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-purehoney-2.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-purehoney-3.jpg" class="w-auto" />
     <img src="assets/visualspage/visual-18.jpg" class="w-auto" />
     <img src="assets/visualspage/visual-19.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-purehoney-4.jpg" class="w-auto"/>
+    <img src="assets/visualspage/visual-purehoney-4.jpg" class="w-auto" />
     <img src="assets/visualspage/visual-20.jpg" class="w-auto" />
-    <img src="assets/visualspage/albumcover-aternative.jpg" class="w-auto"/>
-    <img src="assets/visualspage/booklet/visual-aliensuperstar.jpg" class="w-auto"/>
-    <img src="assets/visualspage/albumcover-1.jpg" class="w-auto"/>
-  </div>
-  <div
-    class="fixed flex justify-between top-9 left-0 right-0 px-25 text-xl mix-blend-difference pointer-events-none z-50">
-    <span class="font-light text-white">act i</span>
-    <span class="text-white uppercase">Renaissance</span>
+    <img src="assets/visualspage/albumcover-aternative.jpg" class="w-auto" />
+    <img src="assets/visualspage/booklet/visual-aliensuperstar.jpg" class="w-auto" />
+    <img src="assets/visualspage/albumcover-1.jpg" class="w-auto" />
   </div>
 </body>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   lucide.createIcons();
+
+  const navhint = document.querySelector('#navhint');
+  let hintHidden = false;
+
+  function hidenavhint() {
+    if (hintHidden || !navhint) return;
+    hintHidden = true;
+    navhint.classList.add('opacity-0', 'pointer-events-none');
+  }
+
+  document.addEventListener('wheel', (event) => {
+    const delta = event.deltaX !== 0 ? event.deltaX : event.deltaY;
+    if (delta === 0) return;
+
+    event.preventDefault();
+    hidenavhint();
+    window.scrollBy({
+      left: delta,
+      behavior: 'auto',
+    });
+  }, { passive: false });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      hidenavhint();
+    }
+  });
 </script>
 </html>
