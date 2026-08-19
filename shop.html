@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHOP: RENAISSANCE</title>
+  <title>SHOP | PROJECT:RENAISSANCE</title>
   <link rel="icon" type="image/png" href="assets/favicon/favicon-shop.png">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="assets/font/font.css">
@@ -13,36 +13,30 @@
   <script src="components/cart/cart-loader.js"></script>
   <style type="text/tailwindcss">
     @layer components {
-      .shop-page { @apply min-h-screen text-white px-5 pt-30 pb-16; }
-      .shop-grid { @apply grid grid-cols-4 gap-10 w-full max-w-7xl mx-auto; }
-      .shop-item { @apply flex flex-col overflow-hidden rounded-2xl border-2 border-white/5 backdrop-blur-md bg-zinc-900/20 z-50; }
-      .shop-media { @apply flex h-44 shrink-0 items-center justify-center px-4 pt-4 pb-5; }
-      .shop-image { @apply h-50 w-full max-w-full object-contain; }
-      .shop-details { @apply flex flex-1 flex-col px-4 pt-0 pb-4; }
-      .shop-heading-row { @apply flex items-start; }
-      .shop-copy { @apply min-w-0 flex-1; }
-      .shop-title { @apply text-lg uppercase leading-tight border-b-2 border-white/5 pb-3; }
-      .shop-description { @apply mt-4 min-h-24 text-sm font-light border-white/5 pb-4 text-white/60 uppercase leading-tight; }
-      .shop-actions { @apply mt-auto flex flex-col items-center justify-center gap-2; }
-      .version-toggle { @apply inline-flex w-60 overflow-hidden rounded-4xl border-2 border-white/5 text-sm text-white mb-2; }
-      .version-option { @apply flex-1 py-2 text-white/30 transition uppercase hover:bg-zinc-700/40 leading-tight hover:text-white cursor-pointer; }
-      .version-option.active { @apply bg-white text-black; }
+      .shop-page { @apply relative min-h-screen text-white pt-15 pb-1 z-10; }
+      .shop-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
+      .shop-grid { @apply grid grid-cols-2 w-full border-l-2 border-t-2 border-white/5 rounded max-w-7xl mx-auto bg-zinc-900/20 backdrop-blur-md; }
+      .shop-item { @apply flex flex-row items-center border-b-2 border-r-2 border-white/5 gap-5 relative; }
+      .shop-media { @apply flex w-1/2 items-center justify-center overflow-hidden; }
+      .shop-image { @apply h-64 w-full max-w-full border-r-2 border-white/5 object-contain; }
+      .shop-details { @apply flex flex-col w-1/2 items-start justify-center; }
+      .shop-title { @apply text-lg uppercase leading-tight; }
+      .shop-description { @apply mt-4 text-sm text-white/30 uppercase leading-tight max-w-70; }
+      .shop-actions { @apply mt-4 w-full flex items-center justify-between; }
+      .shop-buy-button { @apply relative inline-grid overflow-hidden px-24 py-2 text-white bg-zinc-900/20 uppercase border-2 border-white/5 rounded hover:bg-white hover:text-black hover:font-medium transition cursor-pointer transition-transform duration-150; }
+      .shop-buy-button-price { @apply col-start-1 row-start-1 transition duration-100 ease-out translate-y-0 opacity-100 group-hover:-translate-y-full group-hover:opacity-0; }
+      .shop-buy-button-label { @apply col-start-1 row-start-1 transition duration-100 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100; }
+      .shop-scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
 
       @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.08); } 100% { transform: scale(1); } }
       .pop { animation: pop 260ms ease-in-out; }
-
-      .shop-scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
     }
   </style>
 </head>
 <body class="bg-black text-white select-none">
   <main class="shop-page shop-scroll">
+    <div class="shop-layer"></div>
     <section id="shopGrid" class="shop-grid"></section>
-    <div>
-      <img src="assets/shoppage/gradientbg-shop.png"
-        class="fixed bg-cover h-300 bottom-20 left-80 animate-pulse [animation-duration:12s]"
-        style="z-index:0;pointer-events:none;" />
-    </div>
   </main>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -56,7 +50,7 @@
       },
       {
         id: 2,
-        title: 'Renaissance CDㅤㅤㅤㅤㅤㅤㅤㅤ',
+        title: 'Renaissance CD',
         image: 'assets/shoppage/shop-cd.png',
         description: 'Includes 4 panel softpak, 28-page photo booklet, collectible mini poster',
         price: '$12.98'
@@ -79,12 +73,12 @@
         id: 5,
         title: 'Break My Soul - Digital Single',
         image: 'assets/shoppage/shop-bms-ds.png',
-        description: 'Includes the Single, Instrumental, and A Cappella versions - .wav uncompressed lossless audio',
+        description: 'Includes the Single, Instrumental, and A Cappella tracks - .wav uncompressed lossless audio',
         price: '$3.87'
       },
       {
         id: 6,
-        title: 'Break My Soul (Remixes)ㅤㅤㅤㅤㅤㅤㅤㅤ',
+        title: 'Break My Soul (Remixes)',
         image: 'assets/shoppage/shop-bms-remixes.png',
         description: 'Includes remixes by Will.i.am, Terry Hunter, Honey Dijon & Nita Aviance - .wav uncompressed lossless audio',
         price: '$5.16'
@@ -127,23 +121,15 @@
         return `
         <article class="shop-item">
           <div class="shop-media">
-            <img src="${item.image}" alt="${item.title}" class="shop-image" onerror="this.onerror=null; this.src='assets/shoppage/shop-vinyl.png'">
+            <img src="${item.image}" class="shop-image">
           </div>
           <div class="shop-details">
-            <div class="shop-heading-row">
-              <div class="shop-copy">
-                <p class="shop-title">${item.title}</p>
-              </div>
-            </div>
+            <p class="shop-title">${item.title}</p>
             <p class="shop-description">${item.description}</p>
             <div class="shop-actions">
-              <div class="version-toggle" role="group" aria-label="Audio version">
-                <button type="button" class="version-option" aria-pressed="true">Clean</button>
-                <button type="button" class="version-option" aria-pressed="false">Explicit</button>
-              </div>
-              <button data-item-id="${item.id}" class="add-to-bag group relative inline-grid place-items-center overflow-hidden rounded-4xl bg-transparent border-2 border-white/5 hover:bg-white hover:text-black px-17 py-3 text-center text-white uppercase leading-none transition cursor-pointer transition-transform duration-150 active:scale-95" aria-label="Add ${item.title} to bag">
-                <span class="col-start-1 row-start-1 transition duration-300 ease-out translate-y-0 opacity-100 group-hover:-translate-y-full group-hover:opacity-0">${item.price}</span>
-                <span class="col-start-1 row-start-1 transition duration-300 ease-out translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100">Add to Bag</span>
+              <button data-item-id="${item.id}" class="group add-to-bag shop-buy-button">
+                <span class="shop-buy-button-price">${item.price}</span>
+                <span class="shop-buy-button-label">Add to Bag</span>
               </button>
             </div>
           </div>
@@ -176,15 +162,14 @@
       localStorage.setItem('renaissance_cart', JSON.stringify(cart));
     }
 
-    function addToCart(itemId, version) {
+    function addToCart(itemId) {
       const cart = getCart();
-      // treat same item+version as the same cart line
-      const existing = cart.find((i) => Number(i.id) === Number(itemId) && (i.version || 'Explicit') === (version || 'Explicit'));
+      const existing = cart.find((i) => Number(i.id) === Number(itemId));
       if (existing) {
         existing.qty = (existing.qty || 1) + 1;
       } else {
         const item = items.find((it) => Number(it.id) === Number(itemId));
-        cart.push({ id: itemId, title: item ? item.title : '', price: item ? item.price : '', qty: 1, version: version || 'Explicit' });
+        cart.push({ id: itemId, title: item ? item.title : '', price: item ? item.price : '', qty: 1 });
       }
       saveCart(cart);
       updateCartBadge();
@@ -217,34 +202,11 @@
       const id = Number(addBtn.getAttribute('data-item-id'));
       if (!id && id !== 0) return;
 
-      // determine selected version inside the same shop-item
-      const shopItem = addBtn.closest('.shop-item');
-      let version = 'Explicit';
-      if (shopItem) {
-        const selected = shopItem.querySelector('.version-option.active');
-        if (selected) version = selected.textContent.trim();
-      }
-
       // small pop animation to give click feedback
       addBtn.classList.add('pop');
       setTimeout(() => addBtn.classList.remove('pop'), 300);
 
-      addToCart(id, version);
-    });
-
-    document.addEventListener('click', (event) => {
-      const selectedOption = event.target.closest('.version-option');
-
-      if (!selectedOption) return;
-
-      const toggle = selectedOption.closest('.version-toggle');
-      const options = toggle.querySelectorAll('.version-option');
-
-      options.forEach((option) => {
-        const isActive = option === selectedOption;
-        option.classList.toggle('active', isActive);
-        option.setAttribute('aria-pressed', String(isActive));
-      });
+      addToCart(id);
     });
 
   </script>
