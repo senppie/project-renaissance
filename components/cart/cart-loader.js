@@ -32,10 +32,10 @@ async function loadCart() {
         <div class="py-2 flex items-center gap-3">
           <div class="flex-1 min-w-0">
             <div class="text-sm text-white/60 uppercase">${escapeHtml(it.title)}</div>
-            <div class="text-xs text-white/60 uppercase">${it.price} ― ${escapeHtml(it.version || 'Explicit')} ver. ― Qty: ${it.qty || 1}</div>
+            <div class="text-xs text-white/30 uppercase">${it.price} ― Qty: ${it.qty || 1}</div>
           </div>
           <div class="flex items-center gap-2">
-            <button data-item-id="${it.id}" data-item-version="${escapeHtml(it.version || 'Explicit')}" class="remove-from-cart text-white/60 hover:text-white p-1 rounded cursor-pointer" aria-label="Remove one ${escapeHtml(it.title)}">
+            <button data-item-id="${it.id}" class="remove-from-cart text-white/60 hover:text-white p-1 rounded cursor-pointer" aria-label="Remove one ${escapeHtml(it.title)}">
               <i data-lucide="trash-2" class="w-4 h-4"></i>
             </button>
           </div>
@@ -65,8 +65,7 @@ async function loadCart() {
           const id = Number(btn.getAttribute('data-item-id'));
           if (!id && id !== 0) return;
           const cart = getCart();
-          const version = btn.getAttribute('data-item-version') || 'Explicit';
-          const idx = cart.findIndex((c) => Number(c.id) === id && ((c.version || 'Explicit') === version));
+          const idx = cart.findIndex((c) => Number(c.id) === id);
           if (idx === -1) return;
           // if more than one, decrement; otherwise remove item
           if ((cart[idx].qty || 1) > 1) {

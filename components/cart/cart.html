@@ -1,11 +1,10 @@
-<div class="fixed top-6 left-2/3 -translate-x-1/2 z-99">
+<div class="fixed top-3 left-2/3 -translate-x-1/2 z-99">
   <div class="relative">
-    <button id="cartToggle" aria-expanded="false" aria-controls="cartPanel" class="relative flex bg-zinc-900/20 px-3 py-3 text-white hover:bg-zinc-700/40 border-2 border-white/5 backdrop-blur-md rounded-4xl cursor-pointer">
-      <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-      <span id="cartBadge" class="absolute -top-2 -right-2 inline-flex items-center justify-center text-xs bg-white rounded-full w-5 h-5 text-black font-medium hidden">0</span>
+    <button id="cartToggle" class="relative flex py-2 text-white hover:text-white/60 transition cursor-pointer uppercase">Bag
+      <span id="cartBadge" class="absolute mt-1 ml-9 inline-flex items-center justify-center text-xs bg-zinc-900/20 text-white border-2 border-white/5 rounded w-5 h-4 font-medium hidden transition">0</span>
     </button>
 
-    <div id="cartPanel" class="cart-panel hidden absolute right-0 mt-3 w-80 max-w-xs bg-zinc-900/20 border-2 border-white/5 rounded-xl p-3 backdrop-blur-md z-50">
+    <div id="cartPanel" class="cart-panel hidden absolute right-0 mt-3 w-70 max-w-xs bg-zinc-900/20 border-b-2 border-l-2 border-r-2 border-white/5 rounded p-3 backdrop-blur-xl z-50">
       <style>
         /* panel open/close animation */
         .cart-panel { transition: transform .18s ease, opacity .18s ease; transform-origin: top right; transform: translateY(-6px) scale(.98); opacity: 0; }
@@ -15,22 +14,22 @@
         #cartItems::-webkit-scrollbar { display: none; width: 0; height: 0; }
       </style>
       <div class="flex items-center justify-between mb-2">
-        <span class="text-sm uppercase font-normal">Your Bag</span>
-        <button id="cartClose" aria-label="Close cart" class="text-white/60 hover:text-white cursor-pointer">
+        <span class="text-sm uppercase">Your Bag</span>
+        <button id="cartClose" class="text-white/30 hover:text-white cursor-pointer">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
       <div id="cartItems" tabindex="0" class="divide-y-2 divide-white/5 text-sm max-h-60">
-        <p class="text-white/60 text-center py-4 uppercase">Your bag is empty</p>
+        <p class="text-white/30 text-center py-4 uppercase">Your bag is empty</p>
       </div>
 
-      <div id="cartSummary" class="mt-3 text-sm text-white/80 flex items-center justify-between relative">
-        <span class="text-white/60 uppercase z-10">Subtotal:</span>
-        <span id="cartTotal" class="text-white z-10">$0.00</span>
+      <div id="cartSummary" class="mt-3 text-sm flex items-center justify-between relative">
+        <span class="text-white uppercase z-50">Subtotal:</span>
+        <span id="cartTotal" class="text-white z-50">$0.00</span>
       </div>
 
       <div class="mt-3">
-        <a href="checkout.html" id="goToCart" class="block text-center bg-transparent border-2 border-white/5 text-white hover:bg-white hover:text-black rounded-xl py-2 text-sm uppercase">Proceed to Checkout</a>
+        <a href="checkout.html" id="goToCart" class="block text-center bg-zinc-900/20 border-2 border-white/5 text-white hover:bg-white hover:text-black hover:font-bold rounded py-2 text-sm uppercase">Proceed to Checkout</a>
       </div>
     </div>
   </div>
