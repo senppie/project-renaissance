@@ -1,10 +1,10 @@
-<div class="fixed top-3 left-2/3 -translate-x-1/2 z-99">
+<div class="fixed top-3 left-2/3 -translate-x-1/2 z-50">
   <div class="relative">
     <button id="cartToggle" class="relative flex py-2 text-white hover:text-white/60 transition cursor-pointer uppercase">Bag
       <span id="cartBadge" class="absolute mt-1 ml-9 inline-flex items-center justify-center text-xs bg-zinc-900/20 text-white border-2 border-white/5 rounded w-5 h-4 font-medium hidden transition">0</span>
     </button>
 
-    <div id="cartPanel" class="cart-panel hidden absolute mt-0 w-70 max-w-xs bg-zinc-900/20 border-2 border-white/5 rounded p-3 backdrop-blur-xl z-50">
+    <div id="cartPanel" class="cart-panel hidden absolute mt-0 w-70 max-w-xs bg-zinc-900/20 border-2 border-white/5 rounded p-3 backdrop-blur-md z-50">
       <style>
         /* panel open/close animation */
         .cart-panel { transition: transform .18s ease, opacity .18s ease; transform-origin: top right; transform: translateY(-6px) scale(.98); opacity: 0; }
@@ -14,7 +14,7 @@
         #cartItems::-webkit-scrollbar { display: none; width: 0; height: 0; }
       </style>
       <div class="flex items-center justify-between mb-2">
-        <span class="text-sm uppercase">Your Bag</span>
+        <span class="text-sm text-white uppercase">Your Bag</span>
         <button id="cartClose" class="text-white/30 hover:text-white cursor-pointer">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>

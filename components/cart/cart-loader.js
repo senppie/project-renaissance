@@ -17,6 +17,17 @@ async function loadCart() {
       }
     }
 
+    function updateCartBadge() {
+      const badge = document.getElementById('cartBadge');
+      if (!badge) return;
+
+      const total = getCart().reduce((sum, item) => sum + (item.qty || 0), 0);
+      badge.textContent = String(total);
+      badge.classList.toggle('hidden', total === 0);
+      badge.setAttribute('aria-hidden', String(total === 0));
+      badge.style.display = total > 0 ? '' : 'none';
+    }
+
     function renderCartPanel() {
       const container = document.getElementById('cartItems');
       if (!container) return;
@@ -35,7 +46,7 @@ async function loadCart() {
             <div class="text-xs text-white/30 uppercase">${it.price} ― Qty: ${it.qty || 1}</div>
           </div>
           <div class="flex items-center gap-2">
-            <button data-item-id="${it.id}" class="remove-from-cart text-white/60 hover:text-white p-1 rounded cursor-pointer" aria-label="Remove one ${escapeHtml(it.title)}">
+            <button data-item-id="${it.id}" class="remove-from-cart text-white/60 hover:text-white p-1 rounded cursor-pointer">
               <i data-lucide="trash-2" class="w-4 h-4"></i>
             </button>
           </div>
@@ -125,26 +136,19 @@ async function loadCart() {
     // Re-render panel and badge when cart changes
     document.addEventListener('cart:changed', () => {
       renderCartPanel();
-      // update badge text too
-      const badge = document.getElementById('cartBadge');
-      if (badge) {
-        const total = getCart().reduce((s, i) => s + (i.qty || 0), 0);
-        badge.textContent = String(total);
-        if (total > 0) {
-          badge.classList.remove('hidden');
-          badge.setAttribute('aria-hidden', 'false');
-          badge.style.display = '';
-        } else {
-          badge.classList.add('hidden');
-          badge.setAttribute('aria-hidden', 'true');
-          badge.style.display = 'none';
-        }
-      }
+      updateCartBadge();
+    });
+
+    window.addEventListener('storage', (event) => {
+      if (event.key !== 'renaissance_cart') return;
+      renderCartPanel();
+      updateCartBadge();
     });
 
     // initial render
-    document.dispatchEvent(new Event('cart:loaded'));
     renderCartPanel();
+    updateCartBadge();
+    document.dispatchEvent(new Event('cart:loaded'));
 
   } catch (error) {
     console.error('Failed to load cart:', error);
