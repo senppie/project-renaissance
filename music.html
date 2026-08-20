@@ -12,16 +12,19 @@
   <script src="components/homebutton/homebutton-loader.js"></script>
   <style type="text/tailwindcss">
     @layer components {
-        .page {
-          @apply absolute inset-0 flex flex-col items-center justify-center p-8 transition-all duration-700 ease-in-out opacity-0;
-        }
-        .page.active {
-          @apply opacity-100;
-        }
+        .page { @apply absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out opacity-0;}
+        .page.active { @apply opacity-100; }
+        .page-layer { @apply fixed top-0 left-0 right-0 bg-black h-16 pointer-events-none z-20; }
+        .singles-image { @apply m-3 w-40 h-40 border-2 border-white/5 rounded z-50; }
+        .singles-details { @apply flex flex-col justify-center self-stretch -my-4 border-l-2 border-white/5 px-4 py-4 w-full max-w-5xl z-50; }
+        .singles-item { @apply flex flex-row border-r-2 border-b-2 border-white/5 px-4 py-4 items-center gap-4; }
+        .singles-links { @apply grid grid-cols-6 mt-3; }
+        .singles-button { @apply fixed flex items-center bg-zinc-900/20 px-4 py-2 gap-2 text-xs uppercase text-white/30 right-20 bottom-6 border-2 border-white/5 rounded hover:bg-zinc-700/40 hover:font-bold hover:text-white transition backdrop-blur-md tracking-tight cursor-pointer z-50; }
       }
   </style>
 </head>
 <body class="bg-black text-white select-none overflow-hidden">
+  <div class="page-layer"></div>
   <div id="slideshow" class="relative w-full h-screen overflow-hidden">
     <!-- p1: renaissance album -->
     <div class="page active">
@@ -29,15 +32,15 @@
         <div class="grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2">
           <div class="flex flex-col items-start justify-center gap-2">
             <img src="assets/musicpage/albumcover-shadow.png"
-              class="fixed w-cover h-190 right-205 bottom-35 pointer-events-none animate-pulse [animation-duration:18s]" />
-            <img src="assets/musicpage/albumcover.jpeg" class="w-80 h-80 border-2 border-white/5 rounded-2xl z-50" />
-            <div class="flex flex-col px-2 py-3 z-50">
+              class="fixed w-cover h-190 right-205 bottom-28 pointer-events-none animate-pulse [animation-duration:18s]" />
+            <img src="assets/musicpage/albumcover.jpeg" class="w-80 h-80 border-2 border-white/5 rounded z-50" />
+            <div class="flex flex-col px-2 py-2 z-50">
               <h1 class="text-2xl uppercase">Renaissance</h1>
               <p class="text-xl text-white/60 uppercase">Beyoncé</p>
               <h1 class="mt-3 text-white/30 uppercase">Albumㆍ2022</h1>
               <p class="text-white/30 uppercase">16 songsㆍ1 hour 2 minutes</p>
             </div>
-            <div class="grid grid-cols-6 px-2 py-2 z-50">
+            <div class="grid grid-cols-6 px-1 z-50">
               <a href="https://music.apple.com/us/album/renaissance/1630005298"
                 class="flex items-center px-3 py-2 transition-colors duration-200 hover:opacity-70 text-md">
                 <svg class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -86,10 +89,6 @@
             </div>
           </div>
           <div class="flex flex-col text-xl uppercase gap-2" id="songlist">
-            <div>
-              <img src="assets/musicpage/gradientblurbg.png"
-                class="fixed w-370 h-480 left-100 top-80 animate-pulse [animation-duration:18s]" />
-            </div>
           </div>
         </div>
       </div>
@@ -98,17 +97,18 @@
         Entertainment</p>
     </div>
     <!-- p2: singles -->
-    <div class="page flex flex-col items-center justify-center mt-10 p-8">
-      <div class="grid grid-cols-3 gap-20 text-start w-full max-w-7xl z-50">
+    <div class="page flex flex-col items-center justify-center">
+      <div class="grid grid-cols-2 text-start border-l-2 border-t-2 border-white/5 bg-zinc-900/20 rounded w-full max-w-5xl z-50">
         <!-- break my soul -->
-        <div class="flex flex-row items-center gap-5">
-          <img src="assets/musicpage/breakmysoul-cover.jpeg" class="w-40 h-40 border-2 border-white/5 rounded-xl z-50">
-          <div class="flex flex-col items-start gap-9 z-50">
+        <div class="singles-item">
+          <img src="assets/musicpage/breakmysoul-cover.jpeg" class="singles-image">
+          <div class="singles-details">
             <div class="flex flex-col items-start justify-center tracking-tight">
-              <p class="text-sm uppercase">Break My Soul</p>
+              <p class="text-md uppercase mb-2">Break My Soul</p>
               <p class="text-sm uppercase text-white/30">Singleㆍ2022</p>
+              <p class="text-sm uppercase text-white/30">3 songsㆍ13 minutes</p>
             </div>
-            <div class="grid grid-cols-3 gap-2 border-t-2 border-b-2 border-white/5 px-2 py-2 rounded-xl">
+            <div class="singles-links">
               <a href="https://music.apple.com/album/break-my-soul-single/1635595046"
                 class="flex py-1 px-1 transition-colors duration-200 hover:opacity-70">
                 <svg class="w-5 h-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -158,15 +158,15 @@
           </div>
         </div>
         <!-- break my soul remixes -->
-        <div class="flex flex-row items-center gap-5">
-          <img src="assets/musicpage/breakmysoulremixes-cover.jpeg"
-            class="w-40 h-40 border-2 border-white/5 rounded-xl z-50">
-          <div class="flex flex-col items-start gap-9 z-50">
+        <div class="singles-item">
+          <img src="assets/musicpage/breakmysoulremixes-cover.jpeg" class="singles-image">
+          <div class="singles-details">
             <div class="flex flex-col items-start justify-center tracking-tight">
-              <p class="text-sm uppercase">Break My Soul Remixes</p>
+              <p class="text-md uppercase mb-2">Break My Soul Remixes</p>
               <p class="text-sm uppercase text-white/30">EPㆍ2022</p>
+              <p class="text-sm uppercase text-white/30">4 songsㆍ25 minutes</p>
             </div>
-            <div class="grid grid-cols-3 gap-2 border-t-2 border-b-2 border-white/5 px-2 py-2 rounded-xl">
+            <div class="singles-links">
               <a href="https://music.apple.com/album/break-my-soul-remixes-single/1637806491"
                 class="flex py-1 px-1 transition-colors duration-200 hover:opacity-70">
                 <svg class="w-5 h-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -216,16 +216,16 @@
           </div>
         </div>
         <!-- break my soul queens remix -->
-        <div class="flex flex-row items-center gap-5">
-          <img src="assets/musicpage/breakmysoulqueensremix-cover.jpeg"
-            class="w-40 h-40 border-2 border-white/5 rounded-xl z-50">
-          <div class="flex flex-col items-start gap-4 z-50">
+        <div class="singles-item">
+          <img src="assets/musicpage/breakmysoulqueensremix-cover.jpeg" class="singles-image">
+          <div class="singles-details">
             <div class="flex flex-col items-start justify-center tracking-tight">
-              <p class="text-sm uppercase">Break My Soul</p>
-              <p class="text-sm uppercase">(The Queens Remix)</p>
+              <p class="text-md uppercase">Break My Soul</p>
+              <p class="text-md uppercase mb-2">(The Queens Remix)</p>
               <p class="text-sm uppercase text-white/30">Singleㆍ2022</p>
+              <p class="text-sm uppercase text-white/30">1 songㆍ5 minutes</p>
             </div>
-            <div class="grid grid-cols-3 gap-2 border-t-2 border-b-2 border-white/5 px-2 py-2 rounded-xl">
+            <div class="singles-links">
               <a href="https://music.apple.com/album/break-my-soul-the-queens-remix-single/1638430854"
                 class="flex py-1 px-1 transition-colors duration-200 hover:opacity-70">
                 <svg class="w-5 h-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -275,14 +275,15 @@
           </div>
         </div>
         <!-- cuff it -->
-        <div class="flex flex-row items-center gap-5">
-          <img src="assets/musicpage/cuffit-cover.jpeg" class="w-40 h-40 border-2 border-white/5 rounded-xl z-50">
-          <div class="flex flex-col items-start gap-9 z-50">
+        <div class="singles-item">
+          <img src="assets/musicpage/cuffit-cover.jpeg" class="singles-image">
+          <div class="singles-details">
             <div class="flex flex-col items-start justify-center tracking-tight">
-              <p class="text-sm uppercase">Cuff It</p>
+              <p class="text-md uppercase mb-2">Cuff It</p>
               <p class="text-sm uppercase text-white/30">Singleㆍ2023</p>
+              <p class="text-sm uppercase text-white/30">3 songsㆍ11 minutes</p>
             </div>
-            <div class="grid grid-cols-3 gap-2 border-t-2 border-b-2 border-white/5 px-2 py-2 rounded-xl">
+            <div class="singles-links">
               <a href="https://music.apple.com/album/cuff-it-single/1670549664"
                 class="flex py-1 px-1 transition-colors duration-200 hover:opacity-70">
                 <svg class="w-5 h-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -325,15 +326,16 @@
           </div>
         </div>
         <!-- america has a problem ft. kendrick lamar -->
-        <div class="flex flex-row items-center gap-5">
-          <img src="assets/musicpage/americahasaproblem-cover.jpeg"
-            class="w-40 h-40 border-2 border-white/5 rounded-xl z-50">
-          <div class="flex flex-col items-start gap-4 z-50">
+        <div class="singles-item">
+          <img src="assets/musicpage/americahasaproblem-cover.jpeg" class="singles-image">
+          <div class="singles-details">
             <div class="flex flex-col items-start justify-center tracking-tight">
-              <p class="text-sm uppercase">America Has A Problem (Feat. Kendrick Lamar)</p>
+              <p class="text-md uppercase">America Has A Problem</p>
+              <p class="text-md uppercase mb-2">(Feat. Kendrick Lamar)</p>
               <p class="text-sm uppercase text-white/30">Singleㆍ2023</p>
+              <p class="text-sm uppercase text-white/30">1 songㆍ4 minutes</p>
             </div>
-            <div class="grid grid-cols-3 gap-2 border-t-2 border-b-2 border-white/5 px-2 py-2 rounded-xl">
+            <div class="singles-links">
               <a href="https://music.apple.com/album/america-has-a-problem-feat-kendrick-lamar-single/1688801938"
                 class="flex py-1 px-1 transition-colors duration-200 hover:opacity-70">
                 <svg class="w-5 h-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -376,14 +378,15 @@
           </div>
         </div>
         <!-- my house -->
-        <div class="flex flex-row items-center gap-5">
-          <img src="assets/musicpage/myhouse-cover.jpeg" class="w-40 h-40 border-2 border-white/5 rounded-xl z-50">
-          <div class="flex flex-col items-start gap-9 z-50">
+        <div class="singles-item">
+          <img src="assets/musicpage/myhouse-cover.jpeg" class="singles-image">
+          <div class="singles-details">
             <div class="flex flex-col items-start justify-center tracking-tight">
-              <p class="text-sm uppercase">My House</p>
+              <p class="text-md uppercase mb-2">My House</p>
               <p class="text-sm uppercase text-white/30">Singleㆍ2023</p>
+              <p class="text-sm uppercase text-white/30">1 songㆍ4 minutes</p>
             </div>
-            <div class="grid grid-cols-3 gap-2 border-t-2 border-b-2 border-white/5 px-2 py-2 rounded-xl">
+            <div class="singles-links">
               <a href="https://music.apple.com/album/my-house-single/1719203131"
                 class="flex py-1 px-1 transition-colors duration-200 hover:opacity-70">
                 <svg class="w-5 h-5" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -436,19 +439,15 @@
             Music Entertainment</p>
         </div>
       </div>
-      <div>
-        <img src="assets/musicpage/gradientblurbg.png"
-          class="fixed bg-cover left-110 bottom-0 pointer-events-none animate-pulse [animation-duration:18s]" />
-      </div>
     </div>
   </div>
   <button id="scrollCue" type="button"
-    class="fixed flex items-center bg-zinc-900/20 px-4 py-2 gap-2 text-xs uppercase text-white/30 right-20 bottom-6 border-2 border-white/5 rounded-4xl hover:bg-zinc-700/40 hover:font-bold hover:text-white transition backdrop-blur-md tracking-tight cursor-pointer z-50">
+    class="singles-button">
     <span>Singles/EP</span>
     <i data-lucide="arrow-big-down" class="w-4 h-4 "></i>
   </button>
   <button id="topCue" type="button"
-    class="fixed flex items-center bg-zinc-900/20 px-4 py-2 gap-2 text-xs uppercase text-white/30 right-20 bottom-6 border-2 border-white/5 rounded-4xl hover:bg-zinc-700/40 hover:font-bold hover:text-white transition backdrop-blur-md tracking-tight cursor-pointer z-50">
+    class="singles-button">
     <span>Album</span>
     <i data-lucide="arrow-big-up" class="w-4 h-4 "></i>
   </button>
