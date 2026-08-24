@@ -239,17 +239,12 @@
         const li = document.createElement('li');
         li.className = 'flex items-center justify-between';
 
-        // left column: item name + version (clean/explicit)
         const left = document.createElement('div');
         left.className = 'flex flex-col';
         const nameSpan = document.createElement('span');
         nameSpan.className = 'text-white/60 font-light text-sm uppercase';
         nameSpan.textContent = `${item.title || item.name || 'Item'} x${qty}`;
-        const versionSpan = document.createElement('span');
-        versionSpan.className = 'text-white/30 text-xs normal-case uppercase mt-1';
-        versionSpan.textContent = item.version ? `${item.version} Version` : 'Explicit Version';
         left.appendChild(nameSpan);
-        left.appendChild(versionSpan);
 
         const right = document.createElement('div');
         right.className = 'text-white ml-4';
