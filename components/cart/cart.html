@@ -1,10 +1,11 @@
-<div class="fixed top-3 left-2/3 -translate-x-1/2 z-50">
-  <div class="relative">
-    <button id="cartToggle" class="relative flex py-2 text-white hover:text-white/60 transition cursor-pointer uppercase">Bag
+<div class="fixed top-3 left-2/3 -translate-x-1/2 z-50 mix-blend-difference">
+  <button id="cartToggle" class="relative flex py-2 text-white hover:text-white/60 transition cursor-pointer uppercase">Bag
       <span id="cartBadge" class="absolute mt-1 ml-9 inline-flex items-center justify-center text-xs bg-zinc-900/20 text-white border-2 border-white/5 rounded w-5 h-4 font-medium hidden transition">0</span>
-    </button>
+  </button>
+</div>
 
-    <div id="cartPanel" class="cart-panel hidden absolute mt-0 w-70 max-w-xs bg-zinc-900/20 border-2 border-white/5 rounded p-3 backdrop-blur-md z-50">
+<div class="fixed top-3 left-2/3 -translate-x-1/2 z-50 isolate">
+    <div id="cartPanel" class="cart-panel hidden absolute mt-10 w-70 max-w-xs bg-zinc-900/20 border-2 border-white/5 rounded p-3 backdrop-blur-md z-50">
       <style>
         /* panel open/close animation */
         .cart-panel { transition: transform .18s ease, opacity .18s ease; transform-origin: top right; transform: translateY(-6px) scale(.98); opacity: 0; }
@@ -32,5 +33,4 @@
         <a href="checkout.html" id="goToCart" class="block text-center bg-zinc-900/20 border-2 border-white/5 text-white hover:bg-white hover:text-black hover:font-bold rounded py-2 text-sm uppercase">Proceed to Checkout</a>
       </div>
     </div>
-  </div>
 </div>
