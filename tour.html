@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOUR | PROJECT:RENAISSANCE</title>
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-tour.png">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="assets/font/font.css">
+  <script src="components/title/title-loader.js"></script>
+  <script src="components/navbar/navbar-loader.js"></script>
+  <script src="components/homebutton/homebutton-loader.js"></script>
+  <script src="components/cart/cart-loader.js"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --animate-marquee-left: marquee-left 42s linear infinite;
+      --animate-marquee-right: marquee-right 42s linear infinite;
+    }
+
+    @keyframes marquee-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes marquee-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    @layer components {
+      .tour-shell { @apply h-screen overflow-hidden bg-black px-0 pt-14 pb-0; }
+      .tour-frame { @apply relative flex h-full w-full flex-col overflow-hidden; }
+      .tour-row { @apply relative flex min-h-0 flex-1 items-center overflow-hidden py-2; }
+      .tour-track { @apply flex w-max gap-16 px-6; }
+      .tour-track-left { @apply animate-marquee-left; }
+      .tour-track-right { @apply animate-marquee-right; }
+      .tour-card { @apply relative flex h-36 w-64 shrink-0 cursor-pointer items-center justify-center overflow-hidden rounded border-2 border-white/5 uppercase tracking-widest transition-transform duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/5 focus:ring-offset-2 focus:ring-offset-black; }
+      .tour-card-image { @apply absolute inset-0 h-full w-full object-cover; }
+      .visualizer { @apply pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-zinc-900/30 p-6 opacity-0 backdrop-blur-md transition-opacity duration-200; }
+      .visualizer.is-open { @apply pointer-events-auto opacity-100; }
+      .visualizer-panel { @apply relative flex h-full max-h-screen w-full max-w-5xl flex-col rounded border-2 border-white/5 bg-zinc-950 p-6; }
+      .visualizer-close { @apply absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded border-2 border-white/20 text-xl text-white transition hover:bg-white hover:text-black; }
+      .visualizer-preview { @apply flex min-h-0 flex-1 w-full items-center justify-center; }
+      .visualizer-image { @apply block h-auto max-h-full w-auto max-w-full rounded border-2 border-white/5 object-contain; }
+      .visualizer-info { @apply shrink-0 pt-4; }
+      .visualizer-title { @apply text-sm uppercase tracking-widest text-white; }
+      .visualizer-description { @apply mt-2 text-sm text-white/50; }
+      .visualizer-ui-hidden { @apply pointer-events-none opacity-0; }
+    }
+  </style>
+</head>
+<body class="overflow-hidden bg-black text-white select-none">
+  <main class="tour-shell">
+    <section class="tour-frame" aria-label="Tour image carousel">
+      <div class="tour-row" data-direction="left">
+        <div class="tour-track tour-track-left">
+          <button class="tour-card" type="button" data-visualizer="Line 1 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 1 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 1 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 1 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 1 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 1 / Image placeholder"></button>
+        </div>
+      </div>
+
+      <div class="tour-row" data-direction="right">
+        <div class="tour-track tour-track-right">
+          <button class="tour-card" type="button" data-visualizer="Line 2 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 2 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 2 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 2 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 2 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 2 / Image placeholder"></button>
+        </div>
+      </div>
+
+      <div class="tour-row" data-direction="left">
+        <div class="tour-track tour-track-left">
+          <button class="tour-card" type="button" data-visualizer="Line 3 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 3 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 3 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 3 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 3 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 3 / Image placeholder"></button>
+        </div>
+      </div>
+
+      <div class="tour-row" data-direction="right">
+        <div class="tour-track tour-track-right">
+          <button class="tour-card" type="button" data-visualizer="Line 4 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 4 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 4 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 4 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 4 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 4 / Image placeholder"></button>
+        </div>
+      </div>
+
+      <div class="tour-row" data-direction="left">
+        <div class="tour-track tour-track-left">
+          <button class="tour-card" type="button" data-visualizer="Line 5 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 5 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 5 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 5 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 5 / Image placeholder"></button>
+          <button class="tour-card" type="button" data-visualizer="Line 5 / Image placeholder"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="visualizer" class="visualizer" role="dialog" aria-modal="true" aria-label="Image visualizer" aria-hidden="true">
+    <div class="visualizer-panel">
+      <button id="visualizerClose" class="visualizer-close" type="button" aria-label="Close image visualizer">&times;</button>
+      <div class="visualizer-preview">
+        <img id="visualizerImage" class="visualizer-image" alt="" />
+      </div>
+      <div class="visualizer-info">
+        <p id="visualizerTitle" class="visualizer-title"></p>
+        <p id="visualizerDescription" class="visualizer-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const testImage = 'assets/homepage/main-bg.jpeg';
+    document.querySelectorAll('.tour-card').forEach((card) => {
+      const image = document.createElement('img');
+      image.className = 'tour-card-image';
+      image.src = testImage;
+      image.alt = '';
+      card.dataset.visualizer = testImage;
+      card.appendChild(image);
+    });
+
+    document.querySelectorAll('.tour-track').forEach((track) => {
+      Array.from(track.children).forEach((card) => track.appendChild(card.cloneNode(true)));
+    });
+
+    const visualizer = document.getElementById('visualizer');
+    const visualizerClose = document.getElementById('visualizerClose');
+    const visualizerImage = document.getElementById('visualizerImage');
+    const visualizerTitle = document.getElementById('visualizerTitle');
+    const visualizerDescription = document.getElementById('visualizerDescription');
+    const visualizerCards = document.querySelectorAll('[data-visualizer]');
+
+    function getNavigationComponents() {
+      const cartToggle = document.getElementById('cartToggle');
+      return [
+        document.getElementById('Navbar'),
+        document.getElementById('homeButton'),
+        cartToggle ? cartToggle.parentElement : null,
+        document.getElementById('cartPanel'),
+      ].filter(Boolean);
+    }
+
+    function setNavigationVisibility(hidden) {
+      getNavigationComponents().forEach((component) => {
+        component.classList.toggle('visualizer-ui-hidden', hidden);
+        component.setAttribute('aria-hidden', String(hidden));
+      });
+    }
+
+    function closeVisualizer() {
+      visualizer.classList.remove('is-open');
+      visualizer.setAttribute('aria-hidden', 'true');
+      setNavigationVisibility(false);
+    }
+
+    function openVisualizer(imageSource, title, description) {
+      visualizerImage.src = imageSource;
+      visualizerImage.alt = title;
+      visualizerTitle.textContent = title;
+      visualizerDescription.textContent = description;
+      visualizer.classList.add('is-open');
+      visualizer.setAttribute('aria-hidden', 'false');
+      setNavigationVisibility(true);
+      visualizerClose.focus();
+    }
+
+    visualizerCards.forEach((card) => {
+      const rowNumber = Array.from(document.querySelectorAll('.tour-row')).indexOf(card.closest('.tour-row')) + 1;
+      card.dataset.visualizerTitle = `Tour image / Line ${rowNumber}`;
+      card.dataset.visualizerDescription = 'Temporary homepage image for visualizer testing.';
+      card.addEventListener('click', () => openVisualizer(
+        card.dataset.visualizer,
+        card.dataset.visualizerTitle,
+        card.dataset.visualizerDescription,
+      ));
+    });
+
+    visualizerClose.addEventListener('click', closeVisualizer);
+    visualizer.addEventListener('click', (event) => {
+      if (event.target === visualizer) closeVisualizer();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && visualizer.classList.contains('is-open')) closeVisualizer();
+    });
+  </script>
+
+</body>
