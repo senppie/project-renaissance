@@ -16,15 +16,23 @@
          .credits-page { @apply min-h-screen px-55 pb-6 pt-25 text-white; }
          .credits-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
          .credits-card { @apply mb-10; }
-         .credits-card-title { @apply mb-3 text-start text-2xl uppercase; }
+         .credits-card-title { @apply mb-3 text-center text-2xl uppercase; }
          .credits-card-rule { @apply mb-4 h-px w-full border border-white/5 bg-zinc-900/20; }
-         .credits-card-desc { @apply mx-auto max-w-6xl text-center uppercase tracking-tight text-white/60; }
+         .credits-card-desc { @apply mx-auto max-w-6xl text-center uppercase tracking-tight text-white/40; }
+         .credits-tour { @apply mt-8 space-y-6; }
+         .credits-tour-row { @apply flex items-start gap-8; }
+         .credits-tour-label { @apply w-96 text-xl uppercase text-white; }
+         .credits-tour-names { @apply flex-1 uppercase text-xl text-white; }
+         .credits-tour-subname { @apply mr-2 inline-block text-xs uppercase tracking-tight text-white/40; }
     }
   </style>
 </head>
 <body class="bg-black text-white select-none">
     <div class="credits-layer"></div>
     <main class="credits-page">
+        <section class="mb-2 text-center">
+            <h2 class="text-2xl uppercase text-white/30">Music</h2>
+        </section>
         <section class="credits-card">
             <h1 class="credits-card-title">I'm That Girl</h1>
             <div class="credits-card-rule"></div>
@@ -46,7 +54,6 @@
                 WRITTEN BY TOMMY WRIGHT III AND PERFORMED PRINCESS LOKO AND TOMMY WRIGHT III
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Cozy</h2>
             <div class="credits-card-rule"></div>
@@ -72,7 +79,6 @@
                 PERFORMED BY DANUBE DANCE FEAT. KIM COOPER, USED COURTESY OF SONY MUSIC ENTERTAINMENT AUSTRIA GMBH (BMI)
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Alien Superstar</h2>
             <div class="credits-card-rule"></div>
@@ -111,7 +117,6 @@
                 DANCE. PUBLISHED BY SPIEGEL MUSIK WIEN (AKM) AND WARNER-TAMERLANE PUBLISHING CORP (BMI)
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Cuff It</h2>
             <div class="credits-card-rule"></div>
@@ -142,7 +147,6 @@
                 PUBLISHING (ASCAP).
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Energy</h2>
             <div class="credits-card-rule"></div>
@@ -172,7 +176,6 @@
                 (BMI) AND GIRL DOWN (BMI).
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Break My Soul</h2>
             <div class="credits-card-rule"></div>
@@ -202,7 +205,6 @@
                 BY ADAM JAMES PIGOTT PUBLISHING DESIGNEE (BMI) AND GIRL DOWN (BMI)
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Church Girl</h2>
             <div class="credits-card-rule"></div>
@@ -234,7 +236,6 @@
                 WASHINGTON JR.
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Plastic Off the Sofa</h2>
             <div class="credits-card-rule"></div>
@@ -252,7 +253,6 @@
                 MASTERED BY COLIN LEONARD AT SING MASTERING IN ATLANTA, GA USING SING TECHNOLOGY®
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Virgo's Groove</h2>
             <div class="credits-card-rule"></div>
@@ -274,7 +274,6 @@
                 ATLANTA, GA USING SING TECHNOLOGY®
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Move</h2>
             <div class="credits-card-rule"></div>
@@ -296,7 +295,6 @@
                 APPEARS COURTESY OF LEADING VIBES LTD/SINCE 93/RCA RECORDS GRACE JONES APPEARS COURTESY OF WALL OF SOUND
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Heated</h2>
             <div class="credits-card-rule"></div>
@@ -321,7 +319,6 @@
                 SING TECHNOLOGY®
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Thique</h2>
             <div class="credits-card-rule"></div>
@@ -341,7 +338,6 @@
                 ATLANTA, GA USING SING TECHNOLOGY®
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">All Up in Your Mind</h2>
             <div class="credits-card-rule"></div>
@@ -364,7 +360,6 @@
                 GA USING SING TECHNOLOGY®
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">America Has a Problem</h2>
             <div class="credits-card-rule"></div>
@@ -386,7 +381,6 @@
                 (BMI), SANTRON PUBLISHING (BMI)
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Pure/Honey</h2>
             <div class="credits-card-rule"></div>
@@ -421,7 +415,6 @@
                 KEVIN MARQUIS BELLMON AND PERFORMED BY MIKEQ AND KEVIN JZ PRODIGY
             </p>
         </section>
-
         <section class="credits-card">
             <h2 class="credits-card-title">Summer Renaissance</h2>
             <div class="credits-card-rule"></div>
@@ -447,6 +440,73 @@
                 WARNER-TAMERLANE PUBLISHING CORP. (BMI) & RICK’S MUSIC, INC. (BMI). ALL RIGHTS ADMINISTERED BY
                 WARNER-TAMERLANE PUBLISHING CORP. (BMI). ALL RIGHTS RESERVED.”
             </p>
+        </section>
+        <section class="mt-16 mb-2">
+            <section class="mb-2 text-center">
+                <h2 class="text-2xl uppercase text-white/30">Renaissance Tour</h2>
+            </section>
+            <div class="credits-tour">
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">DIRECTOR, EXECUTIVE PRODUCER & CREATIVE DIRECTION</div>
+                    <div class="credits-tour-names">BEYONCÉ</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">ADDITIONAL CREATIVE DIRECTION</div>
+                    <div class="credits-tour-names">ANDREW MAKADSI<br>ED BURKE<br>LEAH NARDOS TAKELE</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">EXECUTIVE PRODUCERS</div>
+                    <div class="credits-tour-names">JUSTINA OMOKHUA<br>ERINN WILLIAMS</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">MUSIC PRODUCTION</div>
+                    <div class="credits-tour-names"><span class="credits-tour-subname">HEAD OF MUSIC PRODUCTION</span>DAMIEN SMITH</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">MUSIC DIRECTION</div>
+                    <div class="credits-tour-names">KHIRYE TYLER<br>DAMMO FARMER</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">LIGHTING DESIGN</div>
+                    <div class="credits-tour-names">TOBIAS RYLANDER</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">STAGE DESIGN</div>
+                    <div class="credits-tour-names">STUFISH ENTERTAINMENT ARCHITECTS<br>ES DEVLIN STUDIO</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">CHOREOGRAPHY &amp; STAGING</div>
+                    <div class="credits-tour-names"><span class="credits-tour-subname">DIRECTOR OF CHOREOGRAPHY</span>FATIMA ROBINSON<br><span class="credits-tour-subname">LEAD CHOREOGRAPHER</span>CHRIS GRANT<br><span class="credits-tour-subname">CHOREOGRAPHER</span>DANA FOGLIA<br><span class="credits-tour-subname">ASSOCIATE CHOREOGRAPHER</span>TIA RIVERA<br><span class="credits-tour-subname">ASSOCIATE CHOREOGRAPHER</span>ADRIAN WILTSHIRE</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">VIDEO DIRECTION</div>
+                    <div class="credits-tour-names">JAMES MERRYMAN</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">COSTUME DESIGN</div>
+                    <div class="credits-tour-names">TINA KNOWLES LAWSON<br>SHIONA TURINI<br>KAREN LANGLEY<br>JULIA SARR-JAMOIS<br>KJ MOODY</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">MUSICAL ARRANGEMENTS</div>
+                    <div class="credits-tour-names">BEYONCÉ<br>KHIRYE TYLER<br>DAMMO FARMER<br>AMORPHOUS</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">LES TWINS</div>
+                    <div class="credits-tour-names">LARRY BOURGEOIS<br>LAURENT BOURGEOIS</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">DANCERS</div>
+                    <div class="credits-tour-names"><span class="credits-tour-subname">THE DOLLS</span>HONEY BALENCIAGA<br><span class="credits-tour-subname">THE DOLLS</span>CARLOS IRIZARRY<br><span class="credits-tour-subname">THE DOLLS</span>DARIUS HICKMAN<br><span class="credits-tour-subname">THE DOLLS</span>JONTÉ MOANING<br><span class="credits-tour-subname">DANCE CAPTAIN</span>HANNAH DOUGLASS<br><span class="credits-tour-subname">DANCER</span>AAHKILAH CORNELIUS<br><span class="credits-tour-subname">DANCER</span>AI SHIMATSU<br><span class="credits-tour-subname">DANCER</span>ALLIYA JANEL<br><span class="credits-tour-subname">ARTIST STAND-IN</span>ALANNAH WILHITE<br><span class="credits-tour-subname">DANCER</span>AMARI MARSHALL<br><span class="credits-tour-subname">DANCER</span>BRIANNA PAVON<br><span class="credits-tour-subname">DANCER</span>KYNDALL HARRIS<br><span class="credits-tour-subname">DANCER</span>LISA SAINVIL<br><span class="credits-tour-subname">DANCER</span>NERITA MCFARLANE<br><span class="credits-tour-subname">DANCER</span>SIMONE ALSTON<br><span class="credits-tour-subname">DANCER</span>TRINITY JOY<br><span class="credits-tour-subname">DANCER</span>JUS'T CHASE<br><span class="credits-tour-subname">DANCER</span>KEVIN "KONKRETE" DAVIS JR.<br><span class="credits-tour-subname">DANCER</span>ROB BYNES<br><span class="credits-tour-subname">DANCER</span>ZAVION BROWN</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">BAND</div>
+                    <div class="credits-tour-names"><span class="credits-tour-subname">KEYS</span>KHIRYE TYLER<br><span class="credits-tour-subname">GUITAR</span>AGAPE JERRY<br><span class="credits-tour-subname">TROMBONE</span>CHRIS JOHNSON<br><span class="credits-tour-subname">TRUMPET</span>CRYSTAL TORRES<br><span class="credits-tour-subname">DRUMS</span>DIAMOND JOHNSON<br><span class="credits-tour-subname">BASS</span>DON ALFORD<br><span class="credits-tour-subname">PIANO</span>EMILY BEAR<br><span class="credits-tour-subname">SAXOPHONE</span>KATTY RODRIGUEZ</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">BACKGROUND VOCALISTS</div>
+                    <div class="credits-tour-names"><span class="credits-tour-subname">DIRECTOR</span>TIFANNY RYAN<br><span class="credits-tour-subname">VOCALIST</span>KARYN PORTER<br><span class="credits-tour-subname">VOCALIST</span>NATALIE IMANI<br><span class="credits-tour-subname">VOCALIST</span>TAYLER GREEN</div>
+                </div>
+            </div>
         </section>
     </main>
 </body>
