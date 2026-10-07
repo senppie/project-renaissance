@@ -18,10 +18,10 @@
          .credits-card { @apply mb-10; }
          .credits-card-title { @apply mb-3 text-center text-2xl uppercase; }
          .credits-card-rule { @apply mb-4 h-px w-full border border-white/5 bg-zinc-900/20; }
-         .credits-card-desc { @apply mx-auto max-w-6xl text-center uppercase tracking-tight text-white/40; }
-         .credits-tour { @apply mt-8 space-y-6; }
-         .credits-tour-row { @apply flex items-start gap-8; }
-         .credits-tour-label { @apply w-96 text-xl uppercase text-white; }
+         .credits-card-desc { @apply mx-auto max-w-5xl text-center uppercase tracking-tight text-white/40; }
+         .credits-tour { @apply mx-auto mt-8 max-w-4xl translate-x-4 space-y-6; }
+         .credits-tour-row { @apply flex items-start gap-15; }
+         .credits-tour-label { @apply w-96 text-xl uppercase text-white/60; }
          .credits-tour-names { @apply flex-1 uppercase text-xl text-white; }
          .credits-tour-subname { @apply mr-2 inline-block text-xs uppercase tracking-tight text-white/40; }
     }
@@ -30,9 +30,17 @@
 <body class="bg-black text-white select-none">
     <div class="credits-layer"></div>
     <main class="credits-page">
-        <section class="mb-2 text-center">
-            <h2 class="text-2xl uppercase text-white/30">Music</h2>
-        </section>
+        <div class="sticky top-16 mx-auto mb-8 w-full max-w-xl py-3 px-3 bg-black z-30" aria-label="Credit sections">
+            <div class="flex items-center justify-between text-md">
+                <button type="button" id="lyricsTab" class="cursor-pointer text-white uppercase transition-colors duration-200" role="tab" aria-selected="true">Music</button>
+                <button type="button" id="tourTab" class="cursor-pointer text-white/30 uppercase transition-colors duration-200" role="tab" aria-selected="false">Renaissance Tour</button>
+            </div>
+            <div class="mt-2 flex items-center gap-2">
+                <div id="lyricsProgress" class="h-1 flex-1 bg-white"></div>
+                <div id="tourProgress" class="h-1 flex-1 bg-white/10"></div>
+            </div>
+        </div>
+        <section id="lyricsPanel" class="credits-panel" role="tabpanel" aria-labelledby="lyricsTab">
         <section class="credits-card">
             <h1 class="credits-card-title">I'm That Girl</h1>
             <div class="credits-card-rule"></div>
@@ -441,10 +449,8 @@
                 WARNER-TAMERLANE PUBLISHING CORP. (BMI). ALL RIGHTS RESERVED.”
             </p>
         </section>
-        <section class="mt-16 mb-2">
-            <section class="mb-2 text-center">
-                <h2 class="text-2xl uppercase text-white/30">Renaissance Tour</h2>
-            </section>
+        </section>
+        <section id="tourPanel" class="credits-panel hidden mt-10 mb-2" role="tabpanel" aria-labelledby="tourTab" hidden>
             <div class="credits-tour">
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">DIRECTOR, EXECUTIVE PRODUCER & CREATIVE DIRECTION</div>
@@ -476,7 +482,12 @@
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">CHOREOGRAPHY &amp; STAGING</div>
-                    <div class="credits-tour-names"><span class="credits-tour-subname">DIRECTOR OF CHOREOGRAPHY</span>FATIMA ROBINSON<br><span class="credits-tour-subname">LEAD CHOREOGRAPHER</span>CHRIS GRANT<br><span class="credits-tour-subname">CHOREOGRAPHER</span>DANA FOGLIA<br><span class="credits-tour-subname">ASSOCIATE CHOREOGRAPHER</span>TIA RIVERA<br><span class="credits-tour-subname">ASSOCIATE CHOREOGRAPHER</span>ADRIAN WILTSHIRE</div>
+                    <div class="credits-tour-names">
+                        <span class="credits-tour-subname">DIRECTOR OF CHOREOGRAPHY</span>FATIMA ROBINSON<br>
+                        <span class="credits-tour-subname">LEAD CHOREOGRAPHER</span>CHRIS GRANT<br>
+                        <span class="credits-tour-subname">CHOREOGRAPHER</span>DANA FOGLIA<br>
+                        <span class="credits-tour-subname">ASSOCIATE CHOREOGRAPHER</span>TIA RIVERA<br>
+                        <span class="credits-tour-subname">ASSOCIATE CHOREOGRAPHER</span>ADRIAN WILTSHIRE</div>
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">VIDEO DIRECTION</div>
@@ -484,7 +495,8 @@
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">COSTUME DESIGN</div>
-                    <div class="credits-tour-names">TINA KNOWLES LAWSON<br>SHIONA TURINI<br>KAREN LANGLEY<br>JULIA SARR-JAMOIS<br>KJ MOODY</div>
+                    <div class="credits-tour-names">TINA KNOWLES LAWSON<br>SHIONA TURINI<br>KAREN LANGLEY<br>JULIA
+                        SARR-JAMOIS<br>KJ MOODY</div>
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">MUSICAL ARRANGEMENTS</div>
@@ -496,18 +508,144 @@
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">DANCERS</div>
-                    <div class="credits-tour-names"><span class="credits-tour-subname">THE DOLLS</span>HONEY BALENCIAGA<br><span class="credits-tour-subname">THE DOLLS</span>CARLOS IRIZARRY<br><span class="credits-tour-subname">THE DOLLS</span>DARIUS HICKMAN<br><span class="credits-tour-subname">THE DOLLS</span>JONTÉ MOANING<br><span class="credits-tour-subname">DANCE CAPTAIN</span>HANNAH DOUGLASS<br><span class="credits-tour-subname">DANCER</span>AAHKILAH CORNELIUS<br><span class="credits-tour-subname">DANCER</span>AI SHIMATSU<br><span class="credits-tour-subname">DANCER</span>ALLIYA JANEL<br><span class="credits-tour-subname">ARTIST STAND-IN</span>ALANNAH WILHITE<br><span class="credits-tour-subname">DANCER</span>AMARI MARSHALL<br><span class="credits-tour-subname">DANCER</span>BRIANNA PAVON<br><span class="credits-tour-subname">DANCER</span>KYNDALL HARRIS<br><span class="credits-tour-subname">DANCER</span>LISA SAINVIL<br><span class="credits-tour-subname">DANCER</span>NERITA MCFARLANE<br><span class="credits-tour-subname">DANCER</span>SIMONE ALSTON<br><span class="credits-tour-subname">DANCER</span>TRINITY JOY<br><span class="credits-tour-subname">DANCER</span>JUS'T CHASE<br><span class="credits-tour-subname">DANCER</span>KEVIN "KONKRETE" DAVIS JR.<br><span class="credits-tour-subname">DANCER</span>ROB BYNES<br><span class="credits-tour-subname">DANCER</span>ZAVION BROWN</div>
+                    <div class="credits-tour-names">
+                        <span class="credits-tour-subname">THE DOLLS</span>HONEY BALENCIAGA<br>
+                        <span class="credits-tour-subname">THE DOLLS</span>CARLOS IRIZARRY<br>
+                        <span class="credits-tour-subname">THE DOLLS</span>DARIUS HICKMAN<br>
+                        <span class="credits-tour-subname">THE DOLLS</span>JONTÉ MOANING<br>
+                        <span class="credits-tour-subname">DANCE CAPTAIN</span>HANNAH DOUGLASS<br>
+                        <span class="credits-tour-subname">DANCER</span>AAHKILAH CORNELIUS<br>
+                        <span class="credits-tour-subname">DANCER</span>AI SHIMATSU<br>
+                        <span class="credits-tour-subname">DANCER</span>ALLIYA JANEL<br>
+                        <span class="credits-tour-subname">ARTIST STAND-IN</span>ALANNAH WILHITE<br>
+                        <span class="credits-tour-subname">DANCER</span>AMARI MARSHALL<br>
+                        <span class="credits-tour-subname">DANCER</span>BRIANNA PAVON<br>
+                        <span class="credits-tour-subname">DANCER</span>KYNDALL HARRIS<br>
+                        <span class="credits-tour-subname">DANCER</span>LISA SAINVIL<br>
+                        <span class="credits-tour-subname">DANCER</span>NERITA MCFARLANE<br>
+                        <span class="credits-tour-subname">DANCER</span>SIMONE ALSTON<br>
+                        <span class="credits-tour-subname">DANCER</span>TRINITY JOY<br>
+                        <span class="credits-tour-subname">DANCER</span>JUS'T CHASE<br>
+                        <span class="credits-tour-subname">DANCER</span>KEVIN "KONKRETE" DAVIS JR.<br>
+                        <span class="credits-tour-subname">DANCER</span>ROB BYNES<br>
+                        <span class="credits-tour-subname">DANCER</span>ZAVION BROWN</div>
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">BAND</div>
-                    <div class="credits-tour-names"><span class="credits-tour-subname">KEYS</span>KHIRYE TYLER<br><span class="credits-tour-subname">GUITAR</span>AGAPE JERRY<br><span class="credits-tour-subname">TROMBONE</span>CHRIS JOHNSON<br><span class="credits-tour-subname">TRUMPET</span>CRYSTAL TORRES<br><span class="credits-tour-subname">DRUMS</span>DIAMOND JOHNSON<br><span class="credits-tour-subname">BASS</span>DON ALFORD<br><span class="credits-tour-subname">PIANO</span>EMILY BEAR<br><span class="credits-tour-subname">SAXOPHONE</span>KATTY RODRIGUEZ</div>
+                    <div class="credits-tour-names">
+                        <span class="credits-tour-subname">KEYS</span>KHIRYE TYLER<br>
+                        <span class="credits-tour-subname">GUITAR</span>AGAPE JERRY<br>
+                        <span class="credits-tour-subname">TROMBONE</span>CHRIS JOHNSON<br>
+                        <span class="credits-tour-subname">TRUMPET</span>CRYSTAL TORRES<br>
+                        <span class="credits-tour-subname">DRUMS</span>DIAMOND JOHNSON<br>
+                        <span class="credits-tour-subname">BASS</span>DON ALFORD<br>
+                        <span class="credits-tour-subname">PIANO</span>EMILY BEAR<br>
+                        <span class="credits-tour-subname">SAXOPHONE</span>KATTY RODRIGUEZ</div>
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">BACKGROUND VOCALISTS</div>
-                    <div class="credits-tour-names"><span class="credits-tour-subname">DIRECTOR</span>TIFANNY RYAN<br><span class="credits-tour-subname">VOCALIST</span>KARYN PORTER<br><span class="credits-tour-subname">VOCALIST</span>NATALIE IMANI<br><span class="credits-tour-subname">VOCALIST</span>TAYLER GREEN</div>
+                    <div class="credits-tour-names">
+                        <span class="credits-tour-subname">DIRECTOR</span>TIFANNY RYAN<br>
+                        <span class="credits-tour-subname">VOCALIST</span>KARYN PORTER<br>
+                        <span class="credits-tour-subname">VOCALIST</span>NATALIE IMANI<br>
+                        <span class="credits-tour-subname">VOCALIST</span>TAYLER GREEN</div>
+                </div>
+                <div class="credits-tour-row">
+                    <div class="credits-tour-label">PARKWOOD ENTERTAINMENT</div>
+                    <div class="credits-tour-names">
+                        <span class="credits-tour-subname">BRAND COORDINATOR</span>ANAIJAH JOHNSON-MENDEZ<br>
+                        <span class="credits-tour-subname">EXECUTIVE PRODUCER, POST</span>ANDREA PINTO LAUREIRO<br>
+                        <span class="credits-tour-subname">CREATIVE DIRECTOR</span>ANDREW MAKADSI<br>
+                        <span class="credits-tour-subname">DIRECTOR OF PRODUCT STRATEGY</span>AUDREY PETERSON<br>
+                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT</span>BRIA WILLIAMS<br>
+                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>CHARLES STERLING III<br>
+                        <span class="credits-tour-subname">POST PRODUCER</span>CHARLES "CJ" TRAHAN II<br>
+                        <span class="credits-tour-subname">SOCIAL MEDIA STRATEGIST</span>CODY BROWN<br>
+                        <span class="credits-tour-subname">HEAD OF MUSIC</span>DAMIEN SMITH<br>
+                        <span class="credits-tour-subname">POST COORDINATOR</span>DAVID CARFAGNO JR.<br>
+                        <span class="credits-tour-subname">PRODUCT MANAGER</span>DORA MELISSA VARGAS<br>
+                        <span class="credits-tour-subname">VISUAL DIRECTOR</span>ED BURKE<br>
+                        <span class="credits-tour-subname">STAFF ACCOUNTANT</span>EMILY HO<br>
+                        <span class="credits-tour-subname">HEAD OF TECHNOLOGY</span>ERICA ASTRELLA<br>
+                        <span class="credits-tour-subname">HEAD OF PRODUCTION</span>ERINN WILLIAMS<br>
+                        <span class="credits-tour-subname">DIRECTOR OF FINANCE</span>GENE BOLAN<br>
+                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT TO THE ARTIST</span>GENEVIEVE TATE<br>
+                        <span class="credits-tour-subname">SENIOR CREATIVE PRODUCER</span>HILLARY COY<br>
+                        <span class="credits-tour-subname">PRODUCTION COORDINATOR</span>JILLIAN DIERENFIELD<br>
+                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>JULIAN PACE<br>
+                        <span class="credits-tour-subname">SENIOR VICE PRESIDENT</span>JUSTINA OMOKHUA<br>
+                        <span class="credits-tour-subname">TOUR OPERATIONS</span>KALEB STEELE<br>
+                        <span class="credits-tour-subname">TECHNICAL PROJECT MANAGER</span>KEENEN THOMPSON<br>
+                        <span class="credits-tour-subname">ART DIRECTOR</span>KELLY SHAMI<br>
+                        <span class="credits-tour-subname">STYLIST</span>KELVIN MOODY<br>
+                        <span class="credits-tour-subname">HEAD OF EDITORIAL AND BRAND</span>KRISTEN HAMMOND<br>
+                        <span class="credits-tour-subname">MANAGER OF LEGAL & BUSINESS AFFAIRS</span>KYLIE GREGORY<br>
+                        <span class="credits-tour-subname">SENIOR STILLS POST PRODUCTION</span>LAURA GERMIDA<br>
+                        <span class="credits-tour-subname">ASSISTANT CREATIVE DIRECTOR</span>LEAH NARDOS TAKELE<br>
+                        <span class="credits-tour-subname">OPERATIONS MANAGER</span>LEVI DESVAUX<br>
+                        <span class="credits-tour-subname">PRODUCTION ACCOUNTANT</span>LISA HILL<br>
+                        <span class="credits-tour-subname">POST COORDINATOR</span>LORI "LA" MCCRORY<br>
+                        <span class="credits-tour-subname">PROJECT COORDINATOR</span>MAKENLI SOMER RASPBERRY<br>
+                        <span class="credits-tour-subname">PROJECT MANAGER A&R</span>MARIEL GOMEREZ<br>
+                        <span class="credits-tour-subname">DIRECTOR OF INFO TECHNOLOGY</span>MATTHEW VANOMMEREN<br>
+                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT TO THE ARTIST</span>MICHAEL HANDLER<br>
+                        <span class="credits-tour-subname">STILLS POST PRODUCTION</span>MOLLY GOBEL<br>
+                        <span class="credits-tour-subname">EXECUTIVE PRODUCER</span>NAILAH HOLLIDAY<br>
+                        <span class="credits-tour-subname">HR MANAGER AND OFFICE ADMINISTRATION</span>NATACHA L PAUL<br>
+                        <span class="credits-tour-subname">INTERN</span>NATALIA BRYANT<br>
+                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>OLAF WOLDAN<br>
+                        <span class="credits-tour-subname">PROJECT MANAGER A&R</span>RICHARD LAWSON<br>
+                        <span class="credits-tour-subname">VP/GM OF IVY PARK</span>ROBERT ZDRAVEVSKI<br>
+                        <span class="credits-tour-subname">WARDROBE OPERATIONS MANAGER</span>RYAN DODSON<br>
+                        <span class="credits-tour-subname">MEDIA MANAGER</span>RYAN LUTZ<br>
+                        <span class="credits-tour-subname">ARCHIVE DIRECTOR</span>SAMANTHA LOSBEN<br>
+                        <span class="credits-tour-subname">ARCHIVE MANAGER</span>SAMANTHA ODDI<br>
+                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>SAM SAUSEDO<br>
+                        <span class="credits-tour-subname">OFFICE & PROPERTY MANAGER</span>SERGAE BURRELL<br>
+                        <span class="credits-tour-subname">POST COORDINATOR</span>SHELBY CAMPBELL<br>
+                        <span class="credits-tour-subname">SENIOR CREATIVE PRODUCER</span>SHELBY COLLINS<br>
+                        <span class="credits-tour-subname">POST SUPERVISOR</span>SHIREEN HINCKLEY<br>
+                        <span class="credits-tour-subname">SENIOR STILLS POST PRODUCTION</span>SUMIRE FUKUDA<br>
+                        <span class="credits-tour-subname">SENIOR ENGINEER</span>TERRICKA "TJ" JOHNSON<br>
+                        <span class="credits-tour-subname">DIRECTOR OF TECHNICAL EXECUTION</span>TIM WHITE<br>
+                        <span class="credits-tour-subname">DIRECTOR OF SOCIAL STRATEGY</span>TRACEY LINCOLN<br>
+                        <span class="credits-tour-subname">ASSISTANT GRAPHIC DESIGNER</span>TYLER SIMIEN<br>
+                        <span class="credits-tour-subname">PUBLICIST</span>YVETTE NOEL-SCHURE</div>
                 </div>
             </div>
         </section>
     </main>
+    <script>
+        const lyricsTab = document.getElementById("lyricsTab");
+        const tourTab = document.getElementById("tourTab");
+        const lyricsPanel = document.getElementById("lyricsPanel");
+        const tourPanel = document.getElementById("tourPanel");
+        const lyricsProgress = document.getElementById("lyricsProgress");
+        const tourProgress = document.getElementById("tourProgress");
+
+        function showCreditsSection(section) {
+            const showLyrics = section === "lyrics";
+
+            lyricsPanel.hidden = !showLyrics;
+            lyricsPanel.classList.toggle("hidden", !showLyrics);
+            tourPanel.hidden = showLyrics;
+            tourPanel.classList.toggle("hidden", showLyrics);
+
+            lyricsTab.classList.toggle("text-white", showLyrics);
+            lyricsTab.classList.toggle("text-white/30", !showLyrics);
+            lyricsTab.setAttribute("aria-selected", String(showLyrics));
+            tourTab.classList.toggle("text-white", !showLyrics);
+            tourTab.classList.toggle("text-white/30", showLyrics);
+            tourTab.setAttribute("aria-selected", String(!showLyrics));
+
+            lyricsProgress.classList.toggle("bg-white", showLyrics);
+            lyricsProgress.classList.toggle("bg-white/10", !showLyrics);
+            tourProgress.classList.toggle("bg-white", !showLyrics);
+            tourProgress.classList.toggle("bg-white/10", showLyrics);
+        }
+
+        lyricsTab.addEventListener("click", () => showCreditsSection("lyrics"));
+        tourTab.addEventListener("click", () => showCreditsSection("tour"));
+    </script>
 </body>
 </html>
