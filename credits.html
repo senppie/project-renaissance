@@ -1395,7 +1395,7 @@
                 <div class="credits-project-content">
                     <p>This project is not affiliated with Beyoncé or Parkwood Entertainment LLC and is not intended for commercial or profit-making purposes.</p>
                     <p>All music featured on this website belongs to its respective artists, songwriters, producers, and rights holders.</p>
-                    <p>Individual song credits are provided here, while streaming links are available throughout the <a href="music.html">Music</a> section.</p>
+                    <p>Individual song credits are provided <a href="#lyricsPanel" id="musicCreditsLink">here</a>, while streaming links are available throughout the <a href="music.html">Music</a> section.</p>
                     <p>All images of Beyoncé and the shop items used in this project were sourced from the official Beyoncé
                         <a href="https://beyonce.com/" target="_blank" rel="noopener noreferrer">website</a>
                         through the
@@ -1441,6 +1441,11 @@
         lyricsTab.addEventListener("click", () => showCreditsSection("lyrics"));
         tourTab.addEventListener("click", () => showCreditsSection("tour"));
         projectTab.addEventListener("click", () => showCreditsSection("project"));
+        document.getElementById("musicCreditsLink").addEventListener("click", (event) => {
+            event.preventDefault();
+            showCreditsSection("lyrics");
+            document.querySelector("main").scrollTo({ top: 0 });
+        });
     </script>
 </body>
 </html>
