@@ -13,41 +13,43 @@
     <script src="components/cart/cart-loader.js"></script>
     <style type="text/tailwindcss">
         @layer components {
-         .credits-page { @apply min-h-screen px-55 pb-6 pt-25 text-white; }
+         .credits-page { @apply min-h-screen px-55 pb-15 pt-15 text-white; }
          .credits-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
-         .credits-card { @apply mb-10; }
-         .credits-card-title { @apply mb-3 text-center text-2xl uppercase; }
-         .credits-card-rule { @apply mb-4 h-px w-full border border-white/5 bg-zinc-900/20; }
-         .credits-card-desc { @apply mx-auto max-w-5xl text-center uppercase tracking-tight text-white/40; }
+         .credits-card { @apply border-b-2 border-r-2 border-white/5; }
+         .credits-music-grid { @apply grid grid-cols-2 w-full border-l-2 border-t-2 border-white/5 rounded max-w-7xl mx-auto bg-zinc-900/20; }
+         .credits-music-grid .credits-card { @apply mb-0; }
+         .credits-card-title { @apply mb-2 text-center text-2xl border-b-2 border-white/5 py-2 uppercase; }
+         .credits-card-desc { @apply mx-auto max-w-2xl text-center uppercase tracking-tight text-white/30 px-4 py-4; }
          .credits-tour { @apply mx-auto mt-8 max-w-4xl translate-x-4 space-y-6; }
          .credits-tour-row { @apply flex items-start gap-15; }
-         .credits-tour-label { @apply w-96 text-xl uppercase text-white/60; }
+         .credits-tour-label { @apply w-96 text-xl uppercase text-white; }
          .credits-tour-names { @apply flex-1 uppercase text-xl text-white; }
-         .credits-tour-subname { @apply mr-2 inline-block text-xs uppercase tracking-tight text-white/40; }
+         .credits-tour-subname { @apply mr-2 inline-block text-sm uppercase tracking-tight text-white/40; }
     }
   </style>
 </head>
 <body class="bg-black text-white select-none">
     <div class="credits-layer"></div>
     <main class="credits-page">
-        <div class="sticky top-16 mx-auto mb-8 w-full max-w-xl py-3 px-3 bg-black z-30" aria-label="Credit sections">
-            <div class="flex items-center justify-between text-md">
-                <button type="button" id="lyricsTab"
-                    class="cursor-pointer text-white uppercase transition-colors duration-200" role="tab"
-                    aria-selected="true">Music</button>
-                <button type="button" id="tourTab"
-                    class="cursor-pointer text-white/30 uppercase transition-colors duration-200" role="tab"
-                    aria-selected="false">Renaissance Tour</button>
-            </div>
-            <div class="mt-2 flex items-center gap-2">
-                <div id="lyricsProgress" class="h-1 flex-1 bg-white"></div>
-                <div id="tourProgress" class="h-1 flex-1 bg-white/10"></div>
+        <div class="fixed bottom-0 inset-x-0 w-full bg-zinc-900/20 border-t-2 border-white/5 backdrop-blur-xl z-30" aria-label="Credit sections">
+            <div class="mx-auto w-full max-w-xl py-3">
+                <div class="flex items-center justify-between text-md">
+                    <button type="button" id="lyricsTab"
+                        class="cursor-pointer text-white uppercase transition-colors duration-200" role="tab"
+                        aria-selected="true">Music</button>
+                    <button type="button" id="tourTab"
+                        class="cursor-pointer text-white/30 uppercase transition-colors duration-200" role="tab"
+                        aria-selected="false">Renaissance Tour</button>
+                </div>
+                <div class="mt-2 flex items-center gap-2">
+                    <div id="lyricsProgress" class="h-1 flex-1 bg-white"></div>
+                    <div id="tourProgress" class="h-1 flex-1 bg-white/10"></div>
+                </div>
             </div>
         </div>
-        <section id="lyricsPanel" class="credits-panel" role="tabpanel" aria-labelledby="lyricsTab">
+        <section id="lyricsPanel" class="credits-panel credits-music-grid" role="tabpanel" aria-labelledby="lyricsTab">
             <section class="credits-card">
                 <h1 class="credits-card-title">I'm That Girl</h1>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, KELMAN DURAN, MIKE DEAN, TOMMY WRIGHT III
                     /
@@ -75,7 +77,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Cozy</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, HONEY REDMOND, CHRISTOPHER LAWRENCE PENNY, LUKE FRANCIS MATTHEW SOLOMON, DAVE
                     GILES
@@ -112,7 +113,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Alien Superstar</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, HONEY REDMOND, CHRISTOPHER LAWRENCE PENNY, LUKE FRANCIS MATTHEW SOLOMON, DENISIA
                     “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, S. CARTER, DAVID
@@ -167,7 +167,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Cuff It</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
                     @NOVAWAV,
@@ -212,7 +211,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Energy</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     PERFORMED BY BEYONCÉ, BEAM / WRITTEN BY BEYONCÉ, TYSHANE THOMPSON, SKRILLEX, ALMANDO CRESSO, JORDAN
                     DOUGLAS, TIZITA MAKURIA, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
@@ -253,7 +251,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Break My Soul</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, CHRISTOPHER A. STEWART, S. CARTER, GEORGE
                     ALLEN, FRED CRAIG MCFARLANE, ADAM JAMES PIGOTT, FREDDIE ROSS/ PUBLISHED BY OAKLAND 13 MUSIC (ASCAP),
@@ -291,7 +288,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Church Girl</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, ERNEST “NO ID” WILSON, ELBERNITA CLARK
                     TERRELL, JIMI STEPHEN PAYTON, DION LAMONT NORMAN, DERRICK ROBERT ORDOGNE, JAMES BROWN, ORVILLE ERWIN
@@ -335,7 +331,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Plastic Off the Sofa</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, SYDNEY BENNETT, SABRINA CLAUDIO, NICK GREEN, PATRICK PAIGE II/ PUBLISHED BY
                     OAKLAND
@@ -360,7 +355,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Virgo's Groove</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, LEVEN KALI, SOLOMON FAGENSON COLE, DANIEL MEMMI, DUSTIN DAB BOWIE, DARIUS
                     DIXSON,
@@ -390,7 +384,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Move</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     PERFORMED BY BEYONCÉ, GRACE JONES, TEMS / WRITTEN BY BEYONCÉ, RICHARD ISONG, ARIOWA IROSOGIE,
                     DENISIA
@@ -419,7 +412,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Heated</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, AUBREY DRAKE GRAHAM, MATTHEW SAMUELS, JAHAAN SWEET, RUPERT THOMAS, JR., SEAN
                     SEATON,
@@ -452,7 +444,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Thique</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, CHAUNCEY HOLLIS JR, ATIA BOGGS P/K/A INK,
                     JULIAN MARTREL MASON, JABBAR STEVENS, CHERDERICKA NICHOLS / PUBLISHED BY OAKLAND 13 MUSIC (ASCAP),
@@ -478,7 +469,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">All Up in Your Mind</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, JABBAR STEVENS, CHERDERICKA NICHOLS, MICHAEL TUCKER, ALEXANDER GUY COOK, MIKE
                     DEAN,
@@ -507,7 +497,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">America Has a Problem</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, TERIUS 'THE-DREAM' GESTEELDE-DIAMANT, S. CARTER, MIKE DEAN, ANDRELL D ROGERS,
                     TINO
@@ -535,7 +524,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Pure/Honey</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, MICHAEL TUCKER, DARIUS DIXSON, MICHAEL POLLACK, DENISIA “@BLU_JUNE” ANDREWS FOR
                     @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, RAPHAEL
@@ -582,7 +570,6 @@
             </section>
             <section class="credits-card">
                 <h2 class="credits-card-title">Summer Renaissance</h2>
-                <div class="credits-card-rule"></div>
                 <p class="credits-card-desc">
                     WRITTEN BY BEYONCÉ, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
                     @NOVAWAV,
