@@ -20,7 +20,14 @@
          .credits-music-grid { @apply grid grid-cols-2 w-full border-l-2 border-t-2 border-white/5 rounded max-w-7xl mx-auto bg-zinc-900/20; }
          .credits-music-grid .credits-card { @apply mb-0; }
          .credits-card-title { @apply text-center text-xl border-b-2 border-white/5 py-4 uppercase; }
+         .credits-card-details > summary { @apply list-none cursor-pointer; }
+         .credits-card-details > summary::-webkit-details-marker { display: none; }
          .credits-card-desc { @apply mx-auto max-w-2xl text-center uppercase tracking-tight text-white/30 px-4 py-4; }
+         .credits-project { @apply mx-auto max-w-4xl border-2 border-white/5 bg-zinc-900/20; }
+         .credits-project-content { @apply mx-auto max-w-4xl text-left tracking-tight text-white/60 uppercase; }
+         .credits-project-content > * { @apply px-4 py-3; }
+         .credits-project-content > :not(:last-child) { @apply border-b-2 border-white/5; }
+         .credits-project-content a { @apply underline underline-offset-4 transition-colors text-white/30 hover:text-white; }
          .credits-tour { @apply mx-auto max-w-4xl border-l-2 border-t-2 border-white/5 bg-zinc-900/20; }
          .credits-tour-row { @apply flex items-stretch border-b-2 border-r-2 border-white/5 px-4; }
          .credits-tour-label { @apply w-96 shrink-0 border-r-2 border-white/5 py-4 pr-5 text-right text-xl uppercase text-white; }
@@ -34,17 +41,21 @@
     <main class="credits-page credits-scroll">
         <div class="fixed bottom-0 inset-x-0 w-full bg-zinc-900/20 border-t-2 border-white/5 backdrop-blur-xl z-30" aria-label="Credit sections">
             <div class="mx-auto w-full max-w-xl py-3">
-                <div class="flex items-center justify-between text-md">
+                <div class="flex items-center text-md">
                     <button type="button" id="lyricsTab"
-                        class="cursor-pointer text-white uppercase transition-colors duration-200" role="tab"
+                        class="flex-1 cursor-pointer text-left text-white uppercase transition-colors duration-200" role="tab"
                         aria-selected="true">Music</button>
                     <button type="button" id="tourTab"
-                        class="cursor-pointer text-white/30 uppercase transition-colors duration-200" role="tab"
+                        class="flex-1 cursor-pointer text-center text-white/30 uppercase transition-colors duration-200" role="tab"
                         aria-selected="false">Renaissance Tour</button>
+                    <button type="button" id="projectTab"
+                        class="flex-1 cursor-pointer text-right text-white/30 uppercase transition-colors duration-200" role="tab"
+                        aria-selected="false">Project</button>
                 </div>
                 <div class="mt-2 flex items-center gap-2">
                     <div id="lyricsProgress" class="h-1 flex-1 bg-white"></div>
                     <div id="tourProgress" class="h-1 flex-1 bg-white/10"></div>
+                    <div id="projectProgress" class="h-1 flex-1 bg-white/10"></div>
                 </div>
             </div>
         </div>
@@ -1378,38 +1389,58 @@
                 </div>
             </div>
         </section>
+        <section id="projectPanel" class="credits-panel flex min-h-[calc(100vh-8rem)] items-center justify-center hidden" role="tabpanel"
+            aria-labelledby="projectTab" hidden>
+            <div class="credits-project">
+                <div class="credits-project-content">
+                    <p>This project is not affiliated with Beyoncé or Parkwood Entertainment LLC and is not intended for commercial or profit-making purposes.</p>
+                    <p>All music featured on this website belongs to its respective artists, songwriters, producers, and rights holders.</p>
+                    <p>Individual song credits are provided here, while streaming links are available throughout the <a href="music.html">Music</a> section.</p>
+                    <p>All images of Beyoncé and the shop items used in this project were sourced from the official Beyoncé
+                        <a href="https://beyonce.com/" target="_blank" rel="noopener noreferrer">website</a>
+                        through the
+                        <a href="https://wayback.archive.org/" target="_blank" rel="noopener noreferrer">Wayback Machine</a>.
+                        Some shop items were edited or recreated using <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma</a>,
+                        with the goal of recreating the original experience as accurately as possible.</p>
+                    <p>The font used throughout the project is BB Manual Mono Pro, available from MyFonts:<br>
+                        <a href="https://www.myfonts.com/pt/collections/bb-manual-mono-pro-font-bold-studio/" target="_blank" rel="noopener noreferrer">BB Manual Mono Pro</a>.</p>
+                </div>
+            </div>
+        </section>
     </main>
     <script>
         const lyricsTab = document.getElementById("lyricsTab");
         const tourTab = document.getElementById("tourTab");
+        const projectTab = document.getElementById("projectTab");
         const lyricsPanel = document.getElementById("lyricsPanel");
         const tourPanel = document.getElementById("tourPanel");
+        const projectPanel = document.getElementById("projectPanel");
         const lyricsProgress = document.getElementById("lyricsProgress");
         const tourProgress = document.getElementById("tourProgress");
+        const projectProgress = document.getElementById("projectProgress");
 
         function showCreditsSection(section) {
-            const showLyrics = section === "lyrics";
+            const sections = [
+                ["lyrics", lyricsTab, lyricsPanel, lyricsProgress],
+                ["tour", tourTab, tourPanel, tourProgress],
+                ["project", projectTab, projectPanel, projectProgress],
+            ];
 
-            lyricsPanel.hidden = !showLyrics;
-            lyricsPanel.classList.toggle("hidden", !showLyrics);
-            tourPanel.hidden = showLyrics;
-            tourPanel.classList.toggle("hidden", showLyrics);
-
-            lyricsTab.classList.toggle("text-white", showLyrics);
-            lyricsTab.classList.toggle("text-white/30", !showLyrics);
-            lyricsTab.setAttribute("aria-selected", String(showLyrics));
-            tourTab.classList.toggle("text-white", !showLyrics);
-            tourTab.classList.toggle("text-white/30", showLyrics);
-            tourTab.setAttribute("aria-selected", String(!showLyrics));
-
-            lyricsProgress.classList.toggle("bg-white", showLyrics);
-            lyricsProgress.classList.toggle("bg-white/10", !showLyrics);
-            tourProgress.classList.toggle("bg-white", !showLyrics);
-            tourProgress.classList.toggle("bg-white/10", showLyrics);
+            sections.forEach(([name, tab, panel, progress]) => {
+                const isActive = section === name;
+                panel.hidden = !isActive;
+                panel.classList.toggle("hidden", !isActive);
+                tab.classList.toggle("text-white", isActive);
+                tab.classList.toggle("text-white/30", !isActive);
+                tab.setAttribute("aria-selected", String(isActive));
+                progress.classList.toggle("bg-white", isActive);
+                progress.classList.toggle("bg-white/10", !isActive);
+            });
         }
 
         lyricsTab.addEventListener("click", () => showCreditsSection("lyrics"));
         tourTab.addEventListener("click", () => showCreditsSection("tour"));
+        projectTab.addEventListener("click", () => showCreditsSection("project"));
     </script>
 </body>
 </html>
