@@ -18,13 +18,13 @@
          .credits-card { @apply border-b-2 border-r-2 border-white/5; }
          .credits-music-grid { @apply grid grid-cols-2 w-full border-l-2 border-t-2 border-white/5 rounded max-w-7xl mx-auto bg-zinc-900/20; }
          .credits-music-grid .credits-card { @apply mb-0; }
-         .credits-card-title { @apply mb-2 text-center text-2xl border-b-2 border-white/5 py-2 uppercase; }
+         .credits-card-title { @apply text-center text-xl border-b-2 border-white/5 py-4 uppercase; }
          .credits-card-desc { @apply mx-auto max-w-2xl text-center uppercase tracking-tight text-white/30 px-4 py-4; }
-         .credits-tour { @apply mx-auto mt-8 max-w-4xl translate-x-4 space-y-6; }
-         .credits-tour-row { @apply flex items-start gap-15; }
-         .credits-tour-label { @apply w-96 text-xl uppercase text-white; }
-         .credits-tour-names { @apply flex-1 uppercase text-xl text-white; }
-         .credits-tour-subname { @apply mr-2 inline-block text-sm uppercase tracking-tight text-white/40; }
+         .credits-tour { @apply mx-auto max-w-4xl border-l-2 border-t-2 border-white/5 bg-zinc-900/20; }
+         .credits-tour-row { @apply flex items-stretch border-b-2 border-r-2 border-white/5 px-4; }
+         .credits-tour-label { @apply w-96 shrink-0 border-r-2 border-white/5 py-4 pr-5 text-right text-xl uppercase text-white; }
+         .credits-tour-names { @apply flex-1 py-4 pl-5 uppercase text-xl text-white; }
+         .credits-tour-subname { @apply mr-3 inline-block uppercase text-xs tracking-tight text-white/30; }
     }
   </style>
 </head>
@@ -606,10 +606,10 @@
                 </p>
             </section>
         </section>
-        <section id="tourPanel" class="credits-panel hidden mt-10 mb-2" role="tabpanel" aria-labelledby="tourTab"
+        <section id="tourPanel" class="credits-panel hidden" role="tabpanel" aria-labelledby="tourTab"
             hidden>
             <div class="credits-tour">
-                <div class="credits-tour-row">
+                <div class="credits-tour-row items-center">
                     <div class="credits-tour-label">DIRECTOR, EXECUTIVE PRODUCER & CREATIVE DIRECTION</div>
                     <div class="credits-tour-names">BEYONCÉ</div>
                 </div>
@@ -623,8 +623,7 @@
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">MUSIC PRODUCTION</div>
-                    <div class="credits-tour-names"><span class="credits-tour-subname">HEAD OF MUSIC
-                            PRODUCTION</span>DAMIEN SMITH</div>
+                    <div class="credits-tour-names"><span class="credits-tour-subname">HEAD OF MUSIC PRODUCTION</span>DAMIEN SMITH</div>
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">MUSIC DIRECTION</div>
@@ -654,8 +653,7 @@
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">COSTUME DESIGN</div>
-                    <div class="credits-tour-names">TINA KNOWLES LAWSON<br>SHIONA TURINI<br>KAREN LANGLEY<br>JULIA
-                        SARR-JAMOIS<br>KJ MOODY</div>
+                    <div class="credits-tour-names">TINA KNOWLES LAWSON<br>SHIONA TURINI<br>KAREN LANGLEY<br>JULIA SARR-JAMOIS<br>KJ MOODY</div>
                 </div>
                 <div class="credits-tour-row">
                     <div class="credits-tour-label">MUSICAL ARRANGEMENTS</div>
