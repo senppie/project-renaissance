@@ -18,20 +18,17 @@
          .credits-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
          .credits-card { @apply border-b-2 border-r-2 border-white/5; }
          .credits-music-grid { @apply grid grid-cols-2 w-full border-l-2 border-t-2 border-white/5 rounded max-w-7xl mx-auto bg-zinc-900/20; }
-         .credits-music-grid .credits-card { @apply mb-0; }
-         .credits-card-title { @apply text-center text-xl border-b-2 border-white/5 py-4 uppercase; }
-         .credits-card-details > summary { @apply list-none cursor-pointer; }
-         .credits-card-details > summary::-webkit-details-marker { display: none; }
-         .credits-card-desc { @apply mx-auto max-w-2xl text-center uppercase tracking-tight text-white/30 px-4 py-4; }
-         .credits-project { @apply mx-auto max-w-4xl border-2 border-white/5 bg-zinc-900/20; }
-         .credits-project-content { @apply mx-auto max-w-4xl text-left tracking-tight text-white/60 uppercase; }
-         .credits-project-content > * { @apply px-4 py-3; }
-         .credits-project-content > :not(:last-child) { @apply border-b-2 border-white/5; }
-         .credits-project-content a { @apply underline underline-offset-4 transition-colors text-white/30 hover:text-white; }
+         .credits-music-grid { @apply mb-0; }
+         .credits-music-title { @apply text-center text-lg border-b-2 border-white/5 py-4 uppercase; }
+         .credits-music-desc { @apply mx-auto max-w-2xl text-center text-sm uppercase tracking-tight text-white/60 px-4 py-4; }
+         .credits-project-panel { @apply mx-auto max-w-6xl; }
+         .credits-project-content { @apply text-center text-white uppercase; }
+         .credits-project-content > p { @apply py-3; }
+         .credits-project-content a { @apply underline underline-offset-3 transition-colors text-white/60 hover:text-white/30; }
          .credits-tour { @apply mx-auto max-w-4xl border-l-2 border-t-2 border-white/5 bg-zinc-900/20; }
-         .credits-tour-row { @apply flex items-stretch border-b-2 border-r-2 border-white/5 px-4; }
-         .credits-tour-label { @apply w-96 shrink-0 border-r-2 border-white/5 py-4 pr-5 text-right text-xl uppercase text-white; }
-         .credits-tour-names { @apply flex-1 py-4 pl-5 uppercase text-xl text-white/60; }
+         .credits-tour-row { @apply flex items-stretch border-b-2 border-r-2 border-white/5 px-2; }
+         .credits-tour-label { @apply w-96 shrink-0 border-r-2 border-white/5 py-4 pr-5 text-right text-lg uppercase text-white; }
+         .credits-tour-names { @apply flex-1 py-4 pl-5 uppercase text-lg text-white/60; }
          .credits-tour-subname { @apply mr-3 inline-block uppercase text-xs tracking-tight text-white/30; }
     }
   </style>
@@ -61,8 +58,8 @@
         </div>
         <section id="lyricsPanel" class="credits-panel credits-music-grid" role="tabpanel" aria-labelledby="lyricsTab">
             <section class="credits-card">
-                <h1 class="credits-card-title">I'm That Girl</h1>
-                <p class="credits-card-desc">
+                <h1 class="credits-music-title">I'm That Girl</h1>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, KELMAN DURAN, MIKE DEAN, TOMMY WRIGHT III
                     /
                     PUBLISHED BY OAKLAND 13 MUSIC (ASCAP), ALL RIGHTS ADMINISTERED BY SONY/ATV. OBO ITSELF AND OAKLAND
@@ -88,8 +85,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Cozy</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Cozy</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, HONEY REDMOND, CHRISTOPHER LAWRENCE PENNY, LUKE FRANCIS MATTHEW SOLOMON, DAVE
                     GILES
                     II, NIJA CHARLES, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, MIKE DEAN, CORECE SMITH, CURTIS ALAN JONES/
@@ -124,8 +121,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Alien Superstar</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Alien Superstar</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, HONEY REDMOND, CHRISTOPHER LAWRENCE PENNY, LUKE FRANCIS MATTHEW SOLOMON, DENISIA
                     “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, S. CARTER, DAVID
                     DEBRANDON
@@ -178,8 +175,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Cuff It</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Cuff It</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
                     @NOVAWAV,
                     MORTEN RISTORP, RAPHAEL SAADIQ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, MARY CHRISTINE BROCKERT, ALLEN
@@ -222,8 +219,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Energy</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Energy</h2>
+                <p class="credits-music-desc">
                     PERFORMED BY BEYONCÉ, BEAM / WRITTEN BY BEYONCÉ, TYSHANE THOMPSON, SKRILLEX, ALMANDO CRESSO, JORDAN
                     DOUGLAS, TIZITA MAKURIA, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
                     @NOVAWAV, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, MARY CHRISTINE BROCKHERT, ALLEN HENRY MC GRIER, ADAM
@@ -262,8 +259,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Break My Soul</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Break My Soul</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, CHRISTOPHER A. STEWART, S. CARTER, GEORGE
                     ALLEN, FRED CRAIG MCFARLANE, ADAM JAMES PIGOTT, FREDDIE ROSS/ PUBLISHED BY OAKLAND 13 MUSIC (ASCAP),
                     ALL
@@ -299,8 +296,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Church Girl</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Church Girl</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, ERNEST “NO ID” WILSON, ELBERNITA CLARK
                     TERRELL, JIMI STEPHEN PAYTON, DION LAMONT NORMAN, DERRICK ROBERT ORDOGNE, JAMES BROWN, ORVILLE ERWIN
                     HALL, PHILLIP GLEN PRICE, RALPH MACDONALD, WILLIAM SALTER / PUBLISHED BY OAKLAND 13 MUSIC (ASCAP),
@@ -342,8 +339,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Plastic Off the Sofa</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Plastic Off the Sofa</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, SYDNEY BENNETT, SABRINA CLAUDIO, NICK GREEN, PATRICK PAIGE II/ PUBLISHED BY
                     OAKLAND
                     13 MUSIC (ASCAP), ALL RIGHTS ADMINISTERED BY SONY/ATV. OBO ITSELF AND OAKLAND 13 MUSIC, SYD’S
@@ -366,8 +363,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Virgo's Groove</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Virgo's Groove</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, LEVEN KALI, SOLOMON FAGENSON COLE, DANIEL MEMMI, DUSTIN DAB BOWIE, DARIUS
                     DIXSON,
                     JOCELYN DONALD, JESSE WILSON, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY
@@ -395,8 +392,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Move</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Move</h2>
+                <p class="credits-music-desc">
                     PERFORMED BY BEYONCÉ, GRACE JONES, TEMS / WRITTEN BY BEYONCÉ, RICHARD ISONG, ARIOWA IROSOGIE,
                     DENISIA
                     “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, TEMILADE OPENIYI, RONALD
@@ -423,8 +420,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Heated</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Heated</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, AUBREY DRAKE GRAHAM, MATTHEW SAMUELS, JAHAAN SWEET, RUPERT THOMAS, JR., SEAN
                     SEATON,
                     DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, RICKY LAWSON,
@@ -455,8 +452,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Thique</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Thique</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, CHAUNCEY HOLLIS JR, ATIA BOGGS P/K/A INK,
                     JULIAN MARTREL MASON, JABBAR STEVENS, CHERDERICKA NICHOLS / PUBLISHED BY OAKLAND 13 MUSIC (ASCAP),
                     ALL
@@ -480,8 +477,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">All Up in Your Mind</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">All Up in Your Mind</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, JABBAR STEVENS, CHERDERICKA NICHOLS, MICHAEL TUCKER, ALEXANDER GUY COOK, MIKE
                     DEAN,
                     LARRY GRIFFIN JR., JAMEIL AOSSEY / PUBLISHED BY OAKLAND 13 MUSIC (ASCAP), ALL RIGHTS ADMINISTERED BY
@@ -508,8 +505,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">America Has a Problem</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">America Has a Problem</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS 'THE-DREAM' GESTEELDE-DIAMANT, S. CARTER, MIKE DEAN, ANDRELL D ROGERS,
                     TINO
                     SANTRON MCINTOSH/ PUBLISHED BY OAKLAND 13 MUSIC (ASCAP), ALL RIGHTS ADMINISTERED BY SONY/ATV. OBO
@@ -535,8 +532,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Pure/Honey</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Pure/Honey</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, MICHAEL TUCKER, DARIUS DIXSON, MICHAEL POLLACK, DENISIA “@BLU_JUNE” ANDREWS FOR
                     @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, RAPHAEL
                     SAADIQ, MOI RENEE, ERIC SNEAD, JEREL BLACK, MICHAEL D COX , KEVIN MARQUIS BELLMON, ANDREW
@@ -581,8 +578,8 @@
                 </p>
             </section>
             <section class="credits-card">
-                <h2 class="credits-card-title">Summer Renaissance</h2>
-                <p class="credits-card-desc">
+                <h2 class="credits-music-title">Summer Renaissance</h2>
+                <p class="credits-music-desc">
                     WRITTEN BY BEYONCÉ, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
                     @NOVAWAV,
                     TERIUS “THE-DREAM” GESTEELDE-DIAMANT, LEVEN KALI, MIKE DEAN, ATIA BOGGS P/K/A INK, LEVAR COPPIN,
@@ -1349,7 +1346,7 @@
                     <div class="credits-tour-label">CLEARANCE SERVICES - BARBOUR & COMPANY, INC.</div>
                     <div class="credits-tour-names">CASSANDRA BARBOUR<br>JESSICA PEREZ<br>MORGAN SMITH</div>
                 </div>
-                <div class="credits-tour-row">
+                <div class="credits-tour-row items-center">
                     <div class="credits-tour-label">CLEARANCE SERVICES - ERIC WEISSMAN MUSIC LICENSING INC.</div>
                     <div class="credits-tour-names">ERIC WEISSMAN</div>
                 </div>
@@ -1391,18 +1388,17 @@
         </section>
         <section id="projectPanel" class="credits-panel flex min-h-[calc(100vh-8rem)] items-center justify-center hidden" role="tabpanel"
             aria-labelledby="projectTab" hidden>
-            <div class="credits-project">
+            <div class="credits-project-panel">
                 <div class="credits-project-content">
                     <p>This project is not affiliated with Beyoncé or Parkwood Entertainment LLC and is not intended for commercial or profit-making purposes.</p>
-                    <p>All music featured on this website belongs to its respective artists, songwriters, producers, and rights holders.</p>
-                    <p>Individual song credits are provided <a href="#lyricsPanel" id="musicCreditsLink">here</a>, while streaming links are available throughout the <a href="music.html">Music</a> section.</p>
+                    <p>All music featured on this website belongs to its respective artists, songwriters, producers, and rights holders.
+                        Individual song credits are provided <a href="#lyricsPanel" id="musicCreditsLink">here</a>, while streaming links are available throughout the <a href="music.html">Music</a> section.</p>
                     <p>All images of Beyoncé and the shop items used in this project were sourced from the official Beyoncé
                         <a href="https://beyonce.com/" target="_blank" rel="noopener noreferrer">website</a>
-                        through the
-                        <a href="https://wayback.archive.org/" target="_blank" rel="noopener noreferrer">Wayback Machine</a>.
+                        through the <a href="https://wayback.archive.org/" target="_blank" rel="noopener noreferrer">Wayback Machine</a>.
                         Some shop items were edited or recreated using <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma</a>,
                         with the goal of recreating the original experience as accurately as possible.</p>
-                    <p>The font used throughout the project is BB Manual Mono Pro, available from MyFonts:<br>
+                    <p>The font used throughout the project is BB Manual Mono Pro, available from MyFonts:
                         <a href="https://www.myfonts.com/pt/collections/bb-manual-mono-pro-font-bold-studio/" target="_blank" rel="noopener noreferrer">BB Manual Mono Pro</a>.</p>
                 </div>
             </div>
