@@ -13,29 +13,29 @@
     <script src="components/cart/cart-loader.js"></script>
     <style type="text/tailwindcss">
         @layer components {
-         .credits-page { @apply min-h-screen px-55 pb-15 pt-15 text-white; }
-         .credits-scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
-         .credits-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
-         .credits-card { @apply border-b-2 border-r-2 border-white/5; }
-         .credits-music-grid { @apply w-full border-l-2 border-t-2 border-white/5 rounded max-w-4xl mx-auto bg-zinc-900/20; }
-         .credits-music-grid { @apply mb-0; }
-         .credits-music-title { @apply text-center text-lg border-b-2 border-white/5 py-4 uppercase; }
-         .credits-music-desc { @apply mx-auto max-w-3xl text-center uppercase tracking-tight text-white/60 px-0 py-6; }
-         .credits-project-panel { @apply mx-auto max-w-6xl; }
-         .credits-project-content { @apply text-center text-white uppercase; }
-         .credits-project-content > p { @apply py-3; }
-         .credits-project-content a { @apply underline underline-offset-3 transition-colors text-white/60 hover:text-white/30; }
-         .credits-tour { @apply mx-auto max-w-4xl border-l-2 border-t-2 border-white/5 bg-zinc-900/20; }
-         .credits-tour-row { @apply flex items-stretch border-b-2 border-r-2 border-white/5 px-2; }
-         .credits-tour-label { @apply w-96 shrink-0 border-r-2 border-white/5 py-4 pr-5 text-right text-lg uppercase text-white; }
-         .credits-tour-names { @apply flex-1 py-4 pl-5 uppercase text-lg text-white/60; }
-         .credits-tour-subname { @apply mr-3 inline-block uppercase text-xs tracking-tight text-white/30; }
+         .page { @apply min-h-screen px-55 pb-15 pt-15 text-white; }
+         .scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
+         .layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
+         .card { @apply border-b-2 border-r-2 border-white/5; }
+         .music-grid { @apply w-full border-l-2 border-t-2 border-white/5 rounded max-w-4xl mx-auto bg-zinc-900/20; }
+         .music-grid { @apply mb-0; }
+         .music-title { @apply text-center text-lg border-b-2 border-white/5 py-4 uppercase; }
+         .music-desc { @apply mx-auto max-w-3xl text-center uppercase tracking-tight text-white/60 px-0 py-6; }
+         .tour-grid { @apply mx-auto max-w-4xl border-l-2 border-t-2 border-white/5 bg-zinc-900/20; }
+         .tour-row { @apply flex items-stretch border-b-2 border-r-2 border-white/5 px-2; }
+         .tour-role { @apply w-96 shrink-0 border-r-2 border-white/5 py-4 pr-5 text-right text-lg uppercase text-white; }
+         .tour-title { @apply flex-1 py-4 pl-5 uppercase text-lg text-white/60; }
+         .tour-subtitle { @apply mr-3 inline-block uppercase text-xs tracking-tight text-white/30; }
+         .project-panel { @apply mx-auto max-w-6xl; }
+         .project-content { @apply text-center text-white uppercase; }
+         .project-content > p { @apply py-3; }
+         .project-content a { @apply underline underline-offset-3 transition-colors text-white/60 hover:text-white/30; }
     }
   </style>
 </head>
 <body class="bg-black text-white select-none">
-    <div class="credits-layer"></div>
-    <main class="credits-page credits-scroll">
+    <div class="layer"></div>
+    <main class="page scroll">
         <div class="fixed bottom-0 inset-x-0 w-full bg-zinc-900/20 border-t-2 border-white/5 backdrop-blur-xl z-30" aria-label="Credit sections">
             <div class="mx-auto w-full max-w-xl py-3">
                 <div class="flex items-center text-md">
@@ -56,10 +56,10 @@
                 </div>
             </div>
         </div>
-        <section id="lyricsPanel" class="credits-panel credits-music-grid" role="tabpanel" aria-labelledby="lyricsTab">
-            <section class="credits-card">
-                <h1 class="credits-music-title">I'm That Girl</h1>
-                <p class="credits-music-desc">
+        <section id="lyricsPanel" class="credits-panel music-grid" role="tabpanel" aria-labelledby="lyricsTab">
+            <section class="card">
+                <h1 class="music-title">I'm That Girl</h1>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, KELMAN DURAN, MIKE DEAN, TOMMY WRIGHT III
                     /
                     PUBLISHED BY OAKLAND 13 MUSIC (ASCAP), ALL RIGHTS ADMINISTERED BY SONY/ATV. OBO ITSELF AND OAKLAND
@@ -84,9 +84,9 @@
                     WRITTEN BY TOMMY WRIGHT III AND PERFORMED PRINCESS LOKO AND TOMMY WRIGHT III
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Cozy</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Cozy</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, HONEY REDMOND, CHRISTOPHER LAWRENCE PENNY, LUKE FRANCIS MATTHEW SOLOMON, DAVE
                     GILES
                     II, NIJA CHARLES, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, MIKE DEAN, CORECE SMITH, CURTIS ALAN JONES/
@@ -120,9 +120,9 @@
                     (BMI)
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Alien Superstar</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Alien Superstar</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, HONEY REDMOND, CHRISTOPHER LAWRENCE PENNY, LUKE FRANCIS MATTHEW SOLOMON, DENISIA
                     “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, S. CARTER, DAVID
                     DEBRANDON
@@ -174,9 +174,9 @@
                     DANCE. PUBLISHED BY SPIEGEL MUSIK WIEN (AKM) AND WARNER-TAMERLANE PUBLISHING CORP (BMI)
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Cuff It</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Cuff It</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
                     @NOVAWAV,
                     MORTEN RISTORP, RAPHAEL SAADIQ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, MARY CHRISTINE BROCKERT, ALLEN
@@ -218,9 +218,9 @@
                     PUBLISHING (ASCAP).
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Energy</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Energy</h2>
+                <p class="music-desc">
                     PERFORMED BY BEYONCÉ, BEAM / WRITTEN BY BEYONCÉ, TYSHANE THOMPSON, SKRILLEX, ALMANDO CRESSO, JORDAN
                     DOUGLAS, TIZITA MAKURIA, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
                     @NOVAWAV, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, MARY CHRISTINE BROCKHERT, ALLEN HENRY MC GRIER, ADAM
@@ -258,9 +258,9 @@
                     (BMI) AND GIRL DOWN (BMI).
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Break My Soul</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Break My Soul</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, CHRISTOPHER A. STEWART, S. CARTER, GEORGE
                     ALLEN, FRED CRAIG MCFARLANE, ADAM JAMES PIGOTT, FREDDIE ROSS/ PUBLISHED BY OAKLAND 13 MUSIC (ASCAP),
                     ALL
@@ -295,9 +295,9 @@
                     BY ADAM JAMES PIGOTT PUBLISHING DESIGNEE (BMI) AND GIRL DOWN (BMI)
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Church Girl</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Church Girl</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, ERNEST “NO ID” WILSON, ELBERNITA CLARK
                     TERRELL, JIMI STEPHEN PAYTON, DION LAMONT NORMAN, DERRICK ROBERT ORDOGNE, JAMES BROWN, ORVILLE ERWIN
                     HALL, PHILLIP GLEN PRICE, RALPH MACDONALD, WILLIAM SALTER / PUBLISHED BY OAKLAND 13 MUSIC (ASCAP),
@@ -338,9 +338,9 @@
                     WASHINGTON JR.
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Plastic Off the Sofa</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Plastic Off the Sofa</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, SYDNEY BENNETT, SABRINA CLAUDIO, NICK GREEN, PATRICK PAIGE II/ PUBLISHED BY
                     OAKLAND
                     13 MUSIC (ASCAP), ALL RIGHTS ADMINISTERED BY SONY/ATV. OBO ITSELF AND OAKLAND 13 MUSIC, SYD’S
@@ -362,9 +362,9 @@
                     MASTERED BY COLIN LEONARD AT SING MASTERING IN ATLANTA, GA USING SING TECHNOLOGY®
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Virgo's Groove</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Virgo's Groove</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, LEVEN KALI, SOLOMON FAGENSON COLE, DANIEL MEMMI, DUSTIN DAB BOWIE, DARIUS
                     DIXSON,
                     JOCELYN DONALD, JESSE WILSON, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY
@@ -391,9 +391,9 @@
                     ATLANTA, GA USING SING TECHNOLOGY®
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Move</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Move</h2>
+                <p class="music-desc">
                     PERFORMED BY BEYONCÉ, GRACE JONES, TEMS / WRITTEN BY BEYONCÉ, RICHARD ISONG, ARIOWA IROSOGIE,
                     DENISIA
                     “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, TEMILADE OPENIYI, RONALD
@@ -419,9 +419,9 @@
                     SOUND
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Heated</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Heated</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, AUBREY DRAKE GRAHAM, MATTHEW SAMUELS, JAHAAN SWEET, RUPERT THOMAS, JR., SEAN
                     SEATON,
                     DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, RICKY LAWSON,
@@ -451,9 +451,9 @@
                     SING TECHNOLOGY®
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Thique</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Thique</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, CHAUNCEY HOLLIS JR, ATIA BOGGS P/K/A INK,
                     JULIAN MARTREL MASON, JABBAR STEVENS, CHERDERICKA NICHOLS / PUBLISHED BY OAKLAND 13 MUSIC (ASCAP),
                     ALL
@@ -476,9 +476,9 @@
                     ATLANTA, GA USING SING TECHNOLOGY®
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">All Up in Your Mind</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">All Up in Your Mind</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, JABBAR STEVENS, CHERDERICKA NICHOLS, MICHAEL TUCKER, ALEXANDER GUY COOK, MIKE
                     DEAN,
                     LARRY GRIFFIN JR., JAMEIL AOSSEY / PUBLISHED BY OAKLAND 13 MUSIC (ASCAP), ALL RIGHTS ADMINISTERED BY
@@ -504,9 +504,9 @@
                     GA USING SING TECHNOLOGY®
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">America Has a Problem</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">America Has a Problem</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, TERIUS 'THE-DREAM' GESTEELDE-DIAMANT, S. CARTER, MIKE DEAN, ANDRELL D ROGERS,
                     TINO
                     SANTRON MCINTOSH/ PUBLISHED BY OAKLAND 13 MUSIC (ASCAP), ALL RIGHTS ADMINISTERED BY SONY/ATV. OBO
@@ -531,9 +531,9 @@
                     (BMI), SANTRON PUBLISHING (BMI)
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Pure/Honey</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Pure/Honey</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, MICHAEL TUCKER, DARIUS DIXSON, MICHAEL POLLACK, DENISIA “@BLU_JUNE” ANDREWS FOR
                     @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR @NOVAWAV, TERIUS “THE-DREAM” GESTEELDE-DIAMANT, RAPHAEL
                     SAADIQ, MOI RENEE, ERIC SNEAD, JEREL BLACK, MICHAEL D COX , KEVIN MARQUIS BELLMON, ANDREW
@@ -577,9 +577,9 @@
                     KEVIN MARQUIS BELLMON AND PERFORMED BY MIKEQ AND KEVIN JZ PRODIGY
                 </p>
             </section>
-            <section class="credits-card">
-                <h2 class="credits-music-title">Summer Renaissance</h2>
-                <p class="credits-music-desc">
+            <section class="card">
+                <h2 class="music-title">Summer Renaissance</h2>
+                <p class="music-desc">
                     WRITTEN BY BEYONCÉ, DENISIA “@BLU_JUNE” ANDREWS FOR @NOVAWAV, BRITTANY “@CHI_CONEY” CONEY FOR
                     @NOVAWAV,
                     TERIUS “THE-DREAM” GESTEELDE-DIAMANT, LEVEN KALI, MIKE DEAN, ATIA BOGGS P/K/A INK, LEVAR COPPIN,
@@ -617,204 +617,204 @@
         </section>
         <section id="tourPanel" class="credits-panel hidden" role="tabpanel" aria-labelledby="tourTab"
             hidden>
-            <div class="credits-tour">
-                <div class="credits-tour-row items-center">
-                    <div class="credits-tour-label">DIRECTOR, EXECUTIVE PRODUCER & CREATIVE DIRECTION</div>
-                    <div class="credits-tour-names">BEYONCÉ</div>
+            <div class="tour-grid">
+                <div class="tour-row items-center">
+                    <div class="tour-role">DIRECTOR, EXECUTIVE PRODUCER & CREATIVE DIRECTION</div>
+                    <div class="tour-title">BEYONCÉ</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">ADDITIONAL CREATIVE DIRECTION</div>
-                    <div class="credits-tour-names">ANDREW MAKADSI<br>ED BURKE<br>LEAH NARDOS TAKELE</div>
+                <div class="tour-row">
+                    <div class="tour-role">ADDITIONAL CREATIVE DIRECTION</div>
+                    <div class="tour-title">ANDREW MAKADSI<br>ED BURKE<br>LEAH NARDOS TAKELE</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">EXECUTIVE PRODUCERS</div>
-                    <div class="credits-tour-names">JUSTINA OMOKHUA<br>ERINN WILLIAMS</div>
+                <div class="tour-row">
+                    <div class="tour-role">EXECUTIVE PRODUCERS</div>
+                    <div class="tour-title">JUSTINA OMOKHUA<br>ERINN WILLIAMS</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">MUSIC PRODUCTION</div>
-                    <div class="credits-tour-names"><span class="credits-tour-subname">HEAD OF MUSIC PRODUCTION</span>DAMIEN SMITH</div>
+                <div class="tour-row">
+                    <div class="tour-role">MUSIC PRODUCTION</div>
+                    <div class="tour-title"><span class="tour-subtitle">HEAD OF MUSIC PRODUCTION</span>DAMIEN SMITH</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">MUSIC DIRECTION</div>
-                    <div class="credits-tour-names">KHIRYE TYLER<br>DAMMO FARMER</div>
+                <div class="tour-row">
+                    <div class="tour-role">MUSIC DIRECTION</div>
+                    <div class="tour-title">KHIRYE TYLER<br>DAMMO FARMER</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">LIGHTING DESIGN</div>
-                    <div class="credits-tour-names">TOBIAS RYLANDER</div>
+                <div class="tour-row">
+                    <div class="tour-role">LIGHTING DESIGN</div>
+                    <div class="tour-title">TOBIAS RYLANDER</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">STAGE DESIGN</div>
-                    <div class="credits-tour-names">STUFISH ENTERTAINMENT ARCHITECTS<br>ES DEVLIN STUDIO</div>
+                <div class="tour-row">
+                    <div class="tour-role">STAGE DESIGN</div>
+                    <div class="tour-title">STUFISH ENTERTAINMENT ARCHITECTS<br>ES DEVLIN STUDIO</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">CHOREOGRAPHY & STAGING</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">DIRECTOR OF CHOREOGRAPHY</span>FATIMA ROBINSON<br>
-                        <span class="credits-tour-subname">LEAD CHOREOGRAPHER</span>CHRIS GRANT<br>
-                        <span class="credits-tour-subname">CHOREOGRAPHER</span>DANA FOGLIA<br>
-                        <span class="credits-tour-subname">ASSOCIATE CHOREOGRAPHER</span>TIA RIVERA<br>
-                        <span class="credits-tour-subname">ASSOCIATE CHOREOGRAPHER</span>ADRIAN WILTSHIRE
+                <div class="tour-row">
+                    <div class="tour-role">CHOREOGRAPHY & STAGING</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">DIRECTOR OF CHOREOGRAPHY</span>FATIMA ROBINSON<br>
+                        <span class="tour-subtitle">LEAD CHOREOGRAPHER</span>CHRIS GRANT<br>
+                        <span class="tour-subtitle">CHOREOGRAPHER</span>DANA FOGLIA<br>
+                        <span class="tour-subtitle">ASSOCIATE CHOREOGRAPHER</span>TIA RIVERA<br>
+                        <span class="tour-subtitle">ASSOCIATE CHOREOGRAPHER</span>ADRIAN WILTSHIRE
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">VIDEO DIRECTION</div>
-                    <div class="credits-tour-names">JAMES MERRYMAN</div>
+                <div class="tour-row">
+                    <div class="tour-role">VIDEO DIRECTION</div>
+                    <div class="tour-title">JAMES MERRYMAN</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">COSTUME DESIGN</div>
-                    <div class="credits-tour-names">TINA KNOWLES LAWSON<br>SHIONA TURINI<br>KAREN LANGLEY<br>JULIA SARR-JAMOIS<br>KJ MOODY</div>
+                <div class="tour-row">
+                    <div class="tour-role">COSTUME DESIGN</div>
+                    <div class="tour-title">TINA KNOWLES LAWSON<br>SHIONA TURINI<br>KAREN LANGLEY<br>JULIA SARR-JAMOIS<br>KJ MOODY</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">MUSICAL ARRANGEMENTS</div>
-                    <div class="credits-tour-names">BEYONCÉ<br>KHIRYE TYLER<br>DAMMO FARMER<br>AMORPHOUS</div>
+                <div class="tour-row">
+                    <div class="tour-role">MUSICAL ARRANGEMENTS</div>
+                    <div class="tour-title">BEYONCÉ<br>KHIRYE TYLER<br>DAMMO FARMER<br>AMORPHOUS</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">LES TWINS</div>
-                    <div class="credits-tour-names">LARRY BOURGEOIS<br>LAURENT BOURGEOIS</div>
+                <div class="tour-row">
+                    <div class="tour-role">LES TWINS</div>
+                    <div class="tour-title">LARRY BOURGEOIS<br>LAURENT BOURGEOIS</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">DANCERS</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">THE DOLLS</span>HONEY BALENCIAGA<br>
-                        <span class="credits-tour-subname">THE DOLLS</span>CARLOS IRIZARRY<br>
-                        <span class="credits-tour-subname">THE DOLLS</span>DARIUS HICKMAN<br>
-                        <span class="credits-tour-subname">THE DOLLS</span>JONTÉ MOANING<br>
-                        <span class="credits-tour-subname">DANCE CAPTAIN</span>HANNAH DOUGLASS<br>
-                        <span class="credits-tour-subname">DANCER</span>AAHKILAH CORNELIUS<br>
-                        <span class="credits-tour-subname">DANCER</span>AI SHIMATSU<br>
-                        <span class="credits-tour-subname">DANCER</span>ALLIYA JANEL<br>
-                        <span class="credits-tour-subname">ARTIST STAND-IN</span>ALANNAH WILHITE<br>
-                        <span class="credits-tour-subname">DANCER</span>AMARI MARSHALL<br>
-                        <span class="credits-tour-subname">DANCER</span>BRIANNA PAVON<br>
-                        <span class="credits-tour-subname">DANCER</span>KYNDALL HARRIS<br>
-                        <span class="credits-tour-subname">DANCER</span>LISA SAINVIL<br>
-                        <span class="credits-tour-subname">DANCER</span>NERITA MCFARLANE<br>
-                        <span class="credits-tour-subname">DANCER</span>SIMONE ALSTON<br>
-                        <span class="credits-tour-subname">DANCER</span>TRINITY JOY<br>
-                        <span class="credits-tour-subname">DANCER</span>JUS'T CHASE<br>
-                        <span class="credits-tour-subname">DANCER</span>KEVIN "KONKRETE" DAVIS JR.<br>
-                        <span class="credits-tour-subname">DANCER</span>ROB BYNES<br>
-                        <span class="credits-tour-subname">DANCER</span>ZAVION BROWN
+                <div class="tour-row">
+                    <div class="tour-role">DANCERS</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">THE DOLLS</span>HONEY BALENCIAGA<br>
+                        <span class="tour-subtitle">THE DOLLS</span>CARLOS IRIZARRY<br>
+                        <span class="tour-subtitle">THE DOLLS</span>DARIUS HICKMAN<br>
+                        <span class="tour-subtitle">THE DOLLS</span>JONTÉ MOANING<br>
+                        <span class="tour-subtitle">DANCE CAPTAIN</span>HANNAH DOUGLASS<br>
+                        <span class="tour-subtitle">DANCER</span>AAHKILAH CORNELIUS<br>
+                        <span class="tour-subtitle">DANCER</span>AI SHIMATSU<br>
+                        <span class="tour-subtitle">DANCER</span>ALLIYA JANEL<br>
+                        <span class="tour-subtitle">ARTIST STAND-IN</span>ALANNAH WILHITE<br>
+                        <span class="tour-subtitle">DANCER</span>AMARI MARSHALL<br>
+                        <span class="tour-subtitle">DANCER</span>BRIANNA PAVON<br>
+                        <span class="tour-subtitle">DANCER</span>KYNDALL HARRIS<br>
+                        <span class="tour-subtitle">DANCER</span>LISA SAINVIL<br>
+                        <span class="tour-subtitle">DANCER</span>NERITA MCFARLANE<br>
+                        <span class="tour-subtitle">DANCER</span>SIMONE ALSTON<br>
+                        <span class="tour-subtitle">DANCER</span>TRINITY JOY<br>
+                        <span class="tour-subtitle">DANCER</span>JUS'T CHASE<br>
+                        <span class="tour-subtitle">DANCER</span>KEVIN "KONKRETE" DAVIS JR.<br>
+                        <span class="tour-subtitle">DANCER</span>ROB BYNES<br>
+                        <span class="tour-subtitle">DANCER</span>ZAVION BROWN
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">BAND</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">KEYS</span>KHIRYE TYLER<br>
-                        <span class="credits-tour-subname">GUITAR</span>AGAPE JERRY<br>
-                        <span class="credits-tour-subname">TROMBONE</span>CHRIS JOHNSON<br>
-                        <span class="credits-tour-subname">TRUMPET</span>CRYSTAL TORRES<br>
-                        <span class="credits-tour-subname">DRUMS</span>DIAMOND JOHNSON<br>
-                        <span class="credits-tour-subname">BASS</span>DON ALFORD<br>
-                        <span class="credits-tour-subname">PIANO</span>EMILY BEAR<br>
-                        <span class="credits-tour-subname">SAXOPHONE</span>KATTY RODRIGUEZ
+                <div class="tour-row">
+                    <div class="tour-role">BAND</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">KEYS</span>KHIRYE TYLER<br>
+                        <span class="tour-subtitle">GUITAR</span>AGAPE JERRY<br>
+                        <span class="tour-subtitle">TROMBONE</span>CHRIS JOHNSON<br>
+                        <span class="tour-subtitle">TRUMPET</span>CRYSTAL TORRES<br>
+                        <span class="tour-subtitle">DRUMS</span>DIAMOND JOHNSON<br>
+                        <span class="tour-subtitle">BASS</span>DON ALFORD<br>
+                        <span class="tour-subtitle">PIANO</span>EMILY BEAR<br>
+                        <span class="tour-subtitle">SAXOPHONE</span>KATTY RODRIGUEZ
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">BACKGROUND VOCALISTS</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">DIRECTOR</span>TIFANNY RYAN<br>
-                        <span class="credits-tour-subname">VOCALIST</span>KARYN PORTER<br>
-                        <span class="credits-tour-subname">VOCALIST</span>NATALIE IMANI<br>
-                        <span class="credits-tour-subname">VOCALIST</span>TAYLER GREEN
+                <div class="tour-row">
+                    <div class="tour-role">BACKGROUND VOCALISTS</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">DIRECTOR</span>TIFANNY RYAN<br>
+                        <span class="tour-subtitle">VOCALIST</span>KARYN PORTER<br>
+                        <span class="tour-subtitle">VOCALIST</span>NATALIE IMANI<br>
+                        <span class="tour-subtitle">VOCALIST</span>TAYLER GREEN
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">PARKWOOD ENTERTAINMENT</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">BRAND COORDINATOR</span>ANAIJAH JOHNSON-MENDEZ<br>
-                        <span class="credits-tour-subname">EXECUTIVE PRODUCER, POST</span>ANDREA PINTO LAUREIRO<br>
-                        <span class="credits-tour-subname">CREATIVE DIRECTOR</span>ANDREW MAKADSI<br>
-                        <span class="credits-tour-subname">DIRECTOR OF PRODUCT STRATEGY</span>AUDREY PETERSON<br>
-                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT</span>BRIA WILLIAMS<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>CHARLES STERLING III<br>
-                        <span class="credits-tour-subname">POST PRODUCER</span>CHARLES "CJ" TRAHAN II<br>
-                        <span class="credits-tour-subname">SOCIAL MEDIA STRATEGIST</span>CODY BROWN<br>
-                        <span class="credits-tour-subname">HEAD OF MUSIC</span>DAMIEN SMITH<br>
-                        <span class="credits-tour-subname">POST COORDINATOR</span>DAVID CARFAGNO JR.<br>
-                        <span class="credits-tour-subname">PRODUCT MANAGER</span>DORA MELISSA VARGAS<br>
-                        <span class="credits-tour-subname">VISUAL DIRECTOR</span>ED BURKE<br>
-                        <span class="credits-tour-subname">STAFF ACCOUNTANT</span>EMILY HO<br>
-                        <span class="credits-tour-subname">HEAD OF TECHNOLOGY</span>ERICA ASTRELLA<br>
-                        <span class="credits-tour-subname">HEAD OF PRODUCTION</span>ERINN WILLIAMS<br>
-                        <span class="credits-tour-subname">DIRECTOR OF FINANCE</span>GENE BOLAN<br>
-                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT TO THE ARTIST</span>GENEVIEVE TATE<br>
-                        <span class="credits-tour-subname">SENIOR CREATIVE PRODUCER</span>HILLARY COY<br>
-                        <span class="credits-tour-subname">PRODUCTION COORDINATOR</span>JILLIAN DIERENFIELD<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>JULIAN PACE<br>
-                        <span class="credits-tour-subname">SENIOR VICE PRESIDENT</span>JUSTINA OMOKHUA<br>
-                        <span class="credits-tour-subname">TOUR OPERATIONS</span>KALEB STEELE<br>
-                        <span class="credits-tour-subname">TECHNICAL PROJECT MANAGER</span>KEENEN THOMPSON<br>
-                        <span class="credits-tour-subname">ART DIRECTOR</span>KELLY SHAMI<br>
-                        <span class="credits-tour-subname">STYLIST</span>KELVIN MOODY<br>
-                        <span class="credits-tour-subname">HEAD OF EDITORIAL AND BRAND</span>KRISTEN HAMMOND<br>
-                        <span class="credits-tour-subname">MANAGER OF LEGAL & BUSINESS AFFAIRS</span>KYLIE GREGORY<br>
-                        <span class="credits-tour-subname">SENIOR STILLS POST PRODUCTION</span>LAURA GERMIDA<br>
-                        <span class="credits-tour-subname">ASSISTANT CREATIVE DIRECTOR</span>LEAH NARDOS TAKELE<br>
-                        <span class="credits-tour-subname">OPERATIONS MANAGER</span>LEVI DESVAUX<br>
-                        <span class="credits-tour-subname">PRODUCTION ACCOUNTANT</span>LISA HILL<br>
-                        <span class="credits-tour-subname">POST COORDINATOR</span>LORI "LA" MCCRORY<br>
-                        <span class="credits-tour-subname">PROJECT COORDINATOR</span>MAKENLI SOMER RASPBERRY<br>
-                        <span class="credits-tour-subname">PROJECT MANAGER A&R</span>MARIEL GOMEREZ<br>
-                        <span class="credits-tour-subname">DIRECTOR OF INFO TECHNOLOGY</span>MATTHEW VANOMMEREN<br>
-                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT TO THE ARTIST</span>MICHAEL HANDLER<br>
-                        <span class="credits-tour-subname">STILLS POST PRODUCTION</span>MOLLY GOBEL<br>
-                        <span class="credits-tour-subname">EXECUTIVE PRODUCER</span>NAILAH HOLLIDAY<br>
-                        <span class="credits-tour-subname">HR MANAGER AND OFFICE ADMINISTRATION</span>NATACHA L PAUL<br>
-                        <span class="credits-tour-subname">INTERN</span>NATALIA BRYANT<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>OLAF WOLDAN<br>
-                        <span class="credits-tour-subname">PROJECT MANAGER A&R</span>RICHARD LAWSON<br>
-                        <span class="credits-tour-subname">VP/GM OF IVY PARK</span>ROBERT ZDRAVEVSKI<br>
-                        <span class="credits-tour-subname">WARDROBE OPERATIONS MANAGER</span>RYAN DODSON<br>
-                        <span class="credits-tour-subname">MEDIA MANAGER</span>RYAN LUTZ<br>
-                        <span class="credits-tour-subname">ARCHIVE DIRECTOR</span>SAMANTHA LOSBEN<br>
-                        <span class="credits-tour-subname">ARCHIVE MANAGER</span>SAMANTHA ODDI<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>SAM SAUSEDO<br>
-                        <span class="credits-tour-subname">OFFICE & PROPERTY MANAGER</span>SERGAE BURRELL<br>
-                        <span class="credits-tour-subname">POST COORDINATOR</span>SHELBY CAMPBELL<br>
-                        <span class="credits-tour-subname">SENIOR CREATIVE PRODUCER</span>SHELBY COLLINS<br>
-                        <span class="credits-tour-subname">POST SUPERVISOR</span>SHIREEN HINCKLEY<br>
-                        <span class="credits-tour-subname">SENIOR STILLS POST PRODUCTION</span>SUMIRE FUKUDA<br>
-                        <span class="credits-tour-subname">SENIOR ENGINEER</span>TERRICKA "TJ" JOHNSON<br>
-                        <span class="credits-tour-subname">DIRECTOR OF TECHNICAL EXECUTION</span>TIM WHITE<br>
-                        <span class="credits-tour-subname">DIRECTOR OF SOCIAL STRATEGY</span>TRACEY LINCOLN<br>
-                        <span class="credits-tour-subname">ASSISTANT GRAPHIC DESIGNER</span>TYLER SIMIEN<br>
-                        <span class="credits-tour-subname">PUBLICIST</span>YVETTE NOEL-SCHURE
+                <div class="tour-row">
+                    <div class="tour-role">PARKWOOD ENTERTAINMENT</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">BRAND COORDINATOR</span>ANAIJAH JOHNSON-MENDEZ<br>
+                        <span class="tour-subtitle">EXECUTIVE PRODUCER, POST</span>ANDREA PINTO LAUREIRO<br>
+                        <span class="tour-subtitle">CREATIVE DIRECTOR</span>ANDREW MAKADSI<br>
+                        <span class="tour-subtitle">DIRECTOR OF PRODUCT STRATEGY</span>AUDREY PETERSON<br>
+                        <span class="tour-subtitle">EXECUTIVE ASSISTANT</span>BRIA WILLIAMS<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>CHARLES STERLING III<br>
+                        <span class="tour-subtitle">POST PRODUCER</span>CHARLES "CJ" TRAHAN II<br>
+                        <span class="tour-subtitle">SOCIAL MEDIA STRATEGIST</span>CODY BROWN<br>
+                        <span class="tour-subtitle">HEAD OF MUSIC</span>DAMIEN SMITH<br>
+                        <span class="tour-subtitle">POST COORDINATOR</span>DAVID CARFAGNO JR.<br>
+                        <span class="tour-subtitle">PRODUCT MANAGER</span>DORA MELISSA VARGAS<br>
+                        <span class="tour-subtitle">VISUAL DIRECTOR</span>ED BURKE<br>
+                        <span class="tour-subtitle">STAFF ACCOUNTANT</span>EMILY HO<br>
+                        <span class="tour-subtitle">HEAD OF TECHNOLOGY</span>ERICA ASTRELLA<br>
+                        <span class="tour-subtitle">HEAD OF PRODUCTION</span>ERINN WILLIAMS<br>
+                        <span class="tour-subtitle">DIRECTOR OF FINANCE</span>GENE BOLAN<br>
+                        <span class="tour-subtitle">EXECUTIVE ASSISTANT TO THE ARTIST</span>GENEVIEVE TATE<br>
+                        <span class="tour-subtitle">SENIOR CREATIVE PRODUCER</span>HILLARY COY<br>
+                        <span class="tour-subtitle">PRODUCTION COORDINATOR</span>JILLIAN DIERENFIELD<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>JULIAN PACE<br>
+                        <span class="tour-subtitle">SENIOR VICE PRESIDENT</span>JUSTINA OMOKHUA<br>
+                        <span class="tour-subtitle">TOUR OPERATIONS</span>KALEB STEELE<br>
+                        <span class="tour-subtitle">TECHNICAL PROJECT MANAGER</span>KEENEN THOMPSON<br>
+                        <span class="tour-subtitle">ART DIRECTOR</span>KELLY SHAMI<br>
+                        <span class="tour-subtitle">STYLIST</span>KELVIN MOODY<br>
+                        <span class="tour-subtitle">HEAD OF EDITORIAL AND BRAND</span>KRISTEN HAMMOND<br>
+                        <span class="tour-subtitle">MANAGER OF LEGAL & BUSINESS AFFAIRS</span>KYLIE GREGORY<br>
+                        <span class="tour-subtitle">SENIOR STILLS POST PRODUCTION</span>LAURA GERMIDA<br>
+                        <span class="tour-subtitle">ASSISTANT CREATIVE DIRECTOR</span>LEAH NARDOS TAKELE<br>
+                        <span class="tour-subtitle">OPERATIONS MANAGER</span>LEVI DESVAUX<br>
+                        <span class="tour-subtitle">PRODUCTION ACCOUNTANT</span>LISA HILL<br>
+                        <span class="tour-subtitle">POST COORDINATOR</span>LORI "LA" MCCRORY<br>
+                        <span class="tour-subtitle">PROJECT COORDINATOR</span>MAKENLI SOMER RASPBERRY<br>
+                        <span class="tour-subtitle">PROJECT MANAGER A&R</span>MARIEL GOMEREZ<br>
+                        <span class="tour-subtitle">DIRECTOR OF INFO TECHNOLOGY</span>MATTHEW VANOMMEREN<br>
+                        <span class="tour-subtitle">EXECUTIVE ASSISTANT TO THE ARTIST</span>MICHAEL HANDLER<br>
+                        <span class="tour-subtitle">STILLS POST PRODUCTION</span>MOLLY GOBEL<br>
+                        <span class="tour-subtitle">EXECUTIVE PRODUCER</span>NAILAH HOLLIDAY<br>
+                        <span class="tour-subtitle">HR MANAGER AND OFFICE ADMINISTRATION</span>NATACHA L PAUL<br>
+                        <span class="tour-subtitle">INTERN</span>NATALIA BRYANT<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>OLAF WOLDAN<br>
+                        <span class="tour-subtitle">PROJECT MANAGER A&R</span>RICHARD LAWSON<br>
+                        <span class="tour-subtitle">VP/GM OF IVY PARK</span>ROBERT ZDRAVEVSKI<br>
+                        <span class="tour-subtitle">WARDROBE OPERATIONS MANAGER</span>RYAN DODSON<br>
+                        <span class="tour-subtitle">MEDIA MANAGER</span>RYAN LUTZ<br>
+                        <span class="tour-subtitle">ARCHIVE DIRECTOR</span>SAMANTHA LOSBEN<br>
+                        <span class="tour-subtitle">ARCHIVE MANAGER</span>SAMANTHA ODDI<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>SAM SAUSEDO<br>
+                        <span class="tour-subtitle">OFFICE & PROPERTY MANAGER</span>SERGAE BURRELL<br>
+                        <span class="tour-subtitle">POST COORDINATOR</span>SHELBY CAMPBELL<br>
+                        <span class="tour-subtitle">SENIOR CREATIVE PRODUCER</span>SHELBY COLLINS<br>
+                        <span class="tour-subtitle">POST SUPERVISOR</span>SHIREEN HINCKLEY<br>
+                        <span class="tour-subtitle">SENIOR STILLS POST PRODUCTION</span>SUMIRE FUKUDA<br>
+                        <span class="tour-subtitle">SENIOR ENGINEER</span>TERRICKA "TJ" JOHNSON<br>
+                        <span class="tour-subtitle">DIRECTOR OF TECHNICAL EXECUTION</span>TIM WHITE<br>
+                        <span class="tour-subtitle">DIRECTOR OF SOCIAL STRATEGY</span>TRACEY LINCOLN<br>
+                        <span class="tour-subtitle">ASSISTANT GRAPHIC DESIGNER</span>TYLER SIMIEN<br>
+                        <span class="tour-subtitle">PUBLICIST</span>YVETTE NOEL-SCHURE
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">WARDROBE</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">DIRECTOR OF TECHNICAL EXECUTION</span>TIMOTHY WHITE<br>
-                        <span class="credits-tour-subname">WARDROBE OPERATIONS</span>RYAN DODSON<br>
-                        <span class="credits-tour-subname">DRESSER</span>SU FLESLAND-CARTER<br>
-                        <span class="credits-tour-subname">DRESSER</span>KANNA TANIUCHI<br>
-                        <span class="credits-tour-subname">DRESSER</span>GEORGINA CURTIS<br>
-                        <span class="credits-tour-subname">STAND IN</span>JUSTINE HERRON<br>
-                        <span class="credits-tour-subname">TAILOR</span>KAITLYN DE LA CRUZ<br>
-                        <span class="credits-tour-subname">ASSISTANT COSTUME DESIGNER</span>ERICA RICE<br>
-                        <span class="credits-tour-subname">ADDITIONAL STYLING</span>BRANDYN GREEN<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>CHRISTINA SMITH<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>ALEXANDRA BICKERDIKE<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>BRIGITTE KOVATS<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>HADYA TUOFIQ<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>TARA GREVILLE<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>LETIZIA GUARINO<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>VANCE GAMBLE<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>ERICA BOISAUBIN<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>JULIA GALL<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>MOLLY PETERS<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>MOLLY SHILLINGFORD<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>NELLY CARLE<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>ALAIN LUCAS<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>CHRISTIAN BOUA<br>
-                        <span class="credits-tour-subname">STYLING ASSISTANT</span>KEVIN GROSJEAN<br>
-                        <span class="credits-tour-subname">SKETCH ARTIST</span>ADAM AFKIR
+                <div class="tour-row">
+                    <div class="tour-role">WARDROBE</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">DIRECTOR OF TECHNICAL EXECUTION</span>TIMOTHY WHITE<br>
+                        <span class="tour-subtitle">WARDROBE OPERATIONS</span>RYAN DODSON<br>
+                        <span class="tour-subtitle">DRESSER</span>SU FLESLAND-CARTER<br>
+                        <span class="tour-subtitle">DRESSER</span>KANNA TANIUCHI<br>
+                        <span class="tour-subtitle">DRESSER</span>GEORGINA CURTIS<br>
+                        <span class="tour-subtitle">STAND IN</span>JUSTINE HERRON<br>
+                        <span class="tour-subtitle">TAILOR</span>KAITLYN DE LA CRUZ<br>
+                        <span class="tour-subtitle">ASSISTANT COSTUME DESIGNER</span>ERICA RICE<br>
+                        <span class="tour-subtitle">ADDITIONAL STYLING</span>BRANDYN GREEN<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>CHRISTINA SMITH<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>ALEXANDRA BICKERDIKE<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>BRIGITTE KOVATS<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>HADYA TUOFIQ<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>TARA GREVILLE<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>LETIZIA GUARINO<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>VANCE GAMBLE<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>ERICA BOISAUBIN<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>JULIA GALL<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>MOLLY PETERS<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>MOLLY SHILLINGFORD<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>NELLY CARLE<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>ALAIN LUCAS<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>CHRISTIAN BOUA<br>
+                        <span class="tour-subtitle">STYLING ASSISTANT</span>KEVIN GROSJEAN<br>
+                        <span class="tour-subtitle">SKETCH ARTIST</span>ADAM AFKIR
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">ADDITIONAL CHOREOGRAPHY</div>
-                    <div class="credits-tour-names">AMARI MARSHALL<br>
+                <div class="tour-row">
+                    <div class="tour-role">ADDITIONAL CHOREOGRAPHY</div>
+                    <div class="tour-title">AMARI MARSHALL<br>
                         CARLOS IRIZARRY<br>
                         DANA FOGLIA<br>
                         DANI LEIGH<br>
@@ -824,427 +824,427 @@
                         LES TWINS<br>
                         ROB BYNES<br>
                         SIDI LARBI CHERKAOUI<br>
-                        <span class="credits-tour-subname">CHOREO ASSISTANT</span>BRIANA GOBOURNE<br>
-                        <span class="credits-tour-subname">CHOREO ASSISTANT</span>BOYBOI
+                        <span class="tour-subtitle">CHOREO ASSISTANT</span>BRIANA GOBOURNE<br>
+                        <span class="tour-subtitle">CHOREO ASSISTANT</span>BOYBOI
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">GLAM</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">ARTIST HAIR STYLIST</span>NEAL FARINAH<br>
-                        <span class="credits-tour-subname">ARTIST MAKE-UP</span>ROKAEL LIZAMA<br>
-                        <span class="credits-tour-subname">DANCER HAIR STYLIST</span>ZIFF SISTRUNK<br>
-                        <span class="credits-tour-subname">DANCER HAIR STYLIST</span>LETISIA RAVELO<br>
-                        <span class="credits-tour-subname">DANCER HAIR STYLIST</span>DOMINIQUE HOLLOWAY
+                <div class="tour-row">
+                    <div class="tour-role">GLAM</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">ARTIST HAIR STYLIST</span>NEAL FARINAH<br>
+                        <span class="tour-subtitle">ARTIST MAKE-UP</span>ROKAEL LIZAMA<br>
+                        <span class="tour-subtitle">DANCER HAIR STYLIST</span>ZIFF SISTRUNK<br>
+                        <span class="tour-subtitle">DANCER HAIR STYLIST</span>LETISIA RAVELO<br>
+                        <span class="tour-subtitle">DANCER HAIR STYLIST</span>DOMINIQUE HOLLOWAY
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">TOUR MANAGEMENT</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">HEAD OF MUSIC</span>DAMIEN SMITH<br>
-                        <span class="credits-tour-subname">TOUR DIRECTOR</span>MARTY HOM<br>
-                        <span class="credits-tour-subname">TOUR MANAGER</span>MARLON BOWERS<br>
-                        <span class="credits-tour-subname">TOURING OPERATIONS</span>KALEB STEELE<br>
-                        <span class="credits-tour-subname">ASSISTANT TOUR MANAGER</span>RYAN ANDERSON<br>
-                        <span class="credits-tour-subname">ROAD MANAGER</span>ANDREA ESPINOZA
+                <div class="tour-row">
+                    <div class="tour-role">TOUR MANAGEMENT</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">HEAD OF MUSIC</span>DAMIEN SMITH<br>
+                        <span class="tour-subtitle">TOUR DIRECTOR</span>MARTY HOM<br>
+                        <span class="tour-subtitle">TOUR MANAGER</span>MARLON BOWERS<br>
+                        <span class="tour-subtitle">TOURING OPERATIONS</span>KALEB STEELE<br>
+                        <span class="tour-subtitle">ASSISTANT TOUR MANAGER</span>RYAN ANDERSON<br>
+                        <span class="tour-subtitle">ROAD MANAGER</span>ANDREA ESPINOZA
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">TOUR BUSINESS ADMINISTRATION</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">TOUR FINANCIAL DIRECTOR</span>DAN MCGEE<br>
-                        <span class="credits-tour-subname">PRODUCTION ACCOUNTANT</span>DYLAN KENNEDY<br>
-                        <span class="credits-tour-subname">PRODUCTION ACCOUNTANT</span>KANE MCGEE
+                <div class="tour-row">
+                    <div class="tour-role">TOUR BUSINESS ADMINISTRATION</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">TOUR FINANCIAL DIRECTOR</span>DAN MCGEE<br>
+                        <span class="tour-subtitle">PRODUCTION ACCOUNTANT</span>DYLAN KENNEDY<br>
+                        <span class="tour-subtitle">PRODUCTION ACCOUNTANT</span>KANE MCGEE
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">VIP SERVICES</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">VIP MANAGER AND ASSISTANT TOUR MANAGER</span>LARRY
+                <div class="tour-row">
+                    <div class="tour-role">VIP SERVICES</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">VIP MANAGER AND ASSISTANT TOUR MANAGER</span>LARRY
                         BEYINCE<br>
-                        <span class="credits-tour-subname">VIP TICKET RELATIONS</span>DORA MELISSA VARGAS
+                        <span class="tour-subtitle">VIP TICKET RELATIONS</span>DORA MELISSA VARGAS
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">PRODUCTION</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">PRODUCTION MANAGER</span>JASON DANTER<br>
-                        <span class="credits-tour-subname">PRODUCTION COORDINATOR</span>CARMEN RODRIGUEZ<br>
-                        <span class="credits-tour-subname">PRODUCTION COORDINATOR</span>EMMA CEDERBLAD<br>
-                        <span class="credits-tour-subname">PRODUCTION COORDINATOR</span>HOLLY SANDEMAN<br>
-                        <span class="credits-tour-subname">STAGE MANAGER</span>BRIAN WARES<br>
-                        <span class="credits-tour-subname">STAGE MANAGER</span>BRAD IMRIE<br>
-                        <span class="credits-tour-subname">SHOW DIRECTOR</span>SEANNE FARMER<br>
-                        <span class="credits-tour-subname">SHOW CALLER</span>VICKI SHENK<br>
-                        <span class="credits-tour-subname">FAN TECH</span>KYLE BRICKER<br>
-                        <span class="credits-tour-subname">IT TECH</span>CARRICK LLOYD<br>
-                        <span class="credits-tour-subname">LAUNDRY TECH</span>ALICE SHAKESPEARE
+                <div class="tour-row">
+                    <div class="tour-role">PRODUCTION</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">PRODUCTION MANAGER</span>JASON DANTER<br>
+                        <span class="tour-subtitle">PRODUCTION COORDINATOR</span>CARMEN RODRIGUEZ<br>
+                        <span class="tour-subtitle">PRODUCTION COORDINATOR</span>EMMA CEDERBLAD<br>
+                        <span class="tour-subtitle">PRODUCTION COORDINATOR</span>HOLLY SANDEMAN<br>
+                        <span class="tour-subtitle">STAGE MANAGER</span>BRIAN WARES<br>
+                        <span class="tour-subtitle">STAGE MANAGER</span>BRAD IMRIE<br>
+                        <span class="tour-subtitle">SHOW DIRECTOR</span>SEANNE FARMER<br>
+                        <span class="tour-subtitle">SHOW CALLER</span>VICKI SHENK<br>
+                        <span class="tour-subtitle">FAN TECH</span>KYLE BRICKER<br>
+                        <span class="tour-subtitle">IT TECH</span>CARRICK LLOYD<br>
+                        <span class="tour-subtitle">LAUNDRY TECH</span>ALICE SHAKESPEARE
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">LIGHTING</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">LIGHTING DIRECTOR</span>ISHAI MIKA<br>
-                        <span class="credits-tour-subname">ADDITIONAL LIGHTING DIRECTOR</span>MICHAEL STRAUN<br>
-                        <span class="credits-tour-subname">LIGHTING PROGRAMMER</span>ISKA GABRE<br>
-                        <span class="credits-tour-subname">LIGHTING CREW CHIEF</span>JAMES JONES III<br>
-                        <span class="credits-tour-subname">FOH / NETWORK</span>MIKE ROTHWELL<br>
-                        <span class="credits-tour-subname">STAGE RIGHT DIMMERS</span>TOM BIDER<br>
-                        <span class="credits-tour-subname">STAGE LEFT DIMMERS</span>DOM MCCLORY<br>
-                        <span class="credits-tour-subname">LX DIMMERS</span>CRAIG SAUNDERS<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>CHRIS WILKES<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>TOM BENNETT<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>LIAM WISE<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>ANDIE SZEKELY<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>MATT ARBLASTER<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>CORNELIUS O'GRADY<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>LEWIS WILDING<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>SERFINA GONZALEZ<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>MARK BUTLER<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>MARY WEBB<br>
-                        <span class="credits-tour-subname">LIGHTING TECH</span>LUKE CREWSSWELL<br>
-                        <span class="credits-tour-subname">FOLLOW ME TECH</span>KAI CANNON<br>
-                        <span class="credits-tour-subname">LIGHTING AUTOMATION OPERATOR</span>SAM COLCOUGH<br>
-                        <span class="credits-tour-subname">PROPS LIGHTING TECH</span>TIM SMITH
+                <div class="tour-row">
+                    <div class="tour-role">LIGHTING</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">LIGHTING DIRECTOR</span>ISHAI MIKA<br>
+                        <span class="tour-subtitle">ADDITIONAL LIGHTING DIRECTOR</span>MICHAEL STRAUN<br>
+                        <span class="tour-subtitle">LIGHTING PROGRAMMER</span>ISKA GABRE<br>
+                        <span class="tour-subtitle">LIGHTING CREW CHIEF</span>JAMES JONES III<br>
+                        <span class="tour-subtitle">FOH / NETWORK</span>MIKE ROTHWELL<br>
+                        <span class="tour-subtitle">STAGE RIGHT DIMMERS</span>TOM BIDER<br>
+                        <span class="tour-subtitle">STAGE LEFT DIMMERS</span>DOM MCCLORY<br>
+                        <span class="tour-subtitle">LX DIMMERS</span>CRAIG SAUNDERS<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>CHRIS WILKES<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>TOM BENNETT<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>LIAM WISE<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>ANDIE SZEKELY<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>MATT ARBLASTER<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>CORNELIUS O'GRADY<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>LEWIS WILDING<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>SERFINA GONZALEZ<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>MARK BUTLER<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>MARY WEBB<br>
+                        <span class="tour-subtitle">LIGHTING TECH</span>LUKE CREWSSWELL<br>
+                        <span class="tour-subtitle">FOLLOW ME TECH</span>KAI CANNON<br>
+                        <span class="tour-subtitle">LIGHTING AUTOMATION OPERATOR</span>SAM COLCOUGH<br>
+                        <span class="tour-subtitle">PROPS LIGHTING TECH</span>TIM SMITH
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">VIDEO CONTENT</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">DESIGN DIRECTOR</span>FREDERIK HEYMAN<br>
-                        <span class="credits-tour-subname">EDITOR</span>TOM WATSON<br>
-                        <span class="credits-tour-subname">EDITOR</span>DANNY TULL<br>
-                        <span class="credits-tour-subname">EDITOR</span>RUTH HOGBEN<br>
-                        <span class="credits-tour-subname">POST SUPERVISOR</span>BEN LOMELI<br>
-                        <span class="credits-tour-subname">SOUND DESIGN</span>AKIRA WOODGRAIN<br>
-                        <span class="credits-tour-subname">3D ARTIST</span>JOEP TRUIJEN<br>
-                        <span class="credits-tour-subname">GREEN WALL OWNER & PROJECT MANAGEMENT</span>FREDERIK
+                <div class="tour-row">
+                    <div class="tour-role">VIDEO CONTENT</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">DESIGN DIRECTOR</span>FREDERIK HEYMAN<br>
+                        <span class="tour-subtitle">EDITOR</span>TOM WATSON<br>
+                        <span class="tour-subtitle">EDITOR</span>DANNY TULL<br>
+                        <span class="tour-subtitle">EDITOR</span>RUTH HOGBEN<br>
+                        <span class="tour-subtitle">POST SUPERVISOR</span>BEN LOMELI<br>
+                        <span class="tour-subtitle">SOUND DESIGN</span>AKIRA WOODGRAIN<br>
+                        <span class="tour-subtitle">3D ARTIST</span>JOEP TRUIJEN<br>
+                        <span class="tour-subtitle">GREEN WALL OWNER & PROJECT MANAGEMENT</span>FREDERIK
                         STORMBY<br>
-                        <span class="credits-tour-subname">SCREEN PRODUCER</span>DAVID NORDSTRÖM<br>
-                        <span class="credits-tour-subname">PROJECT MANAGER</span>MIKE SMITH<br>
-                        <span class="credits-tour-subname">MOTION GRAPHICS ARTIST</span>NILS WESTFELDT<br>
-                        <span class="credits-tour-subname">MOTION GRAPHICS ARTIST</span>DAVID CARVAJAL<br>
-                        <span class="credits-tour-subname">MOTION GRAPHICS ARTIST</span>ERIK HJARKÉUS<br>
-                        <span class="credits-tour-subname">MOTION GRAPHICS ARTIST</span>PERTTI JAASAARI<br>
-                        <span class="credits-tour-subname">MOTION GRAPHICS ARTIST</span>OLIVIA RAMVIKEN<br>
-                        <span class="credits-tour-subname">MOTION GRAPHICS ARTIST</span>VIKTOR RUNFLÖF<br>
-                        <span class="credits-tour-subname">GWD STUDIO PHOTO</span>NOEMI ROMBO ZETTELUND<br>
-                        <span class="credits-tour-subname">TIMELAPSE PHOTO</span>HAMPUS SAND<br>
-                        <span class="credits-tour-subname">PRODUCTION COORDINATOR</span>JESSICA TIDWELL<br>
-                        <span class="credits-tour-subname">PRODUCTION COORDINATOR</span>NIKO KOSBERG<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>O'NEIL HENRY<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>SARAH PARK<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>BROCK HUMPHREY<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>JAMIE YUKICH<br>
-                        <span class="credits-tour-subname">ASSISTANT EDITOR</span>MARISSA WALKER<br>
-                        <span class="credits-tour-subname">VFX</span>TOMMIE GERAEDTS<br>
-                        <span class="credits-tour-subname">VFX</span>JESSE NEWMAN<br>
-                        <span class="credits-tour-subname">VFX</span>FUCHUN CHU
+                        <span class="tour-subtitle">SCREEN PRODUCER</span>DAVID NORDSTRÖM<br>
+                        <span class="tour-subtitle">PROJECT MANAGER</span>MIKE SMITH<br>
+                        <span class="tour-subtitle">MOTION GRAPHICS ARTIST</span>NILS WESTFELDT<br>
+                        <span class="tour-subtitle">MOTION GRAPHICS ARTIST</span>DAVID CARVAJAL<br>
+                        <span class="tour-subtitle">MOTION GRAPHICS ARTIST</span>ERIK HJARKÉUS<br>
+                        <span class="tour-subtitle">MOTION GRAPHICS ARTIST</span>PERTTI JAASAARI<br>
+                        <span class="tour-subtitle">MOTION GRAPHICS ARTIST</span>OLIVIA RAMVIKEN<br>
+                        <span class="tour-subtitle">MOTION GRAPHICS ARTIST</span>VIKTOR RUNFLÖF<br>
+                        <span class="tour-subtitle">GWD STUDIO PHOTO</span>NOEMI ROMBO ZETTELUND<br>
+                        <span class="tour-subtitle">TIMELAPSE PHOTO</span>HAMPUS SAND<br>
+                        <span class="tour-subtitle">PRODUCTION COORDINATOR</span>JESSICA TIDWELL<br>
+                        <span class="tour-subtitle">PRODUCTION COORDINATOR</span>NIKO KOSBERG<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>O'NEIL HENRY<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>SARAH PARK<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>BROCK HUMPHREY<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>JAMIE YUKICH<br>
+                        <span class="tour-subtitle">ASSISTANT EDITOR</span>MARISSA WALKER<br>
+                        <span class="tour-subtitle">VFX</span>TOMMIE GERAEDTS<br>
+                        <span class="tour-subtitle">VFX</span>JESSE NEWMAN<br>
+                        <span class="tour-subtitle">VFX</span>FUCHUN CHU
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">VIDEO</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">ASSISTANT VIDEO DIRECTOR (REHEARSALS)</span>HAYLEY
+                <div class="tour-row">
+                    <div class="tour-role">VIDEO</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">ASSISTANT VIDEO DIRECTOR (REHEARSALS)</span>HAYLEY
                         COLLETT<br>
-                        <span class="credits-tour-subname">ASSISTANT VIDEO DIRECTOR (UK/EU)</span>SANDRA PALORMI<br>
-                        <span class="credits-tour-subname">ASSISTANT VIDEO DIRECTOR (NAM)</span>MICHELLE ARNOLD<br>
-                        <span class="credits-tour-subname">DIRECTOR OF PHOTOGRAPHY</span>BRETT TURNBULL<br>
-                        <span class="credits-tour-subname">VIDEO ENGINEER</span>JULIEN SCHNEIDER<br>
-                        <span class="credits-tour-subname">VIDEO ENGINEER</span>JOHANNS LITZENBERGER<br>
-                        <span class="credits-tour-subname">SHADER</span>EMELIE SCAMINACI<br>
-                        <span class="credits-tour-subname">SHADER</span>FREDERIC VAN GEELKERKEN<br>
-                        <span class="credits-tour-subname">VIDEO CREW CHIEF</span>JON MICHAEL SCHULMANN<br>
-                        <span class="credits-tour-subname">LED TECH</span>BRENT KIRCHNER<br>
-                        <span class="credits-tour-subname">LED TECH</span>TYLER FIELDS<br>
-                        <span class="credits-tour-subname">LED TECH</span>JAKE GARDNER<br>
-                        <span class="credits-tour-subname">LED TECH</span>MATTHEW ORTIZ<br>
-                        <span class="credits-tour-subname">LED TECH</span>CARLA VAGLAND<br>
-                        <span class="credits-tour-subname">LED TECH</span>BRENNA RAE STONE<br>
-                        <span class="credits-tour-subname">LED TECH</span>JERAD ODOM<br>
-                        <span class="credits-tour-subname">LED TECH</span>GEORGE MCPEAK<br>
-                        <span class="credits-tour-subname">LED / VIDEO CAMERA</span>KARL HANSON<br>
-                        <span class="credits-tour-subname">LED / VIDEO CAMERA</span>AUSTIN WAVRA<br>
-                        <span class="credits-tour-subname">LED TECH</span>MICAH WICKRE<br>
-                        <span class="credits-tour-subname">VIDEO CAMERA LONG LENS</span>JAMES LOCKHART<br>
-                        <span class="credits-tour-subname">HANDHELD / JIB</span>ALPHA BARRIE<br>
-                        <span class="credits-tour-subname">VIDEO CAMERA LONG LENS</span>TOM HACKETT<br>
-                        <span class="credits-tour-subname">VIDEO CAMERA LONG LENS</span>NIKKI GRAVES<br>
-                        <span class="credits-tour-subname">MEDIA SERVER TECH</span>ARMANDO PAGAN MORALES<br>
-                        <span class="credits-tour-subname">MEDIA SERVER</span>KAYLA HUMPHRERYS<br>
-                        <span class="credits-tour-subname">RAILCAM CREW CHIEF</span>RICK COMPEAU<br>
-                        <span class="credits-tour-subname">RAILCAM</span>MORITZ TRAXEL<br>
-                        <span class="credits-tour-subname">RAILCAM</span>CHRIS FERGUSON<br>
-                        <span class="credits-tour-subname">RAILCAM</span>JONNY HARKINS<br>
-                        <span class="credits-tour-subname">RAILCAM</span>JOE VICTORIA<br>
-                        <span class="credits-tour-subname">RAILCAM</span>DOMINIC BENDIJO<br>
-                        <span class="credits-tour-subname">RAILCAM</span>RYAN SCHULTZ<br>
-                        <span class="credits-tour-subname">CAMERA OPERATOR</span>DAVID LIEBLING<br>
-                        <span class="credits-tour-subname">CAMERA OPERATOR</span>JOHN WRIGHT<br>
-                        <span class="credits-tour-subname">VISION MIXER</span>MICHAEL DUQUE<br>
-                        <span class="credits-tour-subname">CAMERA TECH / VIDEO RF</span>JHONATAN HERNANDEZ<br>
-                        <span class="credits-tour-subname">VIDEO TEAM MANAGER</span>MIKE SMITH<br>
-                        <span class="credits-tour-subname">SYSTEM MANAGEMENT</span>DOM ADAMS<br>
-                        <span class="credits-tour-subname">SYSTEM MANAGEMENT</span>EMANUEL TILLY<br>
-                        <span class="credits-tour-subname">DISGUISE PROGRAMMER</span>JOSEPH LOTT<br>
-                        <span class="credits-tour-subname">NOTCH DIRECTOR & DESIGNER</span>LEWIS KYLE WHITE<br>
-                        <span class="credits-tour-subname">NOTCH DESIGNER & PROGRAMMER</span>CODY SAMSON
+                        <span class="tour-subtitle">ASSISTANT VIDEO DIRECTOR (UK/EU)</span>SANDRA PALORMI<br>
+                        <span class="tour-subtitle">ASSISTANT VIDEO DIRECTOR (NAM)</span>MICHELLE ARNOLD<br>
+                        <span class="tour-subtitle">DIRECTOR OF PHOTOGRAPHY</span>BRETT TURNBULL<br>
+                        <span class="tour-subtitle">VIDEO ENGINEER</span>JULIEN SCHNEIDER<br>
+                        <span class="tour-subtitle">VIDEO ENGINEER</span>JOHANNS LITZENBERGER<br>
+                        <span class="tour-subtitle">SHADER</span>EMELIE SCAMINACI<br>
+                        <span class="tour-subtitle">SHADER</span>FREDERIC VAN GEELKERKEN<br>
+                        <span class="tour-subtitle">VIDEO CREW CHIEF</span>JON MICHAEL SCHULMANN<br>
+                        <span class="tour-subtitle">LED TECH</span>BRENT KIRCHNER<br>
+                        <span class="tour-subtitle">LED TECH</span>TYLER FIELDS<br>
+                        <span class="tour-subtitle">LED TECH</span>JAKE GARDNER<br>
+                        <span class="tour-subtitle">LED TECH</span>MATTHEW ORTIZ<br>
+                        <span class="tour-subtitle">LED TECH</span>CARLA VAGLAND<br>
+                        <span class="tour-subtitle">LED TECH</span>BRENNA RAE STONE<br>
+                        <span class="tour-subtitle">LED TECH</span>JERAD ODOM<br>
+                        <span class="tour-subtitle">LED TECH</span>GEORGE MCPEAK<br>
+                        <span class="tour-subtitle">LED / VIDEO CAMERA</span>KARL HANSON<br>
+                        <span class="tour-subtitle">LED / VIDEO CAMERA</span>AUSTIN WAVRA<br>
+                        <span class="tour-subtitle">LED TECH</span>MICAH WICKRE<br>
+                        <span class="tour-subtitle">VIDEO CAMERA LONG LENS</span>JAMES LOCKHART<br>
+                        <span class="tour-subtitle">HANDHELD / JIB</span>ALPHA BARRIE<br>
+                        <span class="tour-subtitle">VIDEO CAMERA LONG LENS</span>TOM HACKETT<br>
+                        <span class="tour-subtitle">VIDEO CAMERA LONG LENS</span>NIKKI GRAVES<br>
+                        <span class="tour-subtitle">MEDIA SERVER TECH</span>ARMANDO PAGAN MORALES<br>
+                        <span class="tour-subtitle">MEDIA SERVER</span>KAYLA HUMPHRERYS<br>
+                        <span class="tour-subtitle">RAILCAM CREW CHIEF</span>RICK COMPEAU<br>
+                        <span class="tour-subtitle">RAILCAM</span>MORITZ TRAXEL<br>
+                        <span class="tour-subtitle">RAILCAM</span>CHRIS FERGUSON<br>
+                        <span class="tour-subtitle">RAILCAM</span>JONNY HARKINS<br>
+                        <span class="tour-subtitle">RAILCAM</span>JOE VICTORIA<br>
+                        <span class="tour-subtitle">RAILCAM</span>DOMINIC BENDIJO<br>
+                        <span class="tour-subtitle">RAILCAM</span>RYAN SCHULTZ<br>
+                        <span class="tour-subtitle">CAMERA OPERATOR</span>DAVID LIEBLING<br>
+                        <span class="tour-subtitle">CAMERA OPERATOR</span>JOHN WRIGHT<br>
+                        <span class="tour-subtitle">VISION MIXER</span>MICHAEL DUQUE<br>
+                        <span class="tour-subtitle">CAMERA TECH / VIDEO RF</span>JHONATAN HERNANDEZ<br>
+                        <span class="tour-subtitle">VIDEO TEAM MANAGER</span>MIKE SMITH<br>
+                        <span class="tour-subtitle">SYSTEM MANAGEMENT</span>DOM ADAMS<br>
+                        <span class="tour-subtitle">SYSTEM MANAGEMENT</span>EMANUEL TILLY<br>
+                        <span class="tour-subtitle">DISGUISE PROGRAMMER</span>JOSEPH LOTT<br>
+                        <span class="tour-subtitle">NOTCH DIRECTOR & DESIGNER</span>LEWIS KYLE WHITE<br>
+                        <span class="tour-subtitle">NOTCH DESIGNER & PROGRAMMER</span>CODY SAMSON
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">BACKLINE</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">DRUM TECH</span>SEAN WOODS<br>
-                        <span class="credits-tour-subname">PLAYBACK ENGINEER</span>KEVIN "KWIZ" RYAN<br>
-                        <span class="credits-tour-subname">GUITAR / BASS TECH</span>SEAN O'BRIEN<br>
-                        <span class="credits-tour-subname">KEYBOARD TECH</span>ZACH BAIRD<br>
-                        <span class="credits-tour-subname">LYRIC PROGRAMMER</span>LAURIE HANSEN
+                <div class="tour-row">
+                    <div class="tour-role">BACKLINE</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">DRUM TECH</span>SEAN WOODS<br>
+                        <span class="tour-subtitle">PLAYBACK ENGINEER</span>KEVIN "KWIZ" RYAN<br>
+                        <span class="tour-subtitle">GUITAR / BASS TECH</span>SEAN O'BRIEN<br>
+                        <span class="tour-subtitle">KEYBOARD TECH</span>ZACH BAIRD<br>
+                        <span class="tour-subtitle">LYRIC PROGRAMMER</span>LAURIE HANSEN
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">AUDIO</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">FOH ENGINEER</span>JAMES BERRY<br>
-                        <span class="credits-tour-subname">MIXING ENGINEER</span>CHRIS BALOGH<br>
-                        <span class="credits-tour-subname">MONITOR ENGINEER</span>JIMMY CORBIN<br>
-                        <span class="credits-tour-subname">MONITOR ENGINEER (BAND)</span>CHRIS BELLAMY<br>
-                        <span class="credits-tour-subname">SYSTEM ENGINEER / CREW CHIEF</span>MARK BRNICH<br>
-                        <span class="credits-tour-subname">SYSTEM ENGINEER / AUDIO TECH</span>KRISTEN DEAN<br>
-                        <span class="credits-tour-subname">MONITOR TECH</span>JOHN SWITZER<br>
-                        <span class="credits-tour-subname">MONITOR TECH</span>LEE FOX-FURNELL<br>
-                        <span class="credits-tour-subname">RF TECH</span>CLINT REYNOLDS<br>
-                        <span class="credits-tour-subname">RF TECH</span>ERICK RUIZ<br>
-                        <span class="credits-tour-subname">SHOW COM TECH</span>PATRICK TAGHAVI<br>
-                        <span class="credits-tour-subname">SHOW COM TECH</span>ELMAR DIZON<br>
-                        <span class="credits-tour-subname">PA TECH</span>CHRIS JACOBS<br>
-                        <span class="credits-tour-subname">PA TECH</span>ASHLEY LOWE<br>
-                        <span class="credits-tour-subname">PA TECH</span>JESS SCOTT<br>
-                        <span class="credits-tour-subname">PA TECH</span>MALCOLM SECRIGHT<br>
-                        <span class="credits-tour-subname">VOCAL SOUND EFFECTS ENGINEER</span>TANNER KINNEY<br>
-                        <span class="credits-tour-subname">DIGITAL PROGRAMMER</span>DEMETRIUS HENRY
+                <div class="tour-row">
+                    <div class="tour-role">AUDIO</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">FOH ENGINEER</span>JAMES BERRY<br>
+                        <span class="tour-subtitle">MIXING ENGINEER</span>CHRIS BALOGH<br>
+                        <span class="tour-subtitle">MONITOR ENGINEER</span>JIMMY CORBIN<br>
+                        <span class="tour-subtitle">MONITOR ENGINEER (BAND)</span>CHRIS BELLAMY<br>
+                        <span class="tour-subtitle">SYSTEM ENGINEER / CREW CHIEF</span>MARK BRNICH<br>
+                        <span class="tour-subtitle">SYSTEM ENGINEER / AUDIO TECH</span>KRISTEN DEAN<br>
+                        <span class="tour-subtitle">MONITOR TECH</span>JOHN SWITZER<br>
+                        <span class="tour-subtitle">MONITOR TECH</span>LEE FOX-FURNELL<br>
+                        <span class="tour-subtitle">RF TECH</span>CLINT REYNOLDS<br>
+                        <span class="tour-subtitle">RF TECH</span>ERICK RUIZ<br>
+                        <span class="tour-subtitle">SHOW COM TECH</span>PATRICK TAGHAVI<br>
+                        <span class="tour-subtitle">SHOW COM TECH</span>ELMAR DIZON<br>
+                        <span class="tour-subtitle">PA TECH</span>CHRIS JACOBS<br>
+                        <span class="tour-subtitle">PA TECH</span>ASHLEY LOWE<br>
+                        <span class="tour-subtitle">PA TECH</span>JESS SCOTT<br>
+                        <span class="tour-subtitle">PA TECH</span>MALCOLM SECRIGHT<br>
+                        <span class="tour-subtitle">VOCAL SOUND EFFECTS ENGINEER</span>TANNER KINNEY<br>
+                        <span class="tour-subtitle">DIGITAL PROGRAMMER</span>DEMETRIUS HENRY
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">MUSIC ENGINEERING</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">ENGINEER</span>STUART WHITE<br>
-                        <span class="credits-tour-subname">ASSISTANT ENGINEER</span>MATHEUS BRAZ
+                <div class="tour-row">
+                    <div class="tour-role">MUSIC ENGINEERING</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">ENGINEER</span>STUART WHITE<br>
+                        <span class="tour-subtitle">ASSISTANT ENGINEER</span>MATHEUS BRAZ
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">POWER</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">CREW CHIEF</span>MATT MURPHY<br>
-                        <span class="credits-tour-subname">ELECTRICIAN</span>DAVE LESH<br>
-                        <span class="credits-tour-subname">GENERATOR TECH</span>PAUL APPLEBY<br>
-                        <span class="credits-tour-subname">ELECTRICIAN</span>JACK MURRAY
+                <div class="tour-row">
+                    <div class="tour-role">POWER</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">CREW CHIEF</span>MATT MURPHY<br>
+                        <span class="tour-subtitle">ELECTRICIAN</span>DAVE LESH<br>
+                        <span class="tour-subtitle">GENERATOR TECH</span>PAUL APPLEBY<br>
+                        <span class="tour-subtitle">ELECTRICIAN</span>JACK MURRAY
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">RIGGING</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">HEAD RIGGER</span>BILL RENGSTL<br>
-                        <span class="credits-tour-subname">RIGGER</span>JASON "LEWLEW" LEWIS<br>
-                        <span class="credits-tour-subname">RIGGER</span>ALEX BOLDUC<br>
-                        <span class="credits-tour-subname">CLIMBER CARPENTER</span>ALEXIS "LEX" ROCCOS<br>
-                        <span class="credits-tour-subname">CLIMBER CARPENTER</span>EVAN KLEMMT
+                <div class="tour-row">
+                    <div class="tour-role">RIGGING</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">HEAD RIGGER</span>BILL RENGSTL<br>
+                        <span class="tour-subtitle">RIGGER</span>JASON "LEWLEW" LEWIS<br>
+                        <span class="tour-subtitle">RIGGER</span>ALEX BOLDUC<br>
+                        <span class="tour-subtitle">CLIMBER CARPENTER</span>ALEXIS "LEX" ROCCOS<br>
+                        <span class="tour-subtitle">CLIMBER CARPENTER</span>EVAN KLEMMT
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">CARPS/PROPS</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">HEAD CARPENTER</span>ADAM CAVANAGH<br>
-                        <span class="credits-tour-subname">CARPENTER</span>ROD VAN EGMOND<br>
-                        <span class="credits-tour-subname">CARPENTER</span>STEVIE NORMAN<br>
-                        <span class="credits-tour-subname">CARPENTER</span>KARL CAVANAGH<br>
-                        <span class="credits-tour-subname">CARPENTER</span>OLLIE WALES<br>
-                        <span class="credits-tour-subname">CARPENTER</span>COREY PROULX<br>
-                        <span class="credits-tour-subname">CARPENTER</span>ALEX WHITE<br>
-                        <span class="credits-tour-subname">CARPENTER</span>PHIL DAVIDSON<br>
-                        <span class="credits-tour-subname">CARPENTER</span>ERIC CARDOZA<br>
-                        <span class="credits-tour-subname">CARPENTER</span>JAKE VAN EGMOND<br>
-                        <span class="credits-tour-subname">CARPENTER</span>JOSHIAH THACKER<br>
-                        <span class="credits-tour-subname">CARPENTER</span>MATT FLETCHER<br>
-                        <span class="credits-tour-subname">PROPS</span>TRACY VAN EGMOND<br>
-                        <span class="credits-tour-subname">PROPS</span>EMMA REICHARD<br>
-                        <span class="credits-tour-subname">PROPS</span>TOM CROFT<br>
-                        <span class="credits-tour-subname">ROBOT TECH</span>DOMINIC RICCI<br>
-                        <span class="credits-tour-subname">ROBOT TECH</span>SETH PETERSON
+                <div class="tour-row">
+                    <div class="tour-role">CARPS/PROPS</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">HEAD CARPENTER</span>ADAM CAVANAGH<br>
+                        <span class="tour-subtitle">CARPENTER</span>ROD VAN EGMOND<br>
+                        <span class="tour-subtitle">CARPENTER</span>STEVIE NORMAN<br>
+                        <span class="tour-subtitle">CARPENTER</span>KARL CAVANAGH<br>
+                        <span class="tour-subtitle">CARPENTER</span>OLLIE WALES<br>
+                        <span class="tour-subtitle">CARPENTER</span>COREY PROULX<br>
+                        <span class="tour-subtitle">CARPENTER</span>ALEX WHITE<br>
+                        <span class="tour-subtitle">CARPENTER</span>PHIL DAVIDSON<br>
+                        <span class="tour-subtitle">CARPENTER</span>ERIC CARDOZA<br>
+                        <span class="tour-subtitle">CARPENTER</span>JAKE VAN EGMOND<br>
+                        <span class="tour-subtitle">CARPENTER</span>JOSHIAH THACKER<br>
+                        <span class="tour-subtitle">CARPENTER</span>MATT FLETCHER<br>
+                        <span class="tour-subtitle">PROPS</span>TRACY VAN EGMOND<br>
+                        <span class="tour-subtitle">PROPS</span>EMMA REICHARD<br>
+                        <span class="tour-subtitle">PROPS</span>TOM CROFT<br>
+                        <span class="tour-subtitle">ROBOT TECH</span>DOMINIC RICCI<br>
+                        <span class="tour-subtitle">ROBOT TECH</span>SETH PETERSON
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">AUTOMATION</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">AUTOMATION CREW CHIEF</span>ROBIN HENRY<br>
-                        <span class="credits-tour-subname">3D AUTOMATION OPERATOR</span>AARON LEVY<br>
-                        <span class="credits-tour-subname">2D AUTOMATION OPERATOR</span>TODD BLEIMAN<br>
-                        <span class="credits-tour-subname">NAVCAM BRIDAL OPERATOR</span>JOE SHEPPHERD<br>
-                        <span class="credits-tour-subname">AUTOMATION TECH / ASSISTANT CREW CHIEF</span>TIM MCCARTHY<br>
-                        <span class="credits-tour-subname">AUTOMATION TECH</span>KEWARN DOBSON<br>
-                        <span class="credits-tour-subname">AUTOMATION TECH</span>EMERSON SHEWMAKE<br>
-                        <span class="credits-tour-subname">AUTOMATION TECH</span>AMANDA JOBE<br>
-                        <span class="credits-tour-subname">AUTOMATION TECH</span>DIVINIA FOYA<br>
-                        <span class="credits-tour-subname">LEAD 3D RIGGER</span>DAN MCLAUGHLIN<br>
-                        <span class="credits-tour-subname">AUTOMATION RIGGING</span>ZACH SANDS<br>
-                        <span class="credits-tour-subname">AUTOMATION RIGGING</span>ROBERT MOLINA<br>
-                        <span class="credits-tour-subname">AUTOMATION RIGGING</span>DIDI GERALDO
+                <div class="tour-row">
+                    <div class="tour-role">AUTOMATION</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">AUTOMATION CREW CHIEF</span>ROBIN HENRY<br>
+                        <span class="tour-subtitle">3D AUTOMATION OPERATOR</span>AARON LEVY<br>
+                        <span class="tour-subtitle">2D AUTOMATION OPERATOR</span>TODD BLEIMAN<br>
+                        <span class="tour-subtitle">NAVCAM BRIDAL OPERATOR</span>JOE SHEPPHERD<br>
+                        <span class="tour-subtitle">AUTOMATION TECH / ASSISTANT CREW CHIEF</span>TIM MCCARTHY<br>
+                        <span class="tour-subtitle">AUTOMATION TECH</span>KEWARN DOBSON<br>
+                        <span class="tour-subtitle">AUTOMATION TECH</span>EMERSON SHEWMAKE<br>
+                        <span class="tour-subtitle">AUTOMATION TECH</span>AMANDA JOBE<br>
+                        <span class="tour-subtitle">AUTOMATION TECH</span>DIVINIA FOYA<br>
+                        <span class="tour-subtitle">LEAD 3D RIGGER</span>DAN MCLAUGHLIN<br>
+                        <span class="tour-subtitle">AUTOMATION RIGGING</span>ZACH SANDS<br>
+                        <span class="tour-subtitle">AUTOMATION RIGGING</span>ROBERT MOLINA<br>
+                        <span class="tour-subtitle">AUTOMATION RIGGING</span>DIDI GERALDO
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">SFX</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">SPECIAL FX CREW CHIEF</span>STU WICKENS<br>
-                        <span class="credits-tour-subname">SFX</span>RICHARDO VALDILLEZ<br>
-                        <span class="credits-tour-subname">PYRO TECH</span>JACK KINGRY<br>
-                        <span class="credits-tour-subname">LASER ASSISTANT</span>TOM HART<br>
-                        <span class="credits-tour-subname">SFX</span>CASEY LAKE<br>
-                        <span class="credits-tour-subname">SFX</span>RICHARDO GOSALVES<br>
-                        <span class="credits-tour-subname">SFX</span>FREDDY PRICE
+                <div class="tour-row">
+                    <div class="tour-role">SFX</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">SPECIAL FX CREW CHIEF</span>STU WICKENS<br>
+                        <span class="tour-subtitle">SFX</span>RICHARDO VALDILLEZ<br>
+                        <span class="tour-subtitle">PYRO TECH</span>JACK KINGRY<br>
+                        <span class="tour-subtitle">LASER ASSISTANT</span>TOM HART<br>
+                        <span class="tour-subtitle">SFX</span>CASEY LAKE<br>
+                        <span class="tour-subtitle">SFX</span>RICHARDO GOSALVES<br>
+                        <span class="tour-subtitle">SFX</span>FREDDY PRICE
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">BARRIER</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">BARRICADE</span>CHRIS KORDEK<br>
-                        <span class="credits-tour-subname">BARRICADE</span>ED KERSHAW<br>
-                        <span class="credits-tour-subname">BARRICADE</span>CARLOS ANDERSON<br>
-                        <span class="credits-tour-subname">BARRICADE</span>PATRICK BLASZKOWSKI
+                <div class="tour-row">
+                    <div class="tour-role">BARRIER</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">BARRICADE</span>CHRIS KORDEK<br>
+                        <span class="tour-subtitle">BARRICADE</span>ED KERSHAW<br>
+                        <span class="tour-subtitle">BARRICADE</span>CARLOS ANDERSON<br>
+                        <span class="tour-subtitle">BARRICADE</span>PATRICK BLASZKOWSKI
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">TOUR CATERING</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">CHEF / CREW CHIEF</span>JASON BRIGHT<br>
-                        <span class="credits-tour-subname">CHEF</span>NICOLIA CREATORE<br>
-                        <span class="credits-tour-subname">CHEF</span>TRISTAN CONWAY-GRIM<br>
-                        <span class="credits-tour-subname">CHEF</span>DJANGO WIDDOWSON-JONES<br>
-                        <span class="credits-tour-subname">CHEF</span>TREVOR BANTIN<br>
-                        <span class="credits-tour-subname">CHEF</span>TIFFANY WILLIAMS<br>
-                        <span class="credits-tour-subname">CHEF</span>SIMON SALT<br>
-                        <span class="credits-tour-subname">CHEF</span>STEFANO BOI<br>
-                        <span class="credits-tour-subname">PASTRY CHEF</span>GRANT BIRD<br>
-                        <span class="credits-tour-subname">VEGAN CHEF</span>EZRA BROWN<br>
-                        <span class="credits-tour-subname">FRONT OF HOUSE</span>ANGELINA BROWN<br>
-                        <span class="credits-tour-subname">FRONT OF HOUSE</span>SYL PENHA<br>
-                        <span class="credits-tour-subname">DRESSING ROOM CATERING</span>SAVANNAH BIERMA<br>
-                        <span class="credits-tour-subname">DRESSING ROOM CATERING</span>CHLOE GRAY<br>
-                        <span class="credits-tour-subname">AFTERSHOW / BUS STOCK</span>TAYU RIVERA
+                <div class="tour-row">
+                    <div class="tour-role">TOUR CATERING</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">CHEF / CREW CHIEF</span>JASON BRIGHT<br>
+                        <span class="tour-subtitle">CHEF</span>NICOLIA CREATORE<br>
+                        <span class="tour-subtitle">CHEF</span>TRISTAN CONWAY-GRIM<br>
+                        <span class="tour-subtitle">CHEF</span>DJANGO WIDDOWSON-JONES<br>
+                        <span class="tour-subtitle">CHEF</span>TREVOR BANTIN<br>
+                        <span class="tour-subtitle">CHEF</span>TIFFANY WILLIAMS<br>
+                        <span class="tour-subtitle">CHEF</span>SIMON SALT<br>
+                        <span class="tour-subtitle">CHEF</span>STEFANO BOI<br>
+                        <span class="tour-subtitle">PASTRY CHEF</span>GRANT BIRD<br>
+                        <span class="tour-subtitle">VEGAN CHEF</span>EZRA BROWN<br>
+                        <span class="tour-subtitle">FRONT OF HOUSE</span>ANGELINA BROWN<br>
+                        <span class="tour-subtitle">FRONT OF HOUSE</span>SYL PENHA<br>
+                        <span class="tour-subtitle">DRESSING ROOM CATERING</span>SAVANNAH BIERMA<br>
+                        <span class="tour-subtitle">DRESSING ROOM CATERING</span>CHLOE GRAY<br>
+                        <span class="tour-subtitle">AFTERSHOW / BUS STOCK</span>TAYU RIVERA
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">TOUR NURSE</div>
-                    <div class="credits-tour-names">NATHALIE BONHOMME<br>HELLENNHA CABRERA<br>ALYSSA POWELL</div>
+                <div class="tour-row">
+                    <div class="tour-role">TOUR NURSE</div>
+                    <div class="tour-title">NATHALIE BONHOMME<br>HELLENNHA CABRERA<br>ALYSSA POWELL</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">TOUR MERCHANDISE</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">DESIGN</span>BRYAN RIVERA<br>
-                        <span class="credits-tour-subname">DESIGN</span>TRAVIS BROTHERS<br>
-                        <span class="credits-tour-subname">DESIGN</span>ISHA DIPIKA WALIA<br>
-                        <span class="credits-tour-subname">EU ROAD MANAGER</span>SIMON HARLOCK<br>
-                        <span class="credits-tour-subname">US ROAD MANAGER</span>RICHARD CARTER
+                <div class="tour-row">
+                    <div class="tour-role">TOUR MERCHANDISE</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">DESIGN</span>BRYAN RIVERA<br>
+                        <span class="tour-subtitle">DESIGN</span>TRAVIS BROTHERS<br>
+                        <span class="tour-subtitle">DESIGN</span>ISHA DIPIKA WALIA<br>
+                        <span class="tour-subtitle">EU ROAD MANAGER</span>SIMON HARLOCK<br>
+                        <span class="tour-subtitle">US ROAD MANAGER</span>RICHARD CARTER
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">TOUR DOCUMENTATION</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">VIDEOGRAPHER</span>BEN HAGARTY<br>
-                        <span class="credits-tour-subname">VIDEOGRAPHER</span>DAVE MALAVE<br>
-                        <span class="credits-tour-subname">VIDEOGRAPHER</span>LEAH NARDOS TAKELE<br>
-                        <span class="credits-tour-subname">PHOTOGRAPHER</span>MASON POOLE<br>
-                        <span class="credits-tour-subname">PHOTOGRAPHER</span>ANDREW WHITE<br>
-                        <span class="credits-tour-subname">PHOTOGRAPHER</span>TYLER SIMIEN<br>
-                        <span class="credits-tour-subname">MEDIA MANAGER / DIT</span>JERMAINE HARRELL<br>
-                        <span class="credits-tour-subname">POST-PRODUCTION</span>TYLER JOHNSON
+                <div class="tour-row">
+                    <div class="tour-role">TOUR DOCUMENTATION</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">VIDEOGRAPHER</span>BEN HAGARTY<br>
+                        <span class="tour-subtitle">VIDEOGRAPHER</span>DAVE MALAVE<br>
+                        <span class="tour-subtitle">VIDEOGRAPHER</span>LEAH NARDOS TAKELE<br>
+                        <span class="tour-subtitle">PHOTOGRAPHER</span>MASON POOLE<br>
+                        <span class="tour-subtitle">PHOTOGRAPHER</span>ANDREW WHITE<br>
+                        <span class="tour-subtitle">PHOTOGRAPHER</span>TYLER SIMIEN<br>
+                        <span class="tour-subtitle">MEDIA MANAGER / DIT</span>JERMAINE HARRELL<br>
+                        <span class="tour-subtitle">POST-PRODUCTION</span>TYLER JOHNSON
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">TOUR PROGRAM</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">ART DIRECTOR</span>KELLY SHAMI<br>
-                        <span class="credits-tour-subname">DIRECTOR OF PRODUCT STRATEGY</span>AUDREY PETERSON<br>
-                        <span class="credits-tour-subname">SENIOR CREATIVE PRODUCER</span>HILLARY COY<br>
-                        <span class="credits-tour-subname">PHOTOGRAPHY</span>MASON POOLE<br>
-                        <span class="credits-tour-subname">PHOTOGRAPHY</span>CARLIJN JACOBS<br>
-                        <span class="credits-tour-subname">ADDITIONAL PHOTOGRAPHY</span>FASICA BERHANU<br>
-                        <span class="credits-tour-subname">ADDITIONAL PHOTOGRAPHY</span>SANDY KIM<br>
-                        <span class="credits-tour-subname">ADDITIONAL PHOTOGRAPHY</span>BLAIR CALDWELL<br>
-                        <span class="credits-tour-subname">ASSISTANT GRAPHIC DESIGNER</span>TYLER SIMIEN<br>
-                        <span class="credits-tour-subname">3D DESIGN RENDERING</span>FREDERIK HEYMAN<br>
-                        <span class="credits-tour-subname">POST-PRODUCTION</span>LAURA GERMIDA<br>
-                        <span class="credits-tour-subname">POST-PRODUCTION</span>SUMIRE FUKUDA<br>
-                        <span class="credits-tour-subname">POST-PRODUCTION</span>TYLER JOHNSON<br>
-                        <span class="credits-tour-subname">STAGE & PROP DESIGN RENDERING</span>STUFISH ENTERTAINMENT ARCHITECTS
+                <div class="tour-row">
+                    <div class="tour-role">TOUR PROGRAM</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">ART DIRECTOR</span>KELLY SHAMI<br>
+                        <span class="tour-subtitle">DIRECTOR OF PRODUCT STRATEGY</span>AUDREY PETERSON<br>
+                        <span class="tour-subtitle">SENIOR CREATIVE PRODUCER</span>HILLARY COY<br>
+                        <span class="tour-subtitle">PHOTOGRAPHY</span>MASON POOLE<br>
+                        <span class="tour-subtitle">PHOTOGRAPHY</span>CARLIJN JACOBS<br>
+                        <span class="tour-subtitle">ADDITIONAL PHOTOGRAPHY</span>FASICA BERHANU<br>
+                        <span class="tour-subtitle">ADDITIONAL PHOTOGRAPHY</span>SANDY KIM<br>
+                        <span class="tour-subtitle">ADDITIONAL PHOTOGRAPHY</span>BLAIR CALDWELL<br>
+                        <span class="tour-subtitle">ASSISTANT GRAPHIC DESIGNER</span>TYLER SIMIEN<br>
+                        <span class="tour-subtitle">3D DESIGN RENDERING</span>FREDERIK HEYMAN<br>
+                        <span class="tour-subtitle">POST-PRODUCTION</span>LAURA GERMIDA<br>
+                        <span class="tour-subtitle">POST-PRODUCTION</span>SUMIRE FUKUDA<br>
+                        <span class="tour-subtitle">POST-PRODUCTION</span>TYLER JOHNSON<br>
+                        <span class="tour-subtitle">STAGE & PROP DESIGN RENDERING</span>STUFISH ENTERTAINMENT ARCHITECTS
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">STEEL & ADVANCE TEAMS</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">SITE COORDINATOR - RED</span>CHRIS ORGAN<br>
-                        <span class="credits-tour-subname">SITE COORDINATOR - BLUE</span>MIKE TIERNEY<br>
-                        <span class="credits-tour-subname">SITE COORDINATOR - GREEN</span>TOBY FLEMING<br>
-                        <span class="credits-tour-subname">SITE PRODUCTION COORDINATOR</span>GEMMA FLETCHER<br>
-                        <span class="credits-tour-subname">ADVANCE POWER A1 CREW CHIEF</span>LEE WATTS<br>
-                        <span class="credits-tour-subname">ADVANCE POWER A2</span>ROBERT PILE<br>
-                        <span class="credits-tour-subname">ADVANCE POWER B1 CREW CHIEF</span>LAURIE PAUL<br>
-                        <span class="credits-tour-subname">ADVANCE POWER B2</span>LEWIS GRACE<br>
-                        <span class="credits-tour-subname">ADVANCE SECURITY</span>TUCKER COWELLS<br>
-                        <span class="credits-tour-subname">ADVANCE CATERING - BLUE</span>ABDOUL HAMMOUDAN<br>
-                        <span class="credits-tour-subname">ADVANCE CATERING - RED</span>(IAN) BLAIR GORDON<br>
-                        <span class="credits-tour-subname">ADVANCE CATERING - GREEN</span>SARAH GOGGIN<br>
-                        <span class="credits-tour-subname">ADVANCE POWER USA ONLY</span>KENT JENSEN<br>
-                        <span class="credits-tour-subname">RED TEAM</span>BART DEWOLF<br>
-                        <span class="credits-tour-subname">RED TEAM</span>TOM BEVERNAGIE<br>
-                        <span class="credits-tour-subname">RED TEAM</span>GUNTHER FOURTON<br>
-                        <span class="credits-tour-subname">RED TEAM</span>TATUMI PÄÄKKÖNEN<br>
-                        <span class="credits-tour-subname">RED TEAM</span>LUIS ANDRES VILLAROEL<br>
-                        <span class="credits-tour-subname">RED TEAM</span>MARLON BALLARDES<br>
-                        <span class="credits-tour-subname">RED TEAM</span>BASILE GHYSELS<br>
-                        <span class="credits-tour-subname">RED TEAM</span>BRIAN BARBE<br>
-                        <span class="credits-tour-subname">RED TEAM</span>CLAUDIO FERREIRO<br>
-                        <span class="credits-tour-subname">RED TEAM</span>ALEX AMORÓS<br>
-                        <span class="credits-tour-subname">RED TEAM</span>TOMASZ WEDRYCHOWSKI<br>
-                        <span class="credits-tour-subname">RED TEAM</span>NELSON FERNANDEZ<br>
-                        <span class="credits-tour-subname">RED TEAM</span>HUGH CRONIN<br>
-                        <span class="credits-tour-subname">RED TEAM</span>FLORIAN BELLOQUE<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>JEROME KINZEL<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>TIM PRAET<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>STEF ANGILIS<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>JOCHEN RYCKEBOER<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>DANNY MEULEMA<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>FRANK VORWALD<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>GEERT VAN HEERTUM<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>JANNEMAN VAN BATTUM<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>JOSE CARLOS ARRANZ<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>LADISLAV HAVLICEK<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>PAUDGE TREANOR<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>PAVAO BARTA<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>RAF GOETHUYS<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>ROBERT BIJLSMA<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>DENNIS VAN DEN BOOGAERD<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>TIMOTHY BRIAN JOHNSON<br>
-                        <span class="credits-tour-subname">GREEN TEAM</span>DEEZER CULLINAN<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>KEITH RAY<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>STEFAAN VANDENBOSCH<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>BOSKO BALAZS<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>FIEBE VEUGELEN<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>MICHIEL VAN DEN BOOMEN<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>JAMES HASKEW<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>SIMON ROOK<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>JORIS SANCTORUM<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>NEIL YOUNG<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>DANIEL MORAN<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>TASSILO MAYER<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>TAMAS BALOGH<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>KIERAN CUMMINGS<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>ANDRAS "BANDI" JUHASZ<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>TILO KEIMLING<br>
-                        <span class="credits-tour-subname">BLUE TEAM</span>ROEL VELDINK
+                <div class="tour-row">
+                    <div class="tour-role">STEEL & ADVANCE TEAMS</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">SITE COORDINATOR - RED</span>CHRIS ORGAN<br>
+                        <span class="tour-subtitle">SITE COORDINATOR - BLUE</span>MIKE TIERNEY<br>
+                        <span class="tour-subtitle">SITE COORDINATOR - GREEN</span>TOBY FLEMING<br>
+                        <span class="tour-subtitle">SITE PRODUCTION COORDINATOR</span>GEMMA FLETCHER<br>
+                        <span class="tour-subtitle">ADVANCE POWER A1 CREW CHIEF</span>LEE WATTS<br>
+                        <span class="tour-subtitle">ADVANCE POWER A2</span>ROBERT PILE<br>
+                        <span class="tour-subtitle">ADVANCE POWER B1 CREW CHIEF</span>LAURIE PAUL<br>
+                        <span class="tour-subtitle">ADVANCE POWER B2</span>LEWIS GRACE<br>
+                        <span class="tour-subtitle">ADVANCE SECURITY</span>TUCKER COWELLS<br>
+                        <span class="tour-subtitle">ADVANCE CATERING - BLUE</span>ABDOUL HAMMOUDAN<br>
+                        <span class="tour-subtitle">ADVANCE CATERING - RED</span>(IAN) BLAIR GORDON<br>
+                        <span class="tour-subtitle">ADVANCE CATERING - GREEN</span>SARAH GOGGIN<br>
+                        <span class="tour-subtitle">ADVANCE POWER USA ONLY</span>KENT JENSEN<br>
+                        <span class="tour-subtitle">RED TEAM</span>BART DEWOLF<br>
+                        <span class="tour-subtitle">RED TEAM</span>TOM BEVERNAGIE<br>
+                        <span class="tour-subtitle">RED TEAM</span>GUNTHER FOURTON<br>
+                        <span class="tour-subtitle">RED TEAM</span>TATUMI PÄÄKKÖNEN<br>
+                        <span class="tour-subtitle">RED TEAM</span>LUIS ANDRES VILLAROEL<br>
+                        <span class="tour-subtitle">RED TEAM</span>MARLON BALLARDES<br>
+                        <span class="tour-subtitle">RED TEAM</span>BASILE GHYSELS<br>
+                        <span class="tour-subtitle">RED TEAM</span>BRIAN BARBE<br>
+                        <span class="tour-subtitle">RED TEAM</span>CLAUDIO FERREIRO<br>
+                        <span class="tour-subtitle">RED TEAM</span>ALEX AMORÓS<br>
+                        <span class="tour-subtitle">RED TEAM</span>TOMASZ WEDRYCHOWSKI<br>
+                        <span class="tour-subtitle">RED TEAM</span>NELSON FERNANDEZ<br>
+                        <span class="tour-subtitle">RED TEAM</span>HUGH CRONIN<br>
+                        <span class="tour-subtitle">RED TEAM</span>FLORIAN BELLOQUE<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>JEROME KINZEL<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>TIM PRAET<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>STEF ANGILIS<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>JOCHEN RYCKEBOER<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>DANNY MEULEMA<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>FRANK VORWALD<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>GEERT VAN HEERTUM<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>JANNEMAN VAN BATTUM<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>JOSE CARLOS ARRANZ<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>LADISLAV HAVLICEK<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>PAUDGE TREANOR<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>PAVAO BARTA<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>RAF GOETHUYS<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>ROBERT BIJLSMA<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>DENNIS VAN DEN BOOGAERD<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>TIMOTHY BRIAN JOHNSON<br>
+                        <span class="tour-subtitle">GREEN TEAM</span>DEEZER CULLINAN<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>KEITH RAY<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>STEFAAN VANDENBOSCH<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>BOSKO BALAZS<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>FIEBE VEUGELEN<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>MICHIEL VAN DEN BOOMEN<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>JAMES HASKEW<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>SIMON ROOK<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>JORIS SANCTORUM<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>NEIL YOUNG<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>DANIEL MORAN<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>TASSILO MAYER<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>TAMAS BALOGH<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>KIERAN CUMMINGS<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>ANDRAS "BANDI" JUHASZ<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>TILO KEIMLING<br>
+                        <span class="tour-subtitle">BLUE TEAM</span>ROEL VELDINK
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">DRIVERS</div>
-                    <div class="credits-tour-names">
+                <div class="tour-row">
+                    <div class="tour-role">DRIVERS</div>
+                    <div class="tour-title">
                         ANDREZEJ SLONIEC<br>ARKADIUSZ KOSTRZAB<br>BILLY HIGGS<br>
                         CONSTANTIN "DINO" VLAD-LEHACIU<br>DANIEL BORECZKO<br>DARREN MOWFORTH<br>
                         DAVE RANDLE<br>GERNOT MAYR<br>GRAHAM MARSHALL<br>ILIE MAXIM<br>
@@ -1256,112 +1256,112 @@
                         STEVE MATTHEWS<br>SYLWESTER SLONIEC<br>TEODORO "TEO" LOPATARU<br>
                         THOMAS SCHLICK<br>VALENTIN "VALI" BRATOSIN</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">TOUR TRAVEL</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">A PARTY ACCOMMODATIONS</span>BRIAN LOCKE<br>
-                        <span class="credits-tour-subname">B PARTY ACCOMMODATIONS</span>CARLA GODSON<br>
-                        <span class="credits-tour-subname">C PARTY ACCOMMODATIONS</span>KATIE SMALL<br>
-                        <span class="credits-tour-subname">C PARTY ACCOMMODATIONS (US)</span>ZAMORAH FIGUEROA
+                <div class="tour-row">
+                    <div class="tour-role">TOUR TRAVEL</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">A PARTY ACCOMMODATIONS</span>BRIAN LOCKE<br>
+                        <span class="tour-subtitle">B PARTY ACCOMMODATIONS</span>CARLA GODSON<br>
+                        <span class="tour-subtitle">C PARTY ACCOMMODATIONS</span>KATIE SMALL<br>
+                        <span class="tour-subtitle">C PARTY ACCOMMODATIONS (US)</span>ZAMORAH FIGUEROA
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">SECURITY</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">CHIEF SECURITY OFFICER</span>JULIUS DEBOER<br>
-                        <span class="credits-tour-subname">PERSONAL SECURITY</span>TIMOTHY LUTZ<br>
-                        <span class="credits-tour-subname">PERSONAL SECURITY</span>BRIAN MCAULEY<br>
-                        <span class="credits-tour-subname">LEAD ADVANCE SECURITY</span>PAUL HOWELLS<br>
-                        <span class="credits-tour-subname">SECURITY</span>MARKO DAMIAN<br>
-                        <span class="credits-tour-subname">SECURITY</span>PAVEL BARTON<br>
-                        <span class="credits-tour-subname">SECURITY</span>JAMES PLAZA<br>
-                        <span class="credits-tour-subname">SECURITY</span>NICOLAS MESSER<br>
-                        <span class="credits-tour-subname">SECURITY</span>LISA PEREZ<br>
-                        <span class="credits-tour-subname">SECURITY</span>DAVID ZERBIB<br>
-                        <span class="credits-tour-subname">SECURITY</span>PATRIZIO ALBANESE<br>
-                        <span class="credits-tour-subname">SECURITY</span>TONY WEBB<br>
-                        <span class="credits-tour-subname">SECURITY</span>JOE LITTLE<br>
-                        <span class="credits-tour-subname">VENUE SECURITY DIRECTOR</span>SYLVESTER STARLING<br>
-                        <span class="credits-tour-subname">VENUE LOGISTICS</span>ASHLEY LOFT<br>
-                        <span class="credits-tour-subname">VENUE SECURITY</span>KATHIEM ALDEEN NASER<br>
-                        <span class="credits-tour-subname">ADVANCE SECURITY</span>TUCKER COWELL
+                <div class="tour-row">
+                    <div class="tour-role">SECURITY</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">CHIEF SECURITY OFFICER</span>JULIUS DEBOER<br>
+                        <span class="tour-subtitle">PERSONAL SECURITY</span>TIMOTHY LUTZ<br>
+                        <span class="tour-subtitle">PERSONAL SECURITY</span>BRIAN MCAULEY<br>
+                        <span class="tour-subtitle">LEAD ADVANCE SECURITY</span>PAUL HOWELLS<br>
+                        <span class="tour-subtitle">SECURITY</span>MARKO DAMIAN<br>
+                        <span class="tour-subtitle">SECURITY</span>PAVEL BARTON<br>
+                        <span class="tour-subtitle">SECURITY</span>JAMES PLAZA<br>
+                        <span class="tour-subtitle">SECURITY</span>NICOLAS MESSER<br>
+                        <span class="tour-subtitle">SECURITY</span>LISA PEREZ<br>
+                        <span class="tour-subtitle">SECURITY</span>DAVID ZERBIB<br>
+                        <span class="tour-subtitle">SECURITY</span>PATRIZIO ALBANESE<br>
+                        <span class="tour-subtitle">SECURITY</span>TONY WEBB<br>
+                        <span class="tour-subtitle">SECURITY</span>JOE LITTLE<br>
+                        <span class="tour-subtitle">VENUE SECURITY DIRECTOR</span>SYLVESTER STARLING<br>
+                        <span class="tour-subtitle">VENUE LOGISTICS</span>ASHLEY LOFT<br>
+                        <span class="tour-subtitle">VENUE SECURITY</span>KATHIEM ALDEEN NASER<br>
+                        <span class="tour-subtitle">ADVANCE SECURITY</span>TUCKER COWELL
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">PERSONAL SERVICES</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT TO ARTIST</span>GENEVIEVE TATE<br>
-                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT TO ARTIST</span>MICHAEL HANDLER<br>
-                        <span class="credits-tour-subname">PERSONAL ASSISTANT TO ARTIST</span>MICAH SCHURE<br>
-                        <span class="credits-tour-subname">HEAD CHEF</span>BRANDON CROWE<br>
-                        <span class="credits-tour-subname">CHEF</span>LILLY CHOWDHURY<br>
-                        <span class="credits-tour-subname">CHEF</span>SIMONE BONELLI
+                <div class="tour-row">
+                    <div class="tour-role">PERSONAL SERVICES</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">EXECUTIVE ASSISTANT TO ARTIST</span>GENEVIEVE TATE<br>
+                        <span class="tour-subtitle">EXECUTIVE ASSISTANT TO ARTIST</span>MICHAEL HANDLER<br>
+                        <span class="tour-subtitle">PERSONAL ASSISTANT TO ARTIST</span>MICAH SCHURE<br>
+                        <span class="tour-subtitle">HEAD CHEF</span>BRANDON CROWE<br>
+                        <span class="tour-subtitle">CHEF</span>LILLY CHOWDHURY<br>
+                        <span class="tour-subtitle">CHEF</span>SIMONE BONELLI
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">PHYSIO</div>
-                    <div class="credits-tour-names">RORY CORDIAL<br>NATALIE KINGHORN</div>
+                <div class="tour-row">
+                    <div class="tour-role">PHYSIO</div>
+                    <div class="tour-title">RORY CORDIAL<br>NATALIE KINGHORN</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">DRIVERS</div>
-                    <div class="credits-tour-names">CHRIS MARQUANT<br>GARY SCOREY<br>JEFF THOMAS<br>MARK SCOTT<br>ROMERO
+                <div class="tour-row">
+                    <div class="tour-role">DRIVERS</div>
+                    <div class="tour-title">CHRIS MARQUANT<br>GARY SCOREY<br>JEFF THOMAS<br>MARK SCOTT<br>ROMERO
                         CHAMBERS</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">HOSPITALITY</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">DRESSING ROOM / AMBIANCE</span>JENNIFER JONES<br>
-                        <span class="credits-tour-subname">AMBIANCE</span>LANE ZOERHOF<br>
-                        <span class="credits-tour-subname">AMBIANCE</span>SHANE OSTER<br>
-                        <span class="credits-tour-subname">AMBIANCE</span>JAMES "ASH" ASHMAN<br>
-                        <span class="credits-tour-subname">VENUE CHEF</span>DAVID PERRY<br>
-                        <span class="credits-tour-subname">DRESSING ROOMS CATERING COORDINATOR</span>AMY MOORE
+                <div class="tour-row">
+                    <div class="tour-role">HOSPITALITY</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">DRESSING ROOM / AMBIANCE</span>JENNIFER JONES<br>
+                        <span class="tour-subtitle">AMBIANCE</span>LANE ZOERHOF<br>
+                        <span class="tour-subtitle">AMBIANCE</span>SHANE OSTER<br>
+                        <span class="tour-subtitle">AMBIANCE</span>JAMES "ASH" ASHMAN<br>
+                        <span class="tour-subtitle">VENUE CHEF</span>DAVID PERRY<br>
+                        <span class="tour-subtitle">DRESSING ROOMS CATERING COORDINATOR</span>AMY MOORE
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">BUSINESS MANAGEMENT - GELFAND, RENNERT & FELDMAN, LLC</div>
-                    <div class="credits-tour-names">RON NASH<br>GLORIA BALANAY</div>
+                <div class="tour-row">
+                    <div class="tour-role">BUSINESS MANAGEMENT - GELFAND, RENNERT & FELDMAN, LLC</div>
+                    <div class="tour-title">RON NASH<br>GLORIA BALANAY</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">LEGAL SERVICES - ZIFFREN BRITTENHAM, LLP</div>
-                    <div class="credits-tour-names">DAVID LANDE<br>DAVID BYRNES<br>KELLY VALLON CICCOTTI<br>JULIETTE
+                <div class="tour-row">
+                    <div class="tour-role">LEGAL SERVICES - ZIFFREN BRITTENHAM, LLP</div>
+                    <div class="tour-title">DAVID LANDE<br>DAVID BYRNES<br>KELLY VALLON CICCOTTI<br>JULIETTE
                         BROWNE<br>ALICIA SYDNEY</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">LEGAL SERVICES - LATHAM & WATKINS, LLP</div>
-                    <div class="credits-tour-names">LAURA WASHINGTON<br>KEITH WILLIAMS</div>
+                <div class="tour-row">
+                    <div class="tour-role">LEGAL SERVICES - LATHAM & WATKINS, LLP</div>
+                    <div class="tour-title">LAURA WASHINGTON<br>KEITH WILLIAMS</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">PUBLICITY</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">SCHURE MEDIA GROUP</span>YVETTE NOEL-SCHURE<br>
-                        <span class="credits-tour-subname">SATELLITE 414 (UK)</span>CARL FYSH
+                <div class="tour-row">
+                    <div class="tour-role">PUBLICITY</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">SCHURE MEDIA GROUP</span>YVETTE NOEL-SCHURE<br>
+                        <span class="tour-subtitle">SATELLITE 414 (UK)</span>CARL FYSH
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">CLEARANCE SERVICES - DMG CLEARANCES, INC.</div>
-                    <div class="credits-tour-names">DEBORAH MANNIS-GARDNER<br>JANICE SHREVE</div>
+                <div class="tour-row">
+                    <div class="tour-role">CLEARANCE SERVICES - DMG CLEARANCES, INC.</div>
+                    <div class="tour-title">DEBORAH MANNIS-GARDNER<br>JANICE SHREVE</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">CLEARANCE SERVICES - BARBOUR & COMPANY, INC.</div>
-                    <div class="credits-tour-names">CASSANDRA BARBOUR<br>JESSICA PEREZ<br>MORGAN SMITH</div>
+                <div class="tour-row">
+                    <div class="tour-role">CLEARANCE SERVICES - BARBOUR & COMPANY, INC.</div>
+                    <div class="tour-title">CASSANDRA BARBOUR<br>JESSICA PEREZ<br>MORGAN SMITH</div>
                 </div>
-                <div class="credits-tour-row items-center">
-                    <div class="credits-tour-label">CLEARANCE SERVICES - ERIC WEISSMAN MUSIC LICENSING INC.</div>
-                    <div class="credits-tour-names">ERIC WEISSMAN</div>
+                <div class="tour-row items-center">
+                    <div class="tour-role">CLEARANCE SERVICES - ERIC WEISSMAN MUSIC LICENSING INC.</div>
+                    <div class="tour-title">ERIC WEISSMAN</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">BEYGOOD</div>
-                    <div class="credits-tour-names">
-                        <span class="credits-tour-subname">EXECUTIVE DIRECTOR</span>IVY MCGREGOR<br>
-                        <span class="credits-tour-subname">DIRECTOR OF FINANCE AND OPERATION</span>JENNIFER LEGER<br>
-                        <span class="credits-tour-subname">PROGRAM DIRECTOR</span>MILAN SCHURE<br>
-                        <span class="credits-tour-subname">EXECUTIVE ASSISTANT</span>ALLANA BAREFIELD
+                <div class="tour-row">
+                    <div class="tour-role">BEYGOOD</div>
+                    <div class="tour-title">
+                        <span class="tour-subtitle">EXECUTIVE DIRECTOR</span>IVY MCGREGOR<br>
+                        <span class="tour-subtitle">DIRECTOR OF FINANCE AND OPERATION</span>JENNIFER LEGER<br>
+                        <span class="tour-subtitle">PROGRAM DIRECTOR</span>MILAN SCHURE<br>
+                        <span class="tour-subtitle">EXECUTIVE ASSISTANT</span>ALLANA BAREFIELD
                     </div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">VENDORS</div>
-                    <div class="credits-tour-names">
+                <div class="tour-row">
+                    <div class="tour-role">VENDORS</div>
+                    <div class="tour-title">
                         4 SQUARE<br>64 AUDIO<br>AIRWORKS<br>ARTIST MERCHANTS<br>BARRICADE<br>
                         BLANKS FACTORY LTD<br>BEAT THE STREET GROUND TRANSPORT<br>BLACKOUT (FRANCE)<br>
                         BLANKS FACTORY<br>COAT OF CHROME<br>CUBE PASSES<br>CUE PILOT<br>DAVID MENDOZA<br>
@@ -1376,9 +1376,9 @@
                         THE TOUR DIVISION LTD.<br>TOURQUE METHOD<br>TOURING HEALTH LLC<br>UNBRANDED B.V.<br>
                         VICTOR<br>VT PRO BUCK LLC/VT PRO DESIGN</div>
                 </div>
-                <div class="credits-tour-row">
-                    <div class="credits-tour-label">SPECIAL THANKS</div>
-                    <div class="credits-tour-names">
+                <div class="tour-row">
+                    <div class="tour-role">SPECIAL THANKS</div>
+                    <div class="tour-title">
                         FRIENDS & FAMILY<br>IVY PARK<br>AMAZON MUSIC<br>ARMAND DE BRIGNAC<br>CAA<br>CITI BANK<br>FRIENDS ARENA<br>
                         LIVENATION<br>NKFSB, LLC<br>PARIS LA DÉFENSE ARENA<br>RED STUDIOS<br>TIFFANY & CO.<br>VERIZON WIRELESS</div>
                 </div>
@@ -1386,8 +1386,8 @@
         </section>
         <section id="projectPanel" class="credits-panel flex min-h-[calc(100vh-8rem)] items-center justify-center hidden" role="tabpanel"
             aria-labelledby="projectTab" hidden>
-            <div class="credits-project-panel">
-                <div class="credits-project-content">
+            <div class="project-panel">
+                <div class="project-content">
                     <p>This project is not affiliated with Beyoncé or Parkwood Entertainment LLC and is not intended for commercial or profit-making purposes.</p>
                     <p>All music featured on this website belongs to its respective artists, songwriters, producers, and rights holders.
                         Individual song credits are provided <a href="#lyricsPanel" id="musicCreditsLink">here</a>, while streaming links are available throughout the <a href="music.html">Music</a> section.</p>
