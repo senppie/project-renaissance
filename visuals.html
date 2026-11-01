@@ -11,12 +11,18 @@
   <script src="components/navbar/navbar-loader.js"></script>
   <script src="components/homebutton/homebutton-loader.js"></script>
   <script src="components/cart/cart-loader.js"></script>
+  <style type="text/tailwindcss">
+        @layer components {
+          .visuals-scroll { @apply overflow-x-scroll overflow-y-hidden }
+        }
+  </style>
 </head>
 <body class="bg-black overflow-x-scroll overflow-y-hidden select-none">
   <div id="navhint"
     class="fixed inline-flex left-1/2 bottom-6 -translate-x-1/2 rounded border-2 border-white/5 bg-zinc-900/20 px-3 py-2 text-sm uppercase tracking-tight text-white backdrop-blur-md transition-all duration-300 z-50">
     Scroll or use the arrow keys to navigate
   </div>
+<body class="bg-black visuals-scroll select-none">
   <div class="relative z-10 flex flex-row w-full h-screen">
     <img src="assets/musicpage/albumcover.jpeg" class="w-auto" />
     <img src="assets/visualspage/booklet/visual-cozy.jpg" class="w-auto" />
