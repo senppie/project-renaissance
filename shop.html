@@ -14,7 +14,7 @@
   <style type="text/tailwindcss">
     @layer components {
       .shop-page { @apply relative min-h-screen text-white pt-15 pb-1 z-10; }
-      .shop-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
+      .navbar-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
       .shop-grid { @apply grid grid-cols-2 w-full border-l-2 border-t-2 border-white/5 rounded max-w-7xl mx-auto bg-zinc-900/20 backdrop-blur-md; }
       .shop-item { @apply flex flex-row items-center border-b-2 border-r-2 border-white/5 gap-5 relative; }
       .shop-media { @apply flex w-1/2 items-center justify-center overflow-hidden; }
@@ -34,7 +34,7 @@
   </style>
 </head>
 <body class="bg-black text-white select-none">
-  <div class="shop-layer"></div>
+  <div class="navbar-layer"></div>
   <main class="shop-page shop-scroll">
     <section id="shopGrid" class="shop-grid"></section>
   </main>

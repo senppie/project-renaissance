@@ -15,7 +15,7 @@
         @layer components {
          .page { @apply min-h-screen px-55 pb-15 pt-15 text-white; }
          .scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
-         .layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
+         .navbar-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
          .card { @apply border-b-2 border-r-2 border-white/5; }
          .music-grid { @apply w-full border-l-2 border-t-2 border-white/5 rounded max-w-4xl mx-auto bg-zinc-900/20; }
          .music-grid { @apply mb-0; }
@@ -34,7 +34,7 @@
   </style>
 </head>
 <body class="bg-black text-white select-none">
-    <div class="layer"></div>
+    <div class="navbar-layer"></div>
     <main class="page scroll">
         <div class="fixed bottom-0 inset-x-0 w-full bg-zinc-900/20 border-t-2 border-white/5 backdrop-blur-xl z-30" aria-label="Credit sections">
             <div class="mx-auto w-full max-w-xl py-3">
