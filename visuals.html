@@ -12,100 +12,106 @@
   <script src="components/homebutton/homebutton-loader.js"></script>
   <script src="components/cart/cart-loader.js"></script>
   <style type="text/tailwindcss">
-        @layer components {
-          .visuals-scroll { @apply overflow-x-scroll overflow-y-hidden }
-        }
+    @layer components {
+      .visuals-strip { @apply relative z-10 flex h-screen w-full flex-row; }
+      .visuals-photo { @apply block h-screen w-auto max-w-none shrink-0 object-cover; }
+      .scroll { @apply overflow-x-scroll overflow-y-hidden }
+      .navhint { @apply fixed inline-flex left-1/2 bottom-6 -translate-x-1/2 rounded border-2 border-white/5 bg-zinc-900/20 px-3 py-2 text-sm uppercase tracking-tight text-white backdrop-blur-md transition-all duration-300 z-40 }
+      .navhint-hidden { @apply opacity-0 pointer-events-none; }
+    }
   </style>
 </head>
-<body class="bg-black overflow-x-scroll overflow-y-hidden select-none">
-  <div id="navhint"
-    class="fixed inline-flex left-1/2 bottom-6 -translate-x-1/2 rounded border-2 border-white/5 bg-zinc-900/20 px-3 py-2 text-sm uppercase tracking-tight text-white backdrop-blur-md transition-all duration-300 z-50">
-    Scroll or use the arrow keys to navigate
-  </div>
-<body class="bg-black visuals-scroll select-none">
-  <div class="relative z-10 flex flex-row w-full h-screen">
-    <img src="assets/musicpage/albumcover.jpeg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-cozy.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-01.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-summerrenaissance.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-02.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-03.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-04.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-heated.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-energy-1.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-energy-2.jpeg" class="w-auto" />
-    <img src="assets/visualspage/visual-energy-3.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-05.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-breakmysoul.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-06.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-07.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-08.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-imthatgirl.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-09.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-churchgirl.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-plasticoofthesofa-1.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-plasticoofthesofa-2.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-plasticoofthesofa-3.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-plasticoofthesofa-4.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-plasticoofthesofa-5.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-virgosgroove.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-move-1.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-move-2.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-cuffit.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-10.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-purehoney-1.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-thique-1.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-thique-2.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-thique-3.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-11.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-12.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-13.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-14.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-15.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-16.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-17.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-allupinyourmind.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-americahasaproblem.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-purehoney-2.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-purehoney-3.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-18.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-19.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-purehoney-4.jpg" class="w-auto" />
-    <img src="assets/visualspage/visual-20.jpg" class="w-auto" />
-    <img src="assets/visualspage/albumcover-aternative.jpg" class="w-auto" />
-    <img src="assets/visualspage/booklet/visual-aliensuperstar.jpg" class="w-auto" />
-    <img src="assets/visualspage/albumcover-1.jpg" class="w-auto" />
-  </div>
-</body>
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
+<body class="bg-black scroll select-none">
+  <div id="navhint" class="fixed navhint">Scroll or use the arrow keys to navigate</div>
+  <main id="visualsStrip" class="visuals-strip"></main>
+  <script>
+    const visuals = [
+      'assets/musicpage/albumcover.jpeg',
+      'assets/visualspage/booklet/visual-cozy.jpg',
+      'assets/visualspage/visual-01.jpg',
+      'assets/visualspage/booklet/visual-summerrenaissance.jpg',
+      'assets/visualspage/visual-02.jpg',
+      'assets/visualspage/visual-03.jpg',
+      'assets/visualspage/visual-04.jpg',
+      'assets/visualspage/booklet/visual-heated.jpg',
+      'assets/visualspage/booklet/visual-energy-1.jpg',
+      'assets/visualspage/visual-energy-2.jpeg',
+      'assets/visualspage/visual-energy-3.jpg',
+      'assets/visualspage/visual-05.jpg',
+      'assets/visualspage/booklet/visual-breakmysoul.jpg',
+      'assets/visualspage/visual-06.jpg',
+      'assets/visualspage/visual-07.jpg',
+      'assets/visualspage/visual-08.jpg',
+      'assets/visualspage/booklet/visual-imthatgirl.jpg',
+      'assets/visualspage/visual-09.jpg',
+      'assets/visualspage/booklet/visual-churchgirl.jpg',
+      'assets/visualspage/booklet/visual-plasticoofthesofa-1.jpg',
+      'assets/visualspage/visual-plasticoofthesofa-2.jpg',
+      'assets/visualspage/visual-plasticoofthesofa-3.jpg',
+      'assets/visualspage/visual-plasticoofthesofa-4.jpg',
+      'assets/visualspage/visual-plasticoofthesofa-5.jpg',
+      'assets/visualspage/booklet/visual-virgosgroove.jpg',
+      'assets/visualspage/booklet/visual-move-1.jpg',
+      'assets/visualspage/visual-move-2.jpg',
+      'assets/visualspage/booklet/visual-cuffit.jpg',
+      'assets/visualspage/visual-10.jpg',
+      'assets/visualspage/visual-purehoney-1.jpg',
+      'assets/visualspage/visual-thique-1.jpg',
+      'assets/visualspage/booklet/visual-thique-2.jpg',
+      'assets/visualspage/booklet/visual-thique-3.jpg',
+      'assets/visualspage/visual-11.jpg',
+      'assets/visualspage/visual-12.jpg',
+      'assets/visualspage/visual-13.jpg',
+      'assets/visualspage/visual-14.jpg',
+      'assets/visualspage/visual-15.jpg',
+      'assets/visualspage/visual-16.jpg',
+      'assets/visualspage/visual-17.jpg',
+      'assets/visualspage/booklet/visual-allupinyourmind.jpg',
+      'assets/visualspage/booklet/visual-americahasaproblem.jpg',
+      'assets/visualspage/booklet/visual-purehoney-2.jpg',
+      'assets/visualspage/booklet/visual-purehoney-3.jpg',
+      'assets/visualspage/visual-18.jpg',
+      'assets/visualspage/visual-19.jpg',
+      'assets/visualspage/visual-purehoney-4.jpg',
+      'assets/visualspage/visual-20.jpg',
+      'assets/visualspage/albumcover-aternative.jpg',
+      'assets/visualspage/booklet/visual-aliensuperstar.jpg',
+      'assets/visualspage/albumcover-1.jpg',
+    ];
 
-  const navhint = document.querySelector('#navhint');
-  let hintHidden = false;
+    const visualsStrip = document.getElementById('visualsStrip');
+    const navhint = document.getElementById('navhint');
+    let hintHidden = false;
 
-  function hidenavhint() {
-    if (hintHidden || !navhint) return;
-    hintHidden = true;
-    navhint.classList.add('opacity-0', 'pointer-events-none');
-  }
-
-  document.addEventListener('wheel', (event) => {
-    const delta = event.deltaX !== 0 ? event.deltaX : event.deltaY;
-    if (delta === 0) return;
-
-    event.preventDefault();
-    hidenavhint();
-    window.scrollBy({
-      left: delta,
-      behavior: 'auto',
+    visuals.forEach((src) => {
+      const image = document.createElement('img');
+      image.className = 'visuals-photo';
+      image.src = src;
+      image.alt = '';
+      visualsStrip.appendChild(image);
     });
-  }, { passive: false });
 
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-      hidenavhint();
+    function hideNavhint() {
+      if (hintHidden || !navhint) return;
+      hintHidden = true;
+      navhint.classList.add('navhint-hidden');
     }
-  });
-</script>
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') hideNavhint();
+    });
+
+    document.addEventListener('wheel', (event) => {
+      const delta = event.deltaX !== 0 ? event.deltaX : event.deltaY;
+      if (delta === 0) return;
+
+      event.preventDefault();
+      hideNavhint();
+      window.scrollBy({
+        left: delta,
+        behavior: 'auto',
+      });
+    }, { passive: false });
+  </script>
+</body>
 </html>

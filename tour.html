@@ -15,15 +15,14 @@
     @layer components {
       .tour-strip { @apply relative z-10 flex h-screen w-full flex-row; }
       .tour-photo { @apply block h-screen w-auto max-w-none shrink-0 object-cover; }
+      .scroll { @apply overflow-x-scroll overflow-y-hidden }
+      .navhint { @apply fixed inline-flex left-1/2 bottom-6 -translate-x-1/2 rounded border-2 border-white/5 bg-zinc-900/20 px-3 py-2 text-sm uppercase tracking-tight text-white backdrop-blur-md transition-all duration-300 z-40 }
       .navhint-hidden { @apply opacity-0 pointer-events-none; }
     }
   </style>
 </head>
-<body class="overflow-x-scroll overflow-y-hidden bg-black text-white select-none">
-  <div id="navhint"
-    class="fixed inline-flex left-1/2 bottom-6 -translate-x-1/2 rounded border-2 border-white/5 bg-zinc-900/20 px-3 py-2 text-sm uppercase tracking-tight text-white backdrop-blur-md transition-all duration-300 z-40">
-    Scroll or use the arrow keys to navigate
-  </div>
+<body class="bg-black scroll select-none">
+  <div id="navhint" class="fixed navhint">Scroll or use the arrow keys to navigate</div>
   <main id="tourStrip" class="tour-strip">
   </main>
   <script>
