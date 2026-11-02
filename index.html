@@ -10,16 +10,21 @@
   <script src="components/titlehero/titlehero-loader.js"></script>
   <script src="components/navbar/navbar-loader.js"></script>
   <script src="components/cart/cart-loader.js"></script>
+  <style type="text/tailwindcss">
+    @layer components {
+          .background { @apply fixed inset-0 w-screen h-screen object-cover pointer-events-none transition-opacity duration-800; }
+          .copyright { @apply fixed bottom-6 left-1/2 -translate-x-1/2 mix-blend-difference text-white text-sm tracking-tight z-50; }
+          .social-link { @apply fixed bottom-6 right-20 -translate-x-1/2 mix-blend-difference text-white tracking-tight uppercase hover:text-white/60 z-50; }
+        }
+  </style>
 </head>
 <body class="bg-black select-none">
-  <img id="bg-image" src="assets/homepage/main-bg.jpeg"
-    class="fixed inset-0 w-screen h-screen object-cover pointer-events-none transition-opacity duration-800" />
-  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 mix-blend-difference z-50">
-    <p class="text-white text-sm tracking-tight">© 2026 SENPPIE</p>
+  <img id="bg-image" src="assets/homepage/main-bg.jpeg" class="background"/>
+  <div class="copyright">
+    <p>© 2026 SENPPIE</p>
   </div>
-  <div class="fixed bottom-6 right-20 -translate-x-1/2 mix-blend-difference z-50">
-    <a href="https://github.com/senppie/project-renaissance"
-      class="text-white text-md tracking-tight uppercase hover:text-white/60">Github</a>
+  <div class="social-link">
+    <a href="https://github.com/senppie/project-renaissance">Github</a>
   </div>
 </body>
 <script>
