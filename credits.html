@@ -17,6 +17,8 @@
          .scroll { @apply h-165 scroll-smooth overflow-y-auto scrollbar-thumb-white/10; }
          .navbar-layer { @apply fixed top-0 left-0 right-0 h-16 bg-zinc-900/20 backdrop-blur-xl border-b-2 border-white/5 pointer-events-none z-20; }
          .card { @apply border-b-2 border-r-2 border-white/5; }
+         .tab { @apply fixed bottom-0 inset-x-0 w-full bg-zinc-900/20 border-t-2 border-white/5 backdrop-blur-xl z-30; }
+         .tab-title { @apply flex-1 cursor-pointer uppercase transition-colors duration-200; }
          .music-grid { @apply w-full border-l-2 border-t-2 border-white/5 rounded max-w-4xl mx-auto bg-zinc-900/20; }
          .music-grid { @apply mb-0; }
          .music-title { @apply text-center text-lg border-b-2 border-white/5 py-4 uppercase; }
@@ -36,17 +38,17 @@
 <body class="bg-black text-white select-none">
     <div class="navbar-layer"></div>
     <main class="page scroll">
-        <div class="fixed bottom-0 inset-x-0 w-full bg-zinc-900/20 border-t-2 border-white/5 backdrop-blur-xl z-30" aria-label="Credit sections">
+        <div class="tab">
             <div class="mx-auto w-full max-w-xl py-3">
                 <div class="flex items-center text-md">
                     <button type="button" id="lyricsTab"
-                        class="flex-1 cursor-pointer text-left text-white uppercase transition-colors duration-200 hover:text-white" role="tab"
+                        class="tab-title text-white text-left hover:text-white" role="tab"
                         aria-selected="true">Music</button>
                     <button type="button" id="tourTab"
-                        class="flex-1 cursor-pointer text-center text-white/30 uppercase transition-colors duration-200 hover:text-white" role="tab"
+                        class="tab-title text-white/30 text-center hover:text-white" role="tab"
                         aria-selected="false">Renaissance Tour</button>
                     <button type="button" id="projectTab"
-                        class="flex-1 cursor-pointer text-right text-white/30 uppercase transition-colors duration-200 hover:text-white" role="tab"
+                        class="tab-title text-white/30 text-right hover:text-white" role="tab"
                         aria-selected="false">Project</button>
                 </div>
                 <div class="mt-2 flex items-center gap-2">
